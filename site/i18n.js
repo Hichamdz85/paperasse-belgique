@@ -52,7 +52,7 @@
       split_manual_4: "Vérification des points marqués « à vérifier ».",
 
       install_title: "Installation",
-      install_sub: "Copiez les skills vers le répertoire Claude Code.",
+      install_sub: "Clonez, validez, puis copiez les skills vers Claude Code.",
       copy_btn: "Copier",
       copy_done: "Copié",
 
@@ -105,7 +105,7 @@
       split_manual_4: "Controle van de punten gemarkeerd als « te verifiëren ».",
 
       install_title: "Installatie",
-      install_sub: "Kopieer de skills naar de Claude Code-map.",
+      install_sub: "Kloon, valideer en kopieer de skills naar Claude Code.",
       copy_btn: "Kopiëren",
       copy_done: "Gekopieerd",
 

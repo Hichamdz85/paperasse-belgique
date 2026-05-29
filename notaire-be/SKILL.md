@@ -1,18 +1,21 @@
 ---
 name: notaire-be
 description: >-
-  Skill notarial belge (FR/NL bilingue) couvrant les frais de notaire, les
-  droits d'enregistrement régionaux (Bruxelles / Flandre / Wallonie), les droits
-  de succession, les droits de donation, la plus-value immobilière fédérale et
-  la constitution de SRL/BV. Affiche TOUJOURS la région, la langue et la source
-  officielle datée avant tout taux. Termes officiels néerlandais en regard du
-  français. Aucun taux régional sans région + source. Ce skill ne remplace pas
-  un notaire belge.
-last_updated: 2026-05-29
-langues: [fr, nl]
+  Belgian notarial assistant FR/NL for Belgian property and company matters. Use
+  when working on notary fees, regional registration duties in Brussels/Flanders/
+  Wallonia, inheritance tax, donation duties, Belgian real-estate capital gains,
+  SRL/BV incorporation, regional notarial terminology, or sourced Belgian
+  notarial answers. Always show region, language, dated official source, and
+  confirmation status before any rate. Never give a regional rate without region
+  and source. Does not replace a Belgian notary.
+metadata:
+  short-description: Belgian notary fees, duties and SRL/BV flows
+  version: "2.0.0"
+  last-updated: "2026-05-29"
+  languages: ["fr", "nl"]
 ---
 
-# notaire-be — Notariat belge (FR/NL)
+# notaire-be v2 — Notariat belge (FR/NL)
 
 Skill de référence pour les opérations notariales belges : frais d'acquisition,
 droits d'enregistrement régionaux, succession, donation, plus-value immobilière
@@ -42,9 +45,10 @@ officiels néerlandais (NL) en regard, conformément au bilinguisme belge.
    ou « 3 % à Bruxelles (succession ligne directe, 1re tranche) », etc.
 4. **Données « à vérifier »** (RESEARCH §8) : afficher la mention
    « À VÉRIFIER — source non confirmée » et **ne pas les utiliser dans un
-   calcul**. Concerne notamment : tous les barèmes de donation (#17), le barème
-   erfbelasting détaillé de Flandre (#16), les honoraires notariaux ligne par
-   ligne (#18).
+   calcul**. En v2, cela concerne surtout les bornes intermédiaires de la
+   réforme wallonne des donations immobilières 2028 et les honoraires de
+   constitution SRL/BV. Les donations mobilières 2026 et le barème immobilier
+   commun 2026 sont confirmés et chiffrables.
 5. **Bilinguisme** : libellés FR/NL repris **uniquement** de
    `glossaire-fr-nl.json`. Respecter la nuance régionale (voir ci-dessous).
 
@@ -72,8 +76,9 @@ Les frais d'acquisition se décomposent en **trois blocs** (RESEARCH §7.4) :
 1. **Droits d'enregistrement** — montant **régional** (voir bloc 2 ci-dessous),
    c'est la composante la plus lourde et la seule qui varie selon la région.
 2. **Honoraires du notaire** — **tarifés par arrêté royal fédéral**, dégressifs
-   et **identiques chez tous les notaires**. Le tarif ligne par ligne n'est pas
-   confirmé (RESEARCH §8 #18) : « À VÉRIFIER — source non confirmée ».
+   et **identiques chez tous les notaires**. En v2, les bornes et barèmes
+   principaux sont confirmés dans `references/frais-notaire.md`. Pour un acte
+   précis, renvoyer aussi vers le simulateur officiel notaire.be/notaris.be.
 3. **Frais administratifs et débours** (recherches, transcription
    hypothécaire, etc.).
 
@@ -85,34 +90,37 @@ Toujours préciser la région. Détail et sources dans
 `references/droits-enregistrement.md`.
 
 - **Bruxelles-Capitale** : taux de base **12,5 %** ; **abattement** sur la 1re
-  tranche de **200.000 €** (depuis 2025 ; 250.000 € si engagement PEB) ; plafond
-  de prix 600.000 €. Source : notaire.be, 2026-05-29 — confirmé.
+  tranche de **200.000 €** (depuis 2025) ; bonus PEB **+25.000 € par classe**
+  dès 2 classes, maximum +100.000 € ; plafond de prix 600.000 €. Source :
+  fiscalite.brussels / notaire.be, 2026-05-29 — confirmé.
 - **Région flamande** : `verkooprecht` standard **12 %** ; habitation **propre
   et unique 2 %** (depuis 01/01/2025). Source : vlaanderen.be, 2026-05-29 —
-  confirmé. (Monument classé 1 % : à vérifier, RESEARCH §8 #15.)
+  confirmé. Monument classé 1 % habitation propre/unique : **aboli** depuis
+  01/01/2025 ; le 1 % rénovation énergétique majeure subsiste sous conditions.
 - **Région wallonne** : taux ordinaire **12,5 %** ; habitation **propre et
   unique 3 %** (depuis 01/01/2025) ; **abattement supprimé** depuis 2025.
   Source : wallonie.be, 2026-05-29 — confirmé.
 
 ### 3. Droits de succession (régional, progressif, par héritier)
 
-Barèmes **par région**. Structure confirmée pour Bruxelles et Wallonie ; barème
-détaillé de Flandre « à vérifier ». Détail dans
-`references/succession-donation.md`.
+Barèmes **par région**. Structure confirmée pour Bruxelles et Wallonie ; ligne
+directe/partenaires confirmée avec réserve en Flandre (3/9/27 %, mobilier et
+immeubles taxés séparément). Détail dans `references/succession-donation.md`.
 
 ### 4. Droits de donation
 
-**À VÉRIFIER — barèmes non confirmés (RESEARCH §8 #17).** Aucun chiffre de
-donation (mobilière ou immobilière, quelle que soit la région) ne doit être
-donné ni utilisé dans un calcul. Détail dans `references/succession-donation.md`.
+Donation mobilière 2026 : taux fixes confirmés par région. Donation immobilière
+2026 : barème progressif commun aux 3 régions confirmé. Seules les bornes
+intermédiaires de la réforme wallonne 2028 restent « À VÉRIFIER ». Détail dans
+`references/succession-donation.md`.
 
 ### 5. Plus-value immobilière (impôt FÉDÉRAL)
 
 Bien bâti revendu **dans les 5 ans** : plus-value taxée à **16,5 %**.
 Exonération totale pour la résidence principale. Impôt fédéral identique dans
 les 3 régions. Source : notaire.be / SPF Finances, 2026-05-29 — confirmé.
-(Nouvelle taxe 2026 de 10 % sur actifs financiers : ne concerne PAS l'immobilier
-résidentiel ; modalités à vérifier.)
+La nouvelle taxe 2026 de 10 % sur actifs financiers est distincte et ne concerne
+pas l'immobilier résidentiel.
 
 ### 6. Constitution SRL/BV — `acte authentique` / `authentieke akte`
 

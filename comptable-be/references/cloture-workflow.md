@@ -69,9 +69,10 @@ Deux formats via l'application Filing de la Centrale des bilans (Balanscentrale)
 - **Source :** BNB/NBB — 2026 filing fees, https://www.nbb.be/en/central-balance-sheet-office/preparation-and-filing/how-and-how-much-pay/filing-fees-0
 - **id source :** `compta-bnb-frais-2026` — **statut : confirmé** — consultation 2026-05-29
 
-> **À VÉRIFIER — source non confirmée** : la mention « **TVAC** » (TVA comprise) des frais BNB
-> n'est pas confirmée verbatim. RESEARCH §8 #6. Présenter les montants tels quels, sans affirmer
-> qu'ils sont HT ou TVAC.
+> **Note v2** : la page BNB/NBB ne présente pas ces frais sous une mention « TVAC ».
+> La TVA sur la part BNB est supprimée depuis le 01/01/2017. Présenter les montants
+> comme frais officiels BNB/NBB 2026, sans ajouter une qualification fiscale non
+> affichée par la source.
 
 ### 3.3 Paiement
 Paiement reçu dans les **6 jours ouvrables** après marquage « prêt au paiement », sinon rejet
@@ -92,9 +93,9 @@ automatique.
 - Règle de dépassement (effet décalé) : (non-)dépassement de plus d'un critère pendant
   **deux exercices consécutifs**, conséquences à partir de l'exercice suivant (RESEARCH §2.4, confirmé).
 
-> **À VÉRIFIER — source non confirmée** : la **référence d'article CSA** imposant chaque schéma
-> (complet / abrégé / micro) et la **composition détaillée** des comptes par schéma.
-> RESEARCH §8 #3 et #5, statut `a_verifier`.
+Références confirmées : CSA art. 3:1 (délégation au Roi), art. 1:24 (petite
+société), art. 1:25 (micro-société) et AR du 29/04/2019 art. 3:58 + annexes
+pour les modèles BNB/NBB (`compta-schema-article`, `compta-bnb-modeles`).
 
 ---
 
@@ -103,6 +104,6 @@ automatique.
 Langue selon la région du siège d'exploitation (`langue-regle-pivot`, confirmé) :
 Flandre → NL ; Wallonie → FR ; Bruxelles → FR ou NL.
 
-> **À VÉRIFIER — source non confirmée** : les **modalités exactes du choix FR/NL à Bruxelles**
-> pour le dépôt des comptes / déclarations / actes. RESEARCH §8 #20 —
-> `id source : av-langue-depot-bxl`, statut `a_verifier`.
+Pour Bruxelles, choisir **une** langue officielle (FR ou NL) et conserver cette
+même langue pour toutes les pièces du dépôt. Pas de mélange FR/NL dans un même
+dossier (`av-langue-depot-bxl`, confirmé).

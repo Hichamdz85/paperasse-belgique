@@ -5,7 +5,8 @@
 >
 > **Règle absolue** : le bloc des droits d'enregistrement varie par région —
 > toujours nommer la région + source datée. Les honoraires tarifés par AR
-> fédéral ne sont pas extraits ligne par ligne : « À VÉRIFIER ».
+> fédéral ont des bornes et barèmes confirmés en v2 ; pour un acte précis,
+> renvoyer aussi vers le simulateur officiel notaire.be / notaris.be.
 
 Terminologie FR/NL (`glossaire-fr-nl.json`) :
 - FR : **Notaire** / **Acte authentique** ; NL : **Notaris** / **Authentieke

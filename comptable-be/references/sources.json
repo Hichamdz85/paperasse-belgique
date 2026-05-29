@@ -1,7 +1,7 @@
 {
   "meta": {
     "description": "Sous-ensemble du registre central des sources (data/sources.json) pour le skill comptable-be : domaines comptabilite, fiscalite, droit (langue) et institution (BCE). Valeurs copiées sans modification. Deelverzameling van het centrale bronnenregister voor de skill comptable-be.",
-    "version": "0.1.0",
+    "version": "2.0.0",
     "date_consultation_globale": "2026-05-29",
     "annee_reference": "exercice d'imposition 2026 (revenus 2025)",
     "regle": "Chaque donnée chiffrée affichée ou calculée DOIT renvoyer à une entrée 'confirme'. Les entrées 'a_verifier' ne doivent jamais entrer dans un calcul (RESEARCH.md §8).",
@@ -36,6 +36,6 @@
     { "id": "fisc-isoc-cotisation-distincte", "domaine": "fiscalite", "sujet": "Rémunération dirigeant insuffisante — conséquence", "valeur": "Pas de cotisation distincte (5,10 % abrogée/inexistante) ; seule conséquence = perte du taux réduit (retour 25 %). Art. 219quinquies CIR 92 = cotisation 10 % (exit tax FIIS depuis 01/01/2024)", "url": "https://finances.belgium.be/sites/default/files/121-declaration-isoc-explications-2025.pdf", "date_consultation": "2026-05-29", "statut": "confirme" },
     { "id": "fisc-tva-ar20-exemples", "domaine": "fiscalite", "sujet": "Exemples biens/services par taux TVA (AR n°20)", "valeur": "6 % : eau, livres, médicaments, alimentation de base, transport de personnes, rénovation ≥10 ans ; 12 % : restauration hors boissons, logement social, margarine ; 21 % : reste", "url": "https://finances.belgium.be/fr/faq/les-taux-de-tva", "date_consultation": "2026-05-29", "statut": "confirme" },
     { "id": "fisc-tva-numero-be", "domaine": "fiscalite", "sujet": "Composition numéro de TVA", "valeur": "Numéro de TVA = 'BE' + numéro d'entreprise (10 chiffres)", "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-creer-une/lidentification-la-tva", "date_consultation": "2026-05-29", "statut": "confirme" },
-    { "id": "av-langue-depot-bxl", "domaine": "droit", "sujet": "Langue de dépôt comptes/déclarations/actes à Bruxelles", "valeur": "À VÉRIFIER — modalité choix FR/NL à confirmer (BNB/SPF/Fednot)", "url": "https://www.nbb.be/fr/centrale-des-bilans", "date_consultation": "2026-05-29", "statut": "a_verifier" }
+    { "id": "av-langue-depot-bxl", "domaine": "droit", "sujet": "Langue de dépôt comptes/déclarations/actes à Bruxelles", "valeur": "Une des langues officielles (FR ou NL) mais TOUTES les pièces dans UNE SEULE ET MÊME langue (art. 2:33 CSA + art. 3:67 §3 AR exécution CSA) ; pas de mélange", "url": "https://www.nbb.be/fr/centrale-des-bilans", "date_consultation": "2026-05-29", "statut": "confirme" }
   ]
 }
