@@ -1,7 +1,7 @@
 {
   "meta": {
-    "description": "Sous-ensemble du registre central des sources officielles belges, limité au domaine 'notariat' (+ règle-pivot langue). Sous-verzameling van het centrale register, beperkt tot het domein 'notariat'. Copié sans modification depuis data/sources.json.",
-    "version": "0.1.0",
+    "description": "Sous-ensemble v2 du registre central des sources officielles belges, limité au domaine 'notariat' (+ règle-pivot langue). Sous-verzameling van het centrale register, beperkt tot het domein 'notariat'. Aligné sur data/sources.json et enrichi de détails notariaux confirmés.",
+    "version": "2.0.0",
     "date_consultation_globale": "2026-05-29",
     "annee_reference": "exercice d'imposition 2026 (revenus 2025)",
     "regle": "Chaque donnée chiffrée affichée ou calculée DOIT renvoyer à une entrée 'confirme'. Les entrées 'a_verifier' ne doivent jamais entrer dans un calcul (RESEARCH.md §8).",

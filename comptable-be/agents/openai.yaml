@@ -1,0 +1,4 @@
+interface:
+  display_name: "Comptable BE"
+  short_description: "Belgian accounting, VAT and BNB workflows"
+  default_prompt: "Use $comptable-be to prepare a sourced Belgian FR/NL accounting checklist with VAT, ISoc and BNB deadlines."

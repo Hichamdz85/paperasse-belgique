@@ -1,0 +1,33 @@
+name: Quality gates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "comptable-be/**"
+      - "notaire-be/**"
+      - "data/**"
+      - "scripts/**"
+      - "package.json"
+      - ".github/workflows/quality.yml"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run validation
+        run: npm run validate

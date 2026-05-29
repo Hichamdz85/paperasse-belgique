@@ -1,7 +1,7 @@
 {
   "meta": {
     "description": "Registre central des sources officielles belges. Centraal register van officiële Belgische bronnen.",
-    "version": "0.1.0",
+    "version": "2.0.0",
     "date_consultation_globale": "2026-05-29",
     "annee_reference": "exercice d'imposition 2026 (revenus 2025)",
     "regle": "Chaque donnée chiffrée affichée ou calculée DOIT renvoyer à une entrée 'confirme'. Les entrées 'a_verifier' ne doivent jamais entrer dans un calcul (RESEARCH.md §8).",

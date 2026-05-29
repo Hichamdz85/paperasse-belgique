@@ -3,7 +3,7 @@
 > Skills Claude Code pour automatiser la comptabilité et le notariat **belges**, en **français et néerlandais**, avec des données **sourcées et datées**.
 > Claude Code-skills om de Belgische **boekhouding en notariaat** te automatiseren, in het **Frans en Nederlands**, met **gedateerde en gecontroleerde bronnen**.
 
-Données vérifiées au **2026-05-29** — exercice d'imposition 2026 (revenus 2025).
+Version **2.0** des skills — données vérifiées au **2026-05-29** — exercice d'imposition 2026 (revenus 2025).
 
 ---
 
@@ -16,6 +16,15 @@ Données vérifiées au **2026-05-29** — exercice d'imposition 2026 (revenus 2
 ### Règle d'or : aucune donnée non sourcée
 
 Aucun taux, seuil, échéance ou barème n'est inventé. Chaque donnée chiffrée renvoie à `data/sources.json` (source officielle + date + statut). Les données non confirmées portent la mention littérale **« À VÉRIFIER — source non confirmée »** et ne sont **jamais** utilisées dans un calcul. Voir [`RESEARCH.md`](RESEARCH.md) (section 8) pour la liste des points à vérifier.
+
+### Qualité v2
+
+Chaque skill respecte le schéma officiel `SKILL.md` (`name`, `description`, `metadata`) et possède une interface `agents/openai.yaml`. Le dépôt inclut une validation locale et GitHub Actions pour contrôler :
+
+- la validité du frontmatter ;
+- la présence des métadonnées v2 ;
+- la cohérence des statuts entre `data/sources.json` et les registres de chaque skill ;
+- l'exclusion des sources `a_verifier` des calculs.
 
 ### Skills disponibles
 
@@ -42,8 +51,11 @@ Les skills s'installent en copiant chaque dossier de skill dans `~/.claude/skill
 
 ```bash
 # Cloner le dépôt
-git clone https://github.com/Hichamdz85/paperasse-belgique.git paperasse-be
+git clone https://github.com/hichamdz85/paperasse-belgique.git paperasse-be
 cd paperasse-be
+
+# Valider les sources et les skills
+npm run validate
 
 # Copier les skills vers le répertoire des skills Claude Code
 mkdir -p ~/.claude/skills
@@ -67,6 +79,7 @@ cp company.example.json company.json
 
 ```bash
 node scripts/check-sources.js        # vérifie url + date de chaque source, liste les « à vérifier »
+node scripts/validate-skills.js      # vérifie SKILL.md, agents/openai.yaml et cohérence des sources
 node scripts/generate-statements.js  # bilan + compte de résultats (schéma BNB), libellés FR/NL
 node scripts/generate-pdfs.js        # document imprimable (HTML A4) à partir des états
 ```
@@ -86,6 +99,15 @@ Ces skills sont une aide à la préparation et à la compréhension. Ils **ne re
 ### Gouden regel: geen ongedocumenteerde gegevens
 
 Geen enkel tarief, drempel, vervaldag of barema wordt verzonnen. Elk cijfer verwijst naar `data/sources.json` (officiële bron + datum + status). Niet-bevestigde gegevens dragen de letterlijke vermelding **« À VÉRIFIER — source non confirmée »** en worden **nooit** in een berekening gebruikt. Zie [`RESEARCH.md`](RESEARCH.md) (sectie 8).
+
+### v2-kwaliteit
+
+Elke skill volgt het officiële `SKILL.md`-schema (`name`, `description`, `metadata`) en bevat een `agents/openai.yaml` interface. De repository bevat lokale validatie en GitHub Actions voor:
+
+- geldige frontmatter;
+- verplichte v2-metadata;
+- consistente statussen tussen `data/sources.json` en de skillregisters;
+- uitsluiting van `a_verifier`-bronnen uit berekeningen.
 
 ### Beschikbare skills
 
@@ -112,8 +134,11 @@ De skills worden geïnstalleerd door elke skill-map naar `~/.claude/skills/` te 
 
 ```bash
 # Repository klonen
-git clone https://github.com/Hichamdz85/paperasse-belgique.git paperasse-be
+git clone https://github.com/hichamdz85/paperasse-belgique.git paperasse-be
 cd paperasse-be
+
+# Bronnen en skills valideren
+npm run validate
 
 # Skills kopiëren naar de Claude Code skills-map
 mkdir -p ~/.claude/skills
@@ -135,6 +160,7 @@ cp company.example.json company.json
 
 ```bash
 node scripts/check-sources.js        # controleert url + datum van elke bron
+node scripts/validate-skills.js      # controleert SKILL.md, agents/openai.yaml en bronconsistentie
 node scripts/generate-statements.js  # balans + resultatenrekening (NBB-schema), FR/NL-labels
 node scripts/generate-pdfs.js        # afdrukbaar document (HTML A4)
 ```
@@ -151,9 +177,9 @@ Deze skills zijn een hulpmiddel bij de voorbereiding en het begrip. Zij **vervan
 paperasse-be/
   README.md                  RESEARCH.md            (cadrage sourcé)
   company.example.json       package.json           glossaire-fr-nl.json
-  comptable-be/   SKILL.md + references/ + data/
-  notaire-be/     SKILL.md + references/
-  scripts/        generate-statements.js · generate-pdfs.js · check-sources.js
+  comptable-be/   SKILL.md + agents/ + references/ + data/
+  notaire-be/     SKILL.md + agents/ + references/
+  scripts/        check-sources.js · validate-skills.js · generate-statements.js · generate-pdfs.js
   templates/      pv-approbation-comptes.{fr,nl}.md · depot-bnb-checklist.{fr,nl}.md
   site/           index.html · styles.css · i18n.js   (landing page bilingue)
   data/           sources.json

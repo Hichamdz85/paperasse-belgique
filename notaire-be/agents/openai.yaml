@@ -1,0 +1,4 @@
+interface:
+  display_name: "Notaire BE"
+  short_description: "Belgian notary fees, duties and SRL/BV flows"
+  default_prompt: "Use $notaire-be to answer a Belgian notarial question with region, language, dated source and confirmation status."

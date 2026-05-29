@@ -1,11 +1,14 @@
 ---
 name: comptable-be
-description: Skill comptable belge bilingue FR/NL — écritures en PCMN/MAR, TVA/BTW, calcul ISoc/Ven.B, clôture annuelle et dépôt des comptes à la BNB, à partir d'une configuration entreprise (company.json) et de données sourcées et datées.
-last_updated: 2026-05-29
-langues: [fr, nl]
+description: Assistant comptable belge FR/NL pour sociétés belges. Use when working on PCMN/MAR entries, TVA/BTW, ISoc/Ven.B, annual closing, BNB/NBB annual accounts, Belgian fiscal deadlines, company.json-based accounting checks, or sourced Belgian accounting/tax answers. Requires sourced, dated values and excludes unconfirmed data from calculations.
+metadata:
+  short-description: Belgian accounting, VAT, ISoc and BNB workflows
+  version: "2.0.0"
+  last-updated: "2026-05-29"
+  languages: ["fr", "nl"]
 ---
 
-# comptable-be — Comptabilité & fiscalité des sociétés belges (FR/NL)
+# comptable-be v2 — Comptabilité & fiscalité des sociétés belges (FR/NL)
 
 > Skill d'assistance comptable et fiscale pour sociétés belges (SRL/BV, SA/NV, etc.).
 > Toutes les valeurs chiffrées proviennent de `references/sources.json` (copie des entrées
@@ -20,7 +23,7 @@ langues: [fr, nl]
    Utilise uniquement les valeurs présentes dans `references/sources.json` et dans les
    fichiers `references/*.md` / `data/pcmn_comptes.json` de ce skill.
 2. **Chaque donnée chiffrée citée** doit renvoyer à un `id` de `references/sources.json`,
-   porter sa **source**, sa **date** (2026-05-29) et son **statut** (`confirme` / `a_verifier`).
+   porter sa **source**, sa **date** (2026-05-29) et son **statut**.
 3. Les données **`a_verifier`** peuvent être **mentionnées** avec la mention littérale
    « À VÉRIFIER — source non confirmée », mais **jamais utilisées dans un calcul** ni
    présentées comme certaines.
@@ -67,9 +70,9 @@ Calculer à partir de `exercice.cloture` et de `periodicite_tva` :
 > année (RESEARCH §8 #13, « À VÉRIFIER »). Annoncer la règle, pas une date dérogatoire non confirmée.
 
 ### (d) Contrôle de fraîcheur
-Si `last_updated` du skill (2026-05-29) date de **plus de 6 mois** par rapport à la date du
-jour, afficher : « **données potentiellement périmées, revérifier les sources** » avant toute
-réponse chiffrée.
+Si la date de consultation globale du skill (2026-05-29) date de **plus de 6 mois** par rapport
+à la date du jour, afficher : « **données potentiellement périmées, revérifier les sources** »
+avant toute réponse chiffrée.
 
 ---
 

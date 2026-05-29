@@ -13,6 +13,7 @@ journal.json
 
 # Artefacts d'outils tiers / Artefacten van externe tools
 .claude-flow/
+.serena/
 
 # Système / Systeem
 .DS_Store
