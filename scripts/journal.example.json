@@ -1,0 +1,36 @@
+{
+  "_commentaire": "Journal d'écritures synthétique (valeurs FICTIVES) conforme au schéma attendu par generate-statements.js. Schéma: { meta, ecritures:[{date, compte, libelle, debit, credit}] }. 'compte' = numéro PCMN (le 1er chiffre = classe 1-7). 'date' au format YYYY-MM-DD. Montants en EUR. Comptabilité en partie double: total débits = total crédits. Aucune donnée réelle.",
+  "meta": {
+    "description": "Exemple de journal — exercice 2025 (fictif). Voorbeeldgrootboek — boekjaar 2025 (fictief).",
+    "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" },
+    "devise": "EUR"
+  },
+  "ecritures": [
+    { "date": "2025-01-01", "compte": "100", "libelle": "Capital souscrit", "debit": 0, "credit": 20000 },
+    { "date": "2025-01-01", "compte": "550", "libelle": "Banque — versement du capital", "debit": 20000, "credit": 0 },
+
+    { "date": "2025-02-15", "compte": "241", "libelle": "Acquisition matériel informatique", "debit": 6000, "credit": 0 },
+    { "date": "2025-02-15", "compte": "550", "libelle": "Banque — paiement matériel", "debit": 0, "credit": 6000 },
+
+    { "date": "2025-03-31", "compte": "604", "libelle": "Achat de marchandises", "debit": 12000, "credit": 0 },
+    { "date": "2025-03-31", "compte": "440", "libelle": "Dette fournisseurs", "debit": 0, "credit": 12000 },
+
+    { "date": "2025-04-10", "compte": "440", "libelle": "Paiement fournisseurs", "debit": 8000, "credit": 0 },
+    { "date": "2025-04-10", "compte": "550", "libelle": "Banque — paiement fournisseurs", "debit": 0, "credit": 8000 },
+
+    { "date": "2025-06-30", "compte": "400", "libelle": "Créance client (vente)", "debit": 30000, "credit": 0 },
+    { "date": "2025-06-30", "compte": "700", "libelle": "Ventes de marchandises", "debit": 0, "credit": 30000 },
+
+    { "date": "2025-07-20", "compte": "550", "libelle": "Banque — encaissement client", "debit": 22000, "credit": 0 },
+    { "date": "2025-07-20", "compte": "400", "libelle": "Règlement créance client", "debit": 0, "credit": 22000 },
+
+    { "date": "2025-09-30", "compte": "618", "libelle": "Rémunération du dirigeant", "debit": 9000, "credit": 0 },
+    { "date": "2025-09-30", "compte": "550", "libelle": "Banque — paiement rémunération", "debit": 0, "credit": 9000 },
+
+    { "date": "2025-11-30", "compte": "610", "libelle": "Loyers et charges locatives", "debit": 4000, "credit": 0 },
+    { "date": "2025-11-30", "compte": "550", "libelle": "Banque — paiement loyer", "debit": 0, "credit": 4000 },
+
+    { "date": "2025-12-31", "compte": "630", "libelle": "Amortissement matériel informatique", "debit": 1200, "credit": 0 },
+    { "date": "2025-12-31", "compte": "241", "libelle": "Amortissements actés (réduction valeur)", "debit": 0, "credit": 1200 }
+  ]
+}

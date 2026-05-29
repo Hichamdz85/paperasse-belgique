@@ -1,0 +1,20 @@
+# Dépendances / Afhankelijkheden
+node_modules/
+
+# Sorties générées par les scripts (états financiers) / Gegenereerde uitvoer
+output/
+
+# Configuration réelle de l'entreprise (NE PAS committer — garder uniquement company.example.json)
+# Echte bedrijfsconfiguratie (NIET committen — enkel company.example.json bewaren)
+company.json
+
+# Journaux d'écritures réels / Echte boekingsjournalen
+journal.json
+
+# Artefacts d'outils tiers / Artefacten van externe tools
+.claude-flow/
+
+# Système / Systeem
+.DS_Store
+*.log
+.env

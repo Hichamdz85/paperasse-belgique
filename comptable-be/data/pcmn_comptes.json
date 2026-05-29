@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "description": "Comptes du PCMN/MAR belge (Plan comptable minimum normalisé) avec libellés FR/NL. Les 8 classes (0-7) sont confirmées. Les sous-comptes confirmés verbatim sur cnc-cbn.be portent statut 'confirme' ; ceux dont l'intitulé officiel (notamment NL) n'a pas été confirmé portent statut 'a_completer' avec libellé 'à compléter'. AUCUN numéro de compte n'a été fabriqué.",
+    "source": "PCMN/MAR des entreprises porté par l'AR du 21/10/2018 (Annexe 1re, en exécution des art. III.82 à III.95 CDE), qui abroge l'AR du 12/09/1983 ; CNC/CBN — Titre 3 (https://www.cnc-cbn.be/fr/node/1653) ; classes (https://www.cnc-cbn.be/fr/node/2250) ; glossaire-fr-nl.json",
+    "date_consultation": "2026-05-29",
+    "statut": "mixte (confirme / a_completer)",
+    "note_base_legale": "Base légale confirmée (2e vérif 2026-05-29, id compta-pcmn-ar) : AR du 21/10/2018, Annexe 1re (exéc. art. III.82–III.95 CDE), abrogeant l'AR du 12/09/1983 ; forme/contenu des comptes annuels fixés par l'AR du 29/04/2019 (exéc. CSA). Classes 8 et 9 non incluses ici : d'usage libre/optionnel (note 29 PCMN, id compta-pcmn-classes-89). NL : Minimumindeling van het algemeen rekeningenstelsel (MAR)."
+  },
+  "comptes": [
+    { "numero": "0", "libelle_fr": "Droits et engagements hors bilan", "libelle_nl": "Rechten en verplichtingen buiten balans", "classe": 0, "statut": "confirme" },
+    { "numero": "1", "libelle_fr": "Fonds propres, provisions et dettes à plus d'un an", "libelle_nl": "Eigen vermogen, voorzieningen en schulden op meer dan één jaar", "classe": 1, "statut": "confirme" },
+    { "numero": "2", "libelle_fr": "Frais d'établissement, actifs immobilisés et créances à plus d'un an", "libelle_nl": "Oprichtingskosten, vaste activa en vorderingen op meer dan één jaar", "classe": 2, "statut": "confirme" },
+    { "numero": "3", "libelle_fr": "Stocks et commandes en cours d'exécution", "libelle_nl": "Voorraden en bestellingen in uitvoering", "classe": 3, "statut": "confirme" },
+    { "numero": "4", "libelle_fr": "Créances et dettes à un an au plus", "libelle_nl": "Vorderingen en schulden op ten hoogste één jaar", "classe": 4, "statut": "confirme" },
+    { "numero": "5", "libelle_fr": "Placements de trésorerie et valeurs disponibles", "libelle_nl": "Geldbeleggingen en liquide middelen", "classe": 5, "statut": "confirme" },
+    { "numero": "6", "libelle_fr": "Charges", "libelle_nl": "Kosten", "classe": 6, "statut": "confirme" },
+    { "numero": "7", "libelle_fr": "Produits", "libelle_nl": "Opbrengsten", "classe": 7, "statut": "confirme" },
+
+    { "numero": "10", "libelle_fr": "Capital / Apport", "libelle_nl": "à compléter", "classe": 1, "statut": "a_completer" },
+    { "numero": "13", "libelle_fr": "Réserves", "libelle_nl": "à compléter", "classe": 1, "statut": "a_completer" },
+    { "numero": "14", "libelle_fr": "Résultat reporté", "libelle_nl": "à compléter", "classe": 1, "statut": "a_completer" },
+    { "numero": "17", "libelle_fr": "Dettes à plus d'un an", "libelle_nl": "à compléter", "classe": 1, "statut": "a_completer" },
+
+    { "numero": "20", "libelle_fr": "Frais d'établissement", "libelle_nl": "Oprichtingskosten", "classe": 2, "statut": "confirme" },
+    { "numero": "21", "libelle_fr": "Immobilisations incorporelles", "libelle_nl": "Immateriële vaste activa", "classe": 2, "statut": "confirme" },
+    { "numero": "22", "libelle_fr": "Terrains et constructions", "libelle_nl": "Terreinen en gebouwen", "classe": 2, "statut": "confirme" },
+    { "numero": "23", "libelle_fr": "Installations, machines et outillage", "libelle_nl": "Installaties, machines en uitrusting", "classe": 2, "statut": "confirme" },
+    { "numero": "24", "libelle_fr": "Mobilier et matériel roulant", "libelle_nl": "Meubilair en rollend materieel", "classe": 2, "statut": "confirme" },
+
+    { "numero": "30", "libelle_fr": "Approvisionnements — matières premières", "libelle_nl": "à compléter", "classe": 3, "statut": "a_completer" },
+    { "numero": "34", "libelle_fr": "Marchandises", "libelle_nl": "à compléter", "classe": 3, "statut": "a_completer" },
+
+    { "numero": "40", "libelle_fr": "Créances commerciales", "libelle_nl": "à compléter", "classe": 4, "statut": "a_completer" },
+    { "numero": "400", "libelle_fr": "Clients", "libelle_nl": "à compléter", "classe": 4, "statut": "confirme" },
+    { "numero": "411", "libelle_fr": "TVA à récupérer", "libelle_nl": "à compléter", "classe": 4, "statut": "confirme" },
+    { "numero": "44", "libelle_fr": "Dettes commerciales", "libelle_nl": "à compléter", "classe": 4, "statut": "a_completer" },
+    { "numero": "440", "libelle_fr": "Fournisseurs", "libelle_nl": "à compléter", "classe": 4, "statut": "confirme" },
+    { "numero": "45", "libelle_fr": "Dettes fiscales, salariales et sociales", "libelle_nl": "à compléter", "classe": 4, "statut": "confirme" },
+    { "numero": "451", "libelle_fr": "TVA à payer", "libelle_nl": "à compléter", "classe": 4, "statut": "confirme" },
+
+    { "numero": "55", "libelle_fr": "Établissements de crédit", "libelle_nl": "à compléter", "classe": 5, "statut": "confirme" },
+    { "numero": "57", "libelle_fr": "Caisses", "libelle_nl": "à compléter", "classe": 5, "statut": "confirme" },
+
+    { "numero": "60", "libelle_fr": "Approvisionnements et marchandises", "libelle_nl": "à compléter", "classe": 6, "statut": "a_completer" },
+    { "numero": "61", "libelle_fr": "Services et biens divers", "libelle_nl": "à compléter", "classe": 6, "statut": "a_completer" },
+    { "numero": "62", "libelle_fr": "Rémunérations, charges sociales et pensions", "libelle_nl": "à compléter", "classe": 6, "statut": "confirme" },
+    { "numero": "64", "libelle_fr": "Autres charges d'exploitation", "libelle_nl": "à compléter", "classe": 6, "statut": "a_completer" },
+    { "numero": "65", "libelle_fr": "Charges financières", "libelle_nl": "à compléter", "classe": 6, "statut": "a_completer" },
+    { "numero": "67", "libelle_fr": "Impôts sur le résultat", "libelle_nl": "à compléter", "classe": 6, "statut": "a_completer" },
+
+    { "numero": "70", "libelle_fr": "Chiffre d'affaires", "libelle_nl": "à compléter", "classe": 7, "statut": "confirme" },
+    { "numero": "700", "libelle_fr": "Ventes", "libelle_nl": "à compléter", "classe": 7, "statut": "a_completer" },
+    { "numero": "74", "libelle_fr": "Autres produits d'exploitation", "libelle_nl": "à compléter", "classe": 7, "statut": "a_completer" },
+    { "numero": "75", "libelle_fr": "Produits financiers", "libelle_nl": "Financiële opbrengsten", "classe": 7, "statut": "confirme" }
+  ]
+}

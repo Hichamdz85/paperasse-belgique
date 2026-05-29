@@ -1,0 +1,27 @@
+{
+  "_commentaire": "Exemple de configuration entreprise. Copier vers company.json et adapter. Voorbeeldconfiguratie: kopieer naar company.json en pas aan. Valeurs synthétiques (aucune donnée réelle).",
+  "denomination": "Exemple SRL / Voorbeeld BV",
+  "bce": "0123.456.789",
+  "numero_tva": "BE0123456789",
+  "forme_juridique": "SRL",
+  "forme_juridique_options": ["SRL", "SA", "SNC", "SComm", "SC", "ASBL"],
+  "region": "bruxelles",
+  "region_options": ["bruxelles", "flandre", "wallonie"],
+  "langue": "fr-nl",
+  "langue_commentaire": "Déterminée par la région : bruxelles -> fr-nl ; flandre -> nl ; wallonie -> fr. Voir RESEARCH.md §9.",
+  "regime_tva": "normal",
+  "regime_tva_options": ["normal", "franchise", "forfaitaire_extinction", "non_assujetti"],
+  "periodicite_tva": "trimestrielle",
+  "periodicite_tva_options": ["mensuelle", "trimestrielle"],
+  "exercice": {
+    "debut": "2025-01-01",
+    "cloture": "2025-12-31"
+  },
+  "taille_societe": "petite",
+  "taille_societe_options": ["micro", "petite", "grande"],
+  "schema_comptes": "abrege",
+  "schema_comptes_commentaire": "micro -> micro ; petite -> abrege ; grande -> complet. Voir RESEARCH.md §2.",
+  "date_constitution": "2020-03-15",
+  "dirigeant_remuneration_annuelle": 45000,
+  "dirigeant_remuneration_commentaire": "Pour le taux réduit ISoc : seuil 50.000 EUR à partir de l'ex. imp. 2026 (loi-programme 18/07/2025) ; 45.000 EUR jusqu'à l'ex. imp. 2025. Voir RESEARCH §4.2."
+}
