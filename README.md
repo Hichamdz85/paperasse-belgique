@@ -1,9 +1,20 @@
 # Paperasse Belgique
 
+[![CI](https://github.com/Hichamdz85/paperasse-belgique/actions/workflows/ci.yml/badge.svg)](https://github.com/Hichamdz85/paperasse-belgique/actions/workflows/ci.yml)
+[![Démo en ligne](https://img.shields.io/badge/d%C3%A9mo-en%20ligne-3fbf6b)](https://hichamdz85.github.io/paperasse-belgique/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-FFD100.svg)](LICENSE)
+[![Langues](https://img.shields.io/badge/langues-FR%20%7C%20NL-1A1A1A.svg)](glossaire-fr-nl.json)
+[![Sources](https://img.shields.io/badge/donn%C3%A9es-sourc%C3%A9es%20%26%20dat%C3%A9es-EF3340.svg)](data/sources.json)
+[![Claude Code](https://img.shields.io/badge/Claude%20Code-Agent%20Skills-6C5CE7.svg)](https://docs.claude.com/en/docs/claude-code)
+
 > Skills Claude Code pour automatiser la comptabilité et le notariat **belges**, en **français et néerlandais**, avec des données **sourcées et datées**.
 > Claude Code-skills om de Belgische **boekhouding en notariaat** te automatiseren, in het **Frans en Nederlands**, met **gedateerde en gecontroleerde bronnen**.
 
 Données vérifiées au **2026-05-29** — exercice d'imposition 2026 (revenus 2025).
+
+**Démo en ligne / Live demo : https://hichamdz85.github.io/paperasse-belgique/**
+
+![Aperçu de la landing page Paperasse Belgique](.github/assets/screenshot.png)
 
 ---
 

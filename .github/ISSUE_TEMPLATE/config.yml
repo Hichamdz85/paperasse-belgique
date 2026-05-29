@@ -1,0 +1,10 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Documentation et sources officielles / Documentatie en officiële bronnen
+    url: https://github.com/Hichamdz85/paperasse-belgique/blob/main/RESEARCH.md
+    about: >
+      Avant d'ouvrir une issue, consultez RESEARCH.md (points à vérifier et
+      méthode de sourcing) et data/sources.json (sources officielles belges
+      datées). / Raadpleeg vóór het openen van een issue RESEARCH.md (te
+      verifiëren punten en bronnenmethode) en data/sources.json (gedateerde
+      officiële Belgische bronnen).
