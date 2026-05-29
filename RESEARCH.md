@@ -76,7 +76,12 @@ Le (non-)dépassement de plus d'un critère ne produit effet que s'il dure **deu
 
 ### 2.5 Correspondance schéma / taille
 Micro → schéma micro ; petite → schéma abrégé ; grande → schéma complet (une petite/micro peut volontairement déposer un schéma plus détaillé).
-**Source :** modèles de dépôt BNB/NBB — `confirmé` (logique) ; référence d'article CSA verbatim → section 8
+
+**Référence d'article (schéma imposé par catégorie)** : le schéma découle du **CSA art. 3:1** (délégation au Roi) combiné aux critères de taille **art. 1:24** (petite) / **art. 1:25** (micro), la détermination du schéma par catégorie étant fixée par l'**AR du 29/04/2019 art. 3:58** et ses annexes (modèles). — `confirmé` (3e vérif 2026-05-29)
+
+**Modèles officiels BNB/NBB** : **Modèle C** (complet) / **Modèle A** (abrégé) / **Modèle M** (micro), déclinés sociétés à capital et sans capital, en FR et NL. Structure : bilan (actifs immobilisés/circulants ; capitaux propres / provisions / dettes) + compte de résultats (+ annexe / bilan social selon le schéma). — `confirmé` (3e vérif 2026-05-29)
+
+**Source :** ejustice NUMAC 2019042901 (AR 29/04/2019) ; CNC/CBN https://www.cnc-cbn.be/fr/node/1845 ; modèles BNB/NBB https://www.nbb.be/en/central-balance-sheet-office/preparation-and-filing/what-file/models/models-companies-0 — `confirmé` (3e vérif 2026-05-29)
 
 ---
 
@@ -133,7 +138,7 @@ Majoration en cas de dépôt tardif (art. 3:13 CSA), progressive selon le retard
 
 **Conditions cumulatives :**
 1. Être une **petite société** au sens de l'art. 1:24 §§1-6 CSA. — `confirmé`
-2. **Rémunération minimale dirigeant** : à partir de l'**ex. d'imp. 2026**, au moins **50.000 €** (loi-programme du 18/07/2025 ; montant indexé ; avantages en nature plafonnés à 20 %, soit max 10.000 €) — **45.000 €** valait jusqu'à l'ex. d'imp. 2025 ; ou égale au revenu imposable de la société s'il est inférieur ; allouée à au moins un dirigeant (art. 32 CIR 92), à partir de la **5e période imposable** depuis la constitution. Base : art. 215 al. 3 c) CIR 92. — `confirmé` (2e vérif 2026-05-29)
+2. **Rémunération minimale dirigeant** : à partir de l'**ex. d'imp. 2026**, au moins **50.000 €** (loi-programme du 18/07/2025, **MB 29/07/2025, NUMAC 2025005578** ; montant indexé ; avantages en nature plafonnés à 20 %, soit max 10.000 €) — **45.000 €** valait jusqu'à l'ex. d'imp. 2025 ; ou égale au revenu imposable de la société s'il est inférieur ; allouée à au moins un dirigeant (art. 32 CIR 92), à partir de la **5e période imposable** depuis la constitution. Base : art. 215 al. 3 c) CIR 92. — `confirmé` (2e vérif 2026-05-29)
 3. **Exclusions de détention** : (a) participations > 50 % du capital libéré (sauf ≥75 %) ; (b) ≥ 50 % des parts détenues par une/des autres sociétés ; (c) non-respect de la rémunération dirigeant ; (d) certaines sociétés d'investissement/SIR/SICAF (art. 185bis CIR 92). Coopératives agréées (art. 8:4 CSA) échappent à (a) et (b). — `confirmé`
 - **Exonération start-up** : pas de condition de rémunération minimale les 4 premières périodes imposables. — `confirmé`
 
@@ -145,7 +150,7 @@ Majoration en cas de dépôt tardif (art. 3:13 CSA), progressive selon le retard
 ### 4.4 Versements anticipés (VA)
 Principe : 4 échéances trimestrielles pour éviter une majoration (pas de bonification pour les sociétés). Exonération pour la « petite société » sur les **3 premiers exercices** depuis la constitution.
 **Source :** SPF Finances — Versements anticipés, https://finances.belgium.be/fr/entreprises/impot_des_societes/versements_anticipes — `confirmé` (principe)
-- **Taux de majoration ex. d'imp. 2026 = 6,75 %** ; coefficients VA1–VA4 : **9,00 / 7,50 / 6,00 / 4,50 %**. Échéances 2025 : **10/04, 10/07, 10/10, 22/12/2025**. — `confirmé` (2e vérif 2026-05-29) ; **réserve : avis MB daté ex. d'imp. 2026 à confirmer** (la page SPF affichait ex. d'imp. 2027, même taux).
+- **Taux de majoration ex. d'imp. 2026 = 6,75 %** ; coefficients VA1–VA4 : **9,00 / 7,50 / 6,00 / 4,50 %** (confirmés sur SPF Finances ; le taux découle de l'**art. 218 CIR 92** + taux de référence). Échéances 2025 : **10/04, 10/07, 10/10, 22/12/2025**. — `confirmé` (taux/coefficients, 2e–3e vérif 2026-05-29) ; **réserve : avis MB daté ex. d'imp. 2026 reste à vérifier**.
 
 ### 4.5 Précompte mobilier (dividendes)
 Taux de base : **30 %**. (Taux réduits VVPRbis 15/20 % sous conditions — hors périmètre « standard ».)
@@ -231,28 +236,31 @@ Principe : donation **mobilière** (taux fixes réduits) vs **immobilière** (ba
 - **Flandre & Bruxelles** : **3 %** (ligne directe / époux / cohabitants) / **7 %** (autres).
 - **Wallonie** : **3,3 %** / **5,5 %**.
 
-**Donation IMMOBILIÈRE** :
-- **Flandre** (ligne directe) : **3 %** (0–150.000) / **9 %** (150.000–250.000) / **18 %** (250.000–450.000) / **27 %** (>450.000). — `confirmé` (2e vérif 2026-05-29)
-- **Bruxelles & Wallonie** : barèmes immobiliers **restent à vérifier** (section 8 #17).
+**Donation IMMOBILIÈRE** — barème **COMMUN aux 3 régions en 2026** :
+- **Ligne directe / époux / cohabitants** : **3 %** (0–150.000) / **9 %** (150.000–250.000) / **18 %** (250.000–450.000) / **27 %** (>450.000). — `confirmé` (3e vérif 2026-05-29)
+- **Autres bénéficiaires** : **10 %** / **20 %** / **30 %** / **40 %** (mêmes tranches). — `confirmé` (3e vérif 2026-05-29)
+- **Réforme wallonne au 01/01/2028** : plafonds abaissés à **14 %** (ligne directe) / **20 %** (autres) ; **bornes intermédiaires 2028 restent à vérifier** (section 8 #17).
 
-**Source :** notaire.be — `confirmé` (mobilier 3 régions ; immobilier Flandre)
+**Source :** notaire.be — `confirmé` (barème actuel commun 3 régions ; bornes 2028 Wallonie à vérifier)
 
 ### 7.4 Frais de notaire
 Trois blocs : (1) droits d'enregistrement (régional) ; (2) **honoraires tarifés par AR fédéral**, dégressifs, identiques chez tous les notaires ; (3) frais administratifs/débours.
 
-**Barème des honoraires (AR du 16/12/1950, dégressif, identique chez tous les notaires) + TVA 21 % :**
-| Tranche (€) | Taux |
-|-------------|------|
+**Barème des honoraires (AR du 16/12/1950, consolidé au 01/01/2023 par l'AR du 22/11/2022 ; dégressif, identique chez tous les notaires). 7 bornes communes. Barème J = vente immobilière de gré à gré + TVA 21 % :**
+| Tranche (€) | Barème J |
+|-------------|----------|
 | 0 – 7.500 | **4,56 %** |
-| 7.500 – 17.500 | **2,85 %** |
-| 17.500 – 30.000 | **2,28 %** |
-| 30.000 – 45.495 | **1,71 %** |
-| 45.495 – 64.095 | **1,14 %** |
-| 64.095 – 250.095 | **0,57 %** |
-| > 250.095 | **0,057 %** |
+| 7.500 – 10.000 | **2,85 %** |
+| 10.000 – 12.500 | **2,28 %** |
+| 12.500 – 15.495 | **1,71 %** |
+| 15.495 – 18.600 | **1,14 %** |
+| 18.600 – 186.000 | **0,57 %** |
+| > 186.000 | **0,057 %** |
+
+**Actes immobiliers post-2023** : partie fixe + **forfait frais 750 € HT/acte** ; **indexation biennale** des montants fixes au 1er janvier.
 
 Constitution SRL/BV : honoraires non tarifés (ordre de grandeur 750–1.200 € HTVA — *à vérifier*).
-**Source :** notaire.be — frais liés à l'achat ; AR 16/12/1950 — `confirmé` (2e vérif 2026-05-29 ; bornes € à confirmer sur l'annexe → section 8 #18)
+**Source :** notaire.be — frais liés à l'achat ; AR 16/12/1950 (ejustice NUMAC 1950121603) — `confirmé` (3e vérif 2026-05-29)
 
 ### 7.5 Plus-values immobilières (impôt FÉDÉRAL)
 - Bien bâti revendu **dans les 5 ans** : plus-value taxée à **16,5 %**. Exonération totale pour la **résidence principale**. Impôt fédéral (identique 3 régions).
@@ -271,9 +279,9 @@ Constitution SRL/BV : honoraires non tarifés (ordre de grandeur 750–1.200 €
 |---|---------|--------|
 | 1 | Datation canonique de l'AR fondant le PCMN | **RÉSOLU (2e vérif 2026-05-29)** — AR du 21/10/2018 (abroge AR 12/09/1983) ; AR 29/04/2019 = schémas comptes annuels |
 | 2 | Définition normative exacte des classes PCMN 8 et 9 | **RÉSOLU (2e vérif 2026-05-29)** — usage libre/optionnel (note 29 PCMN) |
-| 3 | Référence d'article CSA imposant chaque schéma (complet/abrégé/micro) | À VÉRIFIER |
+| 3 | Référence d'article CSA imposant chaque schéma (complet/abrégé/micro) | **RÉSOLU (3e vérif 2026-05-29)** — CSA art. 3:1 + art. 1:24 / 1:25 + AR 29/04/2019 art. 3:58 et annexes (NUMAC 2019042901) |
 | 4 | Montants 2026 de la surcharge dépôt tardif (art. 3:13 CSA) | **RÉSOLU (2e vérif 2026-05-29)** — 151/227/453 € (petites) ; 504/755/1.510 € (autres) |
-| 5 | Composition détaillée des comptes annuels par schéma | À VÉRIFIER |
+| 5 | Composition détaillée des comptes annuels par schéma | **RÉSOLU (3e vérif 2026-05-29)** — modèles BNB/NBB : Modèle C (complet) / A (abrégé) / M (micro), sociétés à capital/sans capital, FR/NL ; bilan + compte de résultats (+ annexe / bilan social) |
 | 6 | Frais BNB 2026 : mention « TVAC » verbatim | **RÉSOLU (2e vérif 2026-05-29)** — pas de « TVAC » ; TVA part BNB supprimée depuis 01/01/2017 |
 | 7 | Taux de majoration VA ISoc ex. d'imp. 2026 (revenus 2025) | **RÉSOLU (2e vérif 2026-05-29)** — 6,75 % (réserve : avis MB daté ex. imp. 2026 à confirmer) |
 | 8 | Rémunération dirigeant 45.000 € vs 50.000 € pour 2026 | **RÉSOLU (2e vérif 2026-05-29)** — 50.000 € dès ex. imp. 2026 (loi-programme 18/07/2025) |
@@ -285,9 +293,9 @@ Constitution SRL/BV : honoraires non tarifés (ordre de grandeur 750–1.200 €
 | 14 | Bruxelles : abattement/taux confirmés sur be.brussels | **RÉSOLU (2e vérif 2026-05-29)** — 12,5 % / abattement 200.000 € / bonus PEB +25.000 €/classe (max +100.000 €) / plafond 600.000 € |
 | 15 | Flandre : monument 1 %, sort du taux rénovation énergétique 2025 | **RÉSOLU (2e vérif 2026-05-29)** — monument 1 % aboli depuis 01/01/2025 ; 1 % IER subsiste |
 | 16 | Flandre : barème erfbelasting détaillé + réforme 2026 | **RÉSOLU (2e vérif 2026-05-29)** — 3/9/27 % ; réforme 2026 (abattement partenaire mobilier 75.000 €, singlevermindering) |
-| 17 | Barèmes de donation **immobilière** Bruxelles & Wallonie (mobilier 3 régions + immobilier Flandre = résolus) | À VÉRIFIER (portails régionaux) |
-| 18 | Honoraires notariaux : bornes € de l'annexe AR fédéral + coût constitution SRL | À VÉRIFIER (barème de taux résolu ; bornes € à confirmer) |
-| 19 | Références MB précises nouvelle taxe plus-values 2026 (modalités opt-in/opt-out résolues) | À VÉRIFIER (réf. MB précises) |
+| 17 | Barèmes de donation **immobilière** | **barème actuel RÉSOLU (3e vérif 2026-05-29)** — commun aux 3 régions : 3/9/18/27 % (ligne directe) ; 10/20/30/40 % (autres) ; **bornes intermédiaires 2028 Wallonie restent à vérifier** (réforme 01/01/2028 : plafonds 14 %/20 %) |
+| 18 | Honoraires notariaux : bornes € de l'annexe AR fédéral + coût constitution SRL | **RÉSOLU (3e vérif 2026-05-29)** — AR 16/12/1950 (consolidé 01/01/2023, AR 22/11/2022, NUMAC 1950121603) ; 7 bornes 0–7.500 / 7.500–10.000 / 10.000–12.500 / 12.500–15.495 / 15.495–18.600 / 18.600–186.000 / >186.000 ; Barème J 4,56→0,057 % + TVA 21 % ; post-2023 partie fixe + forfait 750 € HT/acte ; indexation biennale |
+| 19 | Références MB ISoc 2026 (rémunération dirigeant + VA) | **loi-programme RÉSOLU (3e vérif 2026-05-29)** — rémunération dirigeant 50.000 € via loi-programme du 18/07/2025, **MB 29/07/2025, NUMAC 2025005578** ; **avis VA daté reste à vérifier** (taux 6,75 % confirmé, art. 218 CIR 92) |
 | 20 | Langue de dépôt comptes/déclarations/actes à Bruxelles (choix FR/NL) | **RÉSOLU (2e vérif 2026-05-29)** — FR ou NL, mais toutes les pièces dans UNE seule langue (art. 2:33 CSA + art. 3:67 §3 AR exéc. CSA) |
 | 21 | Sigle/intitulé NL exact du MAR | **RÉSOLU (2e vérif 2026-05-29)** — « Minimumindeling van het algemeen rekeningenstelsel (MAR) » (rekening**en**stelsel) |
 | 22 | Appariement régional FR/NL : `successierechten` (féd.) vs `erfbelasting` (Flandre) | **RÉSOLU (2e vérif 2026-05-29)** — féd.+Wallonie : successie-/registratie-/schenkingsrechten ; Flandre : erf-/registratie-/schenkbelasting |

@@ -83,21 +83,34 @@ Taux fixes réduits, **par région** (consulté le 2026-05-29 sur notaire.be —
 > « donation : à vérifier, ne pas chiffrer ». Ils peuvent être utilisés en
 > calcul pour le **mobilier**.
 
-### 2.2 Donation IMMOBILIÈRE — barèmes progressifs
+### 2.2 Donation IMMOBILIÈRE — barème progressif COMMUN aux 3 régions (confirmé)
 
-- **Flandre — ligne directe (confirmé, notaire.be, 2026-05-29)** :
-  - **3 %** sur **0 – 150.000 €** ;
-  - **9 %** sur **150.000 – 250.000 €** ;
-  - **18 %** sur **250.000 – 450.000 €** ;
-  - **27 %** sur **> 450.000 €**.
-- **Bruxelles & Wallonie — immobilier : À VÉRIFIER — source non confirmée.**
-  Ne **pas** chiffrer la donation immobilière pour ces deux régions.
+Barème **identique** dans les trois régions (Bruxelles, Wallonie, Flandre) en
+**2026** — **confirmé** (notaire.be / Fednot « Tarifs des donations
+immobilières », consulté le 2026-05-29) :
 
-**Consigne** : la donation **mobilière** (§2.1) et la donation **immobilière
-Flandre ligne directe** (§2.2) sont confirmées et chiffrables. Pour la donation
-**immobilière Bruxelles / Wallonie**, ne **jamais** donner de chiffre ; renvoyer
-vers les portails régionaux officiels (notaire.be / notaris.be,
-fiscalite.brussels, wallonie.be) et un notaire.
+| Tranche (€) | Ligne directe / époux / cohabitants légaux | Entre toutes autres personnes |
+|-------------|--------------------------------------------|-------------------------------|
+| 0,01 – 150.000 | **3 %** | **10 %** |
+| 150.000,01 – 250.000 | **9 %** | **20 %** |
+| 250.000,01 – 450.000 | **18 %** | **30 %** |
+| > 450.000 | **27 %** | **40 %** |
+
+> Les trois régions partagent la **même grille** en 2026. Cette grille
+> **remplace** toute mention antérieure « Bruxelles / Wallonie donation
+> immobilière : à vérifier, ne pas chiffrer » : le barème est désormais
+> **confirmé et chiffrable** pour les trois régions.
+
+**Réforme wallonne (évolution future — applicable aux donations dès le
+01/01/2028, confirmée)** : le plafond ligne directe passe de **27 % à 14 %** et
+le plafond « autres personnes » de **40 % à 20 %**. Les **bornes intermédiaires
+exactes 2028 restent À VÉRIFIER** (PDF officiel non extractible). Source :
+wallonie.be, communiqué du 14/11/2024.
+
+**Consigne** : la donation **mobilière** (§2.1) et la donation **immobilière**
+(§2.2, barème commun aux 3 régions) sont confirmées et chiffrables pour 2026.
+Pour tout acte précis, renvoyer aussi vers le module de calcul officiel
+notaire.be / notaris.be et un notaire.
 
 ---
 
@@ -107,10 +120,12 @@ fiscalite.brussels, wallonie.be) et un notaire.
 |--------|-----------|----------|---------|
 | Succession — structure | confirmée (3–30 % / 20–65 % / 35–70 % / 40–80 %) | confirmée (3–30 % / 20–65 % / 25–70 % / 30–80 %) | confirmé avec réserve — ligne directe/partenaires 3 % (0–50.000) / 9 % (50.000–250.000) / 27 % (>250.000) ; mobilier et immeubles taxés séparément ; réforme 2026 (abattement partenaire mobilier 75.000 €, singlevermindering) |
 | Donation mobilière | 3 % / 7 % (confirmé) | 3,3 % / 5,5 % (confirmé) | 3 % / 7 % (confirmé) |
-| Donation immobilière | À VÉRIFIER — ne pas chiffrer | À VÉRIFIER — ne pas chiffrer | ligne directe 3 % (0–150k) / 9 % (150–250k) / 18 % (250–450k) / 27 % (>450k) — confirmé |
+| Donation immobilière (barème commun 2026, confirmé) | ligne directe 3/9/18/27 % · autres 10/20/30/40 % (0–150k / 150–250k / 250–450k / >450k) | idem Bruxelles (barème commun) — réforme dès 01/01/2028 : plafonds 14 % / 20 %, bornes intermédiaires à vérifier | idem (barème commun aux 3 régions) |
 
 > Rappel : succession et donation sont des impôts **régionaux**. Aucun taux ne
 > s'utilise sans région + source datée. La donation **mobilière** (3 régions) et
-> la donation **immobilière Flandre ligne directe** sont confirmées ; la
-> donation **immobilière Bruxelles / Wallonie** reste « à vérifier » et exclue
-> de tout calcul.
+> la donation **immobilière** (barème **commun aux 3 régions** en 2026 :
+> ligne directe 3/9/18/27 % · autres 10/20/30/40 %) sont confirmées et
+> chiffrables. Évolution future : **réforme wallonne** des donations
+> immobilières dès le **01/01/2028** (plafonds ramenés à 14 % / 20 % ; bornes
+> intermédiaires exactes à vérifier).

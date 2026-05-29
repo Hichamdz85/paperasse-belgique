@@ -32,8 +32,15 @@ du Code des sociétés et des associations (CSA / WVV).
 > **Note :** le PCMN (plan comptable) et le schéma des comptes annuels relèvent de deux textes
 > distincts : AR 21/10/2018 (plan comptable, exéc. CDE) ≠ AR 29/04/2019 (comptes annuels, exéc. CSA).
 
-- **Statut :** **confirmé** — 2e vérification 2026-05-29 (`id source : compta-pcmn-ar`).
-- **Source :** AR du 21/10/2018, Annexe 1re (Moniteur belge / ejustice) ; CNC/CBN https://www.cnc-cbn.be/fr/node/1845.
+Le **schéma de comptes annuels imposé** (complet / abrégé / micro) découle du **CSA art. 3:1**
+(délégation au Roi) combiné aux critères de taille (**art. 1:24** petite société / **art. 1:25**
+micro-société), la détermination du schéma par catégorie étant fixée par l'**AR du 29/04/2019
+art. 3:58** et ses annexes (modèles). Les **modèles officiels** sont publiés par la BNB/NBB :
+**Modèle C** (complet) / **Modèle A** (abrégé) / **Modèle M** (micro), déclinés sociétés à capital
+et sans capital, en FR et NL.
+
+- **Statut :** **confirmé** — 3e vérification 2026-05-29 (`id source : compta-pcmn-ar`, `compta-schema-article`, `compta-bnb-modeles`).
+- **Source :** AR du 21/10/2018, Annexe 1re (Moniteur belge / ejustice, NUMAC 2019042901 pour l'AR du 29/04/2019) ; CNC/CBN https://www.cnc-cbn.be/fr/node/1845 ; modèles BNB/NBB https://www.nbb.be/en/central-balance-sheet-office/preparation-and-filing/what-file/models/models-companies-0.
 
 ---
 

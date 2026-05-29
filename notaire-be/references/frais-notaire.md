@@ -31,29 +31,47 @@ Les « frais de notaire » regroupent trois composantes distinctes
 
 ### Bloc 2 — Honoraires du notaire (tarifés par AR fédéral)
 
-- **Tarifés par arrêté royal fédéral (AR du 16/12/1950)**, **dégressifs** (taux
-  décroissant par tranches de prix), **identiques chez tous les notaires** de
-  Belgique (le notaire ne fixe pas librement ses honoraires sur ce poste), et
-  soumis à la **TVA de 21 %**.
-- **Barème dégressif** (pourcentage appliqué par tranche de prix) :
+- **Tarifés par arrêté royal fédéral (AR du 16/12/1950**, version consolidée en
+  vigueur depuis le **01/01/2023**, AR modificatif du **22/11/2022**),
+  **dégressifs** (taux décroissant par tranches de prix), **identiques chez tous
+  les notaires** de Belgique (le notaire ne fixe pas librement ses honoraires sur
+  ce poste), et soumis à la **TVA de 21 %**.
+- **7 bornes communes** (en €) : 0 – 7.500 / 7.500 – 10.000 / 10.000 – 12.500 /
+  12.500 – 15.495 / 15.495 – 18.600 / 18.600 – 186.000 / surplus (> 186.000).
+- **Barème J — vente immobilière de gré à gré** (pourcentage appliqué par
+  tranche de prix, + TVA 21 %) :
 
-  | Tranche de prix (€) | Taux honoraires |
-  |---------------------|-----------------|
+  | Tranche de prix (€) | Taux honoraires (barème J) |
+  |---------------------|----------------------------|
   | 0 – 7.500 | **4,56 %** |
-  | 7.500 – 17.500 | **2,85 %** |
-  | 17.500 – 30.000 | **2,28 %** |
-  | 30.000 – 45.495 | **1,71 %** |
-  | 45.495 – 64.095 | **1,14 %** |
-  | 64.095 – 250.095 | **0,57 %** |
-  | > 250.095 | **0,057 %** |
+  | 7.500 – 10.000 | **2,85 %** |
+  | 10.000 – 12.500 | **2,28 %** |
+  | 12.500 – 15.495 | **1,71 %** |
+  | 15.495 – 18.600 | **1,14 %** |
+  | 18.600 – 186.000 | **0,57 %** |
+  | > 186.000 (surplus) | **0,057 %** |
 
-- **Statut : confirmé partiel** — la structure dégressive et les pourcentages
-  sont confirmés (AR du 16/12/1950) ; les **bornes en € sont à confirmer sur
-  l'annexe officielle de l'AR**. Honoraires soumis à **TVA 21 %**.
-- **Source** : AR du 16/12/1950 (tarif des notaires, annexe) + notaire.be —
+- **Actes immobiliers post-2023** : barèmes dédiés avec **partie fixe** (ex.
+  **250 €** pour une vente ; **225 €** pour habitation propre et unique) et
+  **bornes finales adaptées** (… 15.495 – 18.595 / 18.595 – 186.005 /
+  186.005 – 249.905 / surplus). **Forfait frais administratifs / débours :
+  750 € HT par acte** (**550 € HT** par acte lié dès le 2e).
+- **Donation d'immeuble** : appliquer le **barème H** (taux **2,85 / 1,71 /
+  1,425 / 1,14 / 0,855 / 0,57 / 0,057 %**, mêmes 7 bornes) ou le **barème F**
+  (avancement d'hoirie).
+- **Indexation** : les **montants fixes / forfaits** sont indexés de plein droit
+  **tous les 2 ans au 1er janvier** (1re indexation 01/01/2024 ; prochaine
+  01/01/2026). Les **taux proportionnels** et les **bornes** ne sont **pas**
+  indexés.
+- **Statut : confirmé** — structure dégressive, pourcentages **et bornes**
+  désormais connus (AR du 16/12/1950, version consolidée 01/01/2023). Honoraires
+  soumis à **TVA 21 %**.
+- **Source** : AR du 16/12/1950 (ejustice numac 1950121603) + notaire.be —
   frais liés à l'achat
   (https://www.notaire.be/immobilier/acheter-et-vendre-un-bien-immobilier/les-frais-lies-lachat),
   consulté le 2026-05-29.
+- **Recommandation** : pour tout chiffrage d'acte précis, utiliser le **module
+  de calcul officiel notaire.be**.
 
 ### Bloc 3 — Frais administratifs et débours
 
@@ -120,7 +138,7 @@ Les « frais de notaire » regroupent trois composantes distinctes
 | Bloc / poste | Niveau | Statut |
 |--------------|--------|--------|
 | 1. Droits d'enregistrement | Régional (Bxl / Flandre / Wallonie) | confirmé par région |
-| 2. Honoraires notaire | Fédéral (AR du 16/12/1950, dégressif, identique partout, + TVA 21 %) | confirmé partiel (taux confirmés ; bornes € à confirmer sur annexe) |
+| 2. Honoraires notaire | Fédéral (AR du 16/12/1950, version consolidée 01/01/2023, dégressif, identique partout, + TVA 21 %) | confirmé (taux **et** bornes connus — barème J vente ; H/F donation ; forfait débours 750 € HT/acte ; indexation biennale des montants fixes) |
 | 3. Frais administratifs / débours | Variable | existence confirmée ; montants non chiffrés |
 | Plus-value immo < 5 ans | Fédéral 16,5 % | confirmé |
 | Taxe plus-values actifs financiers 2026 | Fédéral 10 % (exonération 10.000 €/an, réf. 31/12/2025, opt-in/opt-out) | confirmé |
