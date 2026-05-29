@@ -1,6 +1,6 @@
 # Paperasse Belgique
 
-[![CI](https://github.com/Hichamdz85/paperasse-belgique/actions/workflows/ci.yml/badge.svg)](https://github.com/Hichamdz85/paperasse-belgique/actions/workflows/ci.yml)
+[![Quality gates](https://github.com/Hichamdz85/paperasse-belgique/actions/workflows/quality.yml/badge.svg)](https://github.com/Hichamdz85/paperasse-belgique/actions/workflows/quality.yml)
 [![Démo en ligne](https://img.shields.io/badge/d%C3%A9mo-en%20ligne-3fbf6b)](https://hichamdz85.github.io/paperasse-belgique/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-FFD100.svg)](LICENSE)
 [![Langues](https://img.shields.io/badge/langues-FR%20%7C%20NL-1A1A1A.svg)](glossaire-fr-nl.json)
