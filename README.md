@@ -42,7 +42,7 @@ Les skills s'installent en copiant chaque dossier de skill dans `~/.claude/skill
 
 ```bash
 # Cloner le dépôt
-git clone <url-du-depot> paperasse-be
+git clone https://github.com/Hichamdz85/paperasse-belgique.git paperasse-be
 cd paperasse-be
 
 # Copier les skills vers le répertoire des skills Claude Code
@@ -112,7 +112,7 @@ De skills worden geïnstalleerd door elke skill-map naar `~/.claude/skills/` te 
 
 ```bash
 # Repository klonen
-git clone <repo-url> paperasse-be
+git clone https://github.com/Hichamdz85/paperasse-belgique.git paperasse-be
 cd paperasse-be
 
 # Skills kopiëren naar de Claude Code skills-map
