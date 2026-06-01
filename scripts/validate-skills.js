@@ -145,11 +145,12 @@ async function validateSkillMd(skillDir) {
     fail(`${skillDir}/SKILL.md`, 'description ne doit pas contenir < ou >');
   }
 
-  if (!/metadata:\n(?:.|\n)*?version:\s*["']?2\.0\.0["']?/m.test(frontmatter)) {
-    fail(`${skillDir}/SKILL.md`, 'metadata.version doit etre "2.0.0"');
+  if (!/metadata:\n(?:.|\n)*?version:\s*["']?\d+\.\d+\.\d+["']?/m.test(frontmatter)) {
+    fail(`${skillDir}/SKILL.md`, 'metadata.version (semver X.Y.Z) manquante');
   }
-  if (!/last-updated:\s*["']?2026-05-29["']?/m.test(frontmatter)) {
-    fail(`${skillDir}/SKILL.md`, 'metadata.last-updated doit etre "2026-05-29"');
+  const lastUpdated = /last-updated:\s*["']?(\d{4}-\d{2}-\d{2})["']?/m.exec(frontmatter)?.[1];
+  if (!lastUpdated || !validateDate(lastUpdated)) {
+    fail(`${skillDir}/SKILL.md`, 'metadata.last-updated doit etre une date valide (AAAA-MM-JJ)');
   }
 }
 

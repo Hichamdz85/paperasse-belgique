@@ -9,6 +9,23 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 
 ---
 
+## [2.1.0] — 2026-06-01
+
+### Ajouté / Toegevoegd
+- Skill `asbl-be` (ASBL / VZW) : régime CSA Livre 9, comptabilité simplifiée ou en partie double (seuils 2 des 4 critères), dépôt des comptes (greffe / BNB), impôt des personnes morales (IPM), taxe annuelle compensatoire des droits de succession (patrimoniumtaks), TVA et registre UBO. Sources officielles datées (2026-06-01).
+- `data/sources.json` : 10 entrées du domaine `asbl` (8 confirmées / confirmées partiellement, 2 « à vérifier »).
+- `glossaire-fr-nl.json` : termes ASBL/VZW (asbl, aisbl, organe d'administration, but désintéressé, comptabilité simplifiée, IPM, taxe patrimoniale, greffe, registre UBO, membre).
+- Landing page : 3e carte « asbl-be » (FR/NL) ; carte « Bientôt » mise à jour (indépendant / IPP).
+
+### Modifié / Gewijzigd
+- Validateur de skills (`scripts/validate-skills.js`) assoupli : version semver (X.Y.Z) + `last-updated` au format date valide (AAAA-MM-JJ) ; statuts confirmés étendus (`confirme`, `confirme_partiel`, `confirme_avec_reserve`).
+- `package.json` aligné sur 2.1.0.
+
+### Restant à vérifier / Nog te verifiëren
+- Seuils des catégories micro/petite/grande des ASBL (art. 1:28-1:29 CSA) — divergence de sources.
+- Réforme annoncée du dépôt obligatoire de toutes les ASBL à la BNB dès 2026 — non confirmée en droit en vigueur.
+- Catégories et délais précis du registre UBO pour les ASBL (confirmé partiel).
+
 ## [2.0.0] — 2026-05-29
 
 ### Ajouté / Toegevoegd
@@ -42,5 +59,6 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 - Landing page statique bilingue FR/NL (`site/`).
 - `RESEARCH.md` : cadrage juridique sourcé + liste des points à vérifier. Licence MIT.
 
+[2.1.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.1.0
 [2.0.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.0.0
 [1.0.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v1.0.0

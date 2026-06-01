@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Paperasse Belgique — Skills Claude Code pour la comptabilité et le notariat belges</title>
+  <!-- Favicon : drapeau belge stylisé (SVG inline, data-URI — supprime la requête 404 /favicon.ico) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 26 20'%3E%3Crect width='26' height='20' rx='3' fill='%231A1A1A'/%3E%3Crect x='8.67' width='8.66' height='20' fill='%23FFD100'/%3E%3Crect x='17.33' width='8.67' height='20' rx='3' fill='%23EF3340'/%3E%3C/svg%3E" />
   <meta name="description" data-i18n="meta_description"
     content="Skills Claude Code pour automatiser la comptabilité et le notariat belges, en français et néerlandais, avec des données sourcées et datées." />
 
@@ -124,6 +126,23 @@
             </div>
           </article>
 
+          <!-- Carte asbl-be -->
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21h18" /><path d="M6 21V8l6-4 6 4v13" /><path d="M10 21v-4h4v4" /><path d="M9 11h.01M15 11h.01" />
+              </svg>
+            </div>
+            <h3 class="card-title">asbl-be</h3>
+            <p class="card-desc" data-i18n="card_asbl_desc">
+              ASBL/VZW : régime CSA Livre 9, comptabilité simplifiée ou en partie double, dépôt (greffe/BNB), IPM, taxe patrimoniale, TVA et registre UBO.
+            </p>
+            <div class="badges">
+              <span class="badge badge-quality" data-i18n="badge_quality">Qualité</span>
+              <span class="badge badge-source" data-i18n="badge_source">Sources vérifiées</span>
+            </div>
+          </article>
+
           <!-- Carte « Bientôt » -->
           <article class="card card-soon">
             <div class="card-icon" aria-hidden="true">
@@ -133,7 +152,7 @@
             </div>
             <h3 class="card-title" data-i18n="card_soon_title">Bientôt</h3>
             <p class="card-desc" data-i18n="card_soon_desc">
-              TVA avancée, ressources humaines (CP), aides régionales — en préparation.
+              Indépendant / personne physique (IPP), TVA avancée, ressources humaines (CP), aides régionales — en préparation.
             </p>
             <div class="badges">
               <span class="badge badge-soon" data-i18n="badge_soon">À venir</span>
@@ -189,6 +208,7 @@ npm run validate
 mkdir -p ~/.claude/skills
 cp -R comptable-be ~/.claude/skills/comptable-be
 cp -R notaire-be  ~/.claude/skills/notaire-be
+cp -R asbl-be     ~/.claude/skills/asbl-be
 
 ls ~/.claude/skills/</code></pre>
         </div>

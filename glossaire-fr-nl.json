@@ -48,6 +48,16 @@
     { "cle": "micro_societe", "fr": "Microsociété (art. 1:25 CSA)", "nl": "Microvennootschap (art. 1:25 WVV)", "domaine": "droit", "statut": "confirme", "source": "CSA / WVV art. 1:25" },
     { "cle": "schema_complet", "fr": "Schéma complet", "nl": "Volledig schema", "domaine": "comptabilite", "statut": "confirme", "source": "BNB / NBB" },
     { "cle": "schema_abrege", "fr": "Schéma abrégé", "nl": "Verkort schema", "domaine": "comptabilite", "statut": "confirme", "source": "BNB / NBB" },
-    { "cle": "schema_micro", "fr": "Micro-schéma", "nl": "Microschema", "domaine": "comptabilite", "statut": "confirme", "source": "BNB / NBB" }
+    { "cle": "schema_micro", "fr": "Micro-schéma", "nl": "Microschema", "domaine": "comptabilite", "statut": "confirme", "source": "BNB / NBB" },
+    { "cle": "asbl", "fr": "Association sans but lucratif (ASBL)", "nl": "Vereniging zonder winstoogmerk (VZW)", "domaine": "forme_juridique", "statut": "confirme", "source": "CSA / WVV Livre 9 (loi 23.03.2019)" },
+    { "cle": "aisbl", "fr": "Association internationale sans but lucratif (AISBL)", "nl": "Internationale vereniging zonder winstoogmerk (IVZW)", "domaine": "forme_juridique", "statut": "confirme", "source": "CSA / WVV (loi 23.03.2019)" },
+    { "cle": "organe_administration", "fr": "Organe d'administration", "nl": "Bestuursorgaan", "domaine": "droit", "statut": "confirme", "source": "CSA / WVV" },
+    { "cle": "but_desinteresse", "fr": "But désintéressé", "nl": "Belangeloos doel", "domaine": "droit", "statut": "confirme", "source": "CSA / WVV Livre 9" },
+    { "cle": "comptabilite_simplifiee", "fr": "Comptabilité simplifiée", "nl": "Vereenvoudigde boekhouding", "domaine": "comptabilite", "statut": "confirme", "source": "SPF Justice / FOD Justitie ; CNC / CBN" },
+    { "cle": "ipm", "fr": "Impôt des personnes morales (IPM)", "nl": "Rechtspersonenbelasting (RPB)", "domaine": "fiscalite", "statut": "confirme", "source": "SPF Finances / FOD Financiën" },
+    { "cle": "taxe_patrimoniale", "fr": "Taxe annuelle compensatoire des droits de succession", "nl": "Patrimoniumtaks", "domaine": "fiscalite", "statut": "confirme", "source": "SPF Finances / FOD Financiën" },
+    { "cle": "greffe", "fr": "Greffe du tribunal de l'entreprise", "nl": "Griffie van de ondernemingsrechtbank", "domaine": "institution", "statut": "confirme", "source": "SPF Justice / FOD Justitie" },
+    { "cle": "registre_ubo", "fr": "Registre des bénéficiaires effectifs (UBO)", "nl": "UBO-register", "domaine": "institution", "statut": "confirme", "source": "SPF Finances / FOD Financiën" },
+    { "cle": "membre", "fr": "Membre", "nl": "Lid", "domaine": "droit", "statut": "confirme", "source": "CSA / WVV Livre 9" }
   ]
 }

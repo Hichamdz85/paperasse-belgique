@@ -39,6 +39,7 @@ const FICHIERS = [
   join(RACINE, 'data', 'sources.json'),
   join(RACINE, 'comptable-be', 'references', 'sources.json'),
   join(RACINE, 'notaire-be', 'references', 'sources.json'),
+  join(RACINE, 'asbl-be', 'references', 'sources.json'),
 ];
 
 // Valide un format de date YYYY-MM-DD ET la réalité de la date (ex. rejette

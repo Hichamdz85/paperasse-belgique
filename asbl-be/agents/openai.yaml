@@ -1,0 +1,4 @@
+interface:
+  display_name: "ASBL BE"
+  short_description: "Belgian ASBL/VZW law, tax and UBO workflows"
+  default_prompt: "Use $asbl-be to prepare a sourced Belgian FR/NL ASBL/VZW checklist with CSA Book 9, bookkeeping, IPM, patrimony tax and UBO obligations."
