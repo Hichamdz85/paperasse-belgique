@@ -58,6 +58,14 @@
     { "cle": "taxe_patrimoniale", "fr": "Taxe annuelle compensatoire des droits de succession", "nl": "Patrimoniumtaks", "domaine": "fiscalite", "statut": "confirme", "source": "SPF Finances / FOD Financiën" },
     { "cle": "greffe", "fr": "Greffe du tribunal de l'entreprise", "nl": "Griffie van de ondernemingsrechtbank", "domaine": "institution", "statut": "confirme", "source": "SPF Justice / FOD Justitie" },
     { "cle": "registre_ubo", "fr": "Registre des bénéficiaires effectifs (UBO)", "nl": "UBO-register", "domaine": "institution", "statut": "confirme", "source": "SPF Finances / FOD Financiën" },
-    { "cle": "membre", "fr": "Membre", "nl": "Lid", "domaine": "droit", "statut": "confirme", "source": "CSA / WVV Livre 9" }
+    { "cle": "membre", "fr": "Membre", "nl": "Lid", "domaine": "droit", "statut": "confirme", "source": "CSA / WVV Livre 9" },
+    { "cle": "conservation", "fr": "Conservation", "nl": "Bewaring", "domaine": "organisation", "statut": "confirme", "source": "SPF Finances / FOD Financiën ; CNC / CBN" },
+    { "cle": "delai_conservation", "fr": "Délai de conservation", "nl": "Bewaartermijn", "domaine": "organisation", "statut": "confirme", "source": "SPF Finances / FOD Financiën ; CNC / CBN" },
+    { "cle": "piece_justificative", "fr": "Pièce justificative", "nl": "Verantwoordingsstuk", "domaine": "organisation", "statut": "confirme", "source": "CNC / CBN ; CDE Livre III" },
+    { "cle": "facture", "fr": "Facture", "nl": "Factuur", "domaine": "organisation", "statut": "confirme", "source": "SPF Finances / FOD Financiën (Code TVA)" },
+    { "cle": "releve_bancaire", "fr": "Relevé bancaire", "nl": "Rekeninguittreksel", "domaine": "organisation", "statut": "confirme", "source": "Febelfin ; usage bancaire belge" },
+    { "cle": "archivage", "fr": "Archivage", "nl": "Archivering", "domaine": "organisation", "statut": "confirme", "source": "CNC / CBN ; CDE Livre III" },
+    { "cle": "classement", "fr": "Classement", "nl": "Klassement", "domaine": "organisation", "statut": "confirme", "source": "Terminologie administrative belge" },
+    { "cle": "facture_electronique", "fr": "Facturation électronique", "nl": "Elektronische facturatie", "domaine": "organisation", "statut": "confirme", "source": "SPF Finances / FOD Financiën (efacture.belgium.be)" }
   ]
 }

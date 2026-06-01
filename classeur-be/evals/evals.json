@@ -1,0 +1,99 @@
+{
+  "skill_name": "classeur-be",
+  "description": "Scénarios d'évaluation — couverture sourcée (organisation, archivage, conservation, facturation).",
+  "evals": [
+    {
+      "id": 1,
+      "name": "conservation-comptable-7-ans",
+      "langue": "fr",
+      "company": {
+        "denomination": "Demo Classeur SRL",
+        "bce": "0123.456.789",
+        "region": "wallonie",
+        "langue": "fr",
+        "forme_juridique": "SRL",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Combien de temps dois-je conserver mes livres comptables et mes pieces justificatives en Belgique ?",
+      "expected_output": "Les livres comptables et pieces justificatives se conservent 7 ans (3 ans pour les pieces sans valeur probante envers les tiers).",
+      "assertions": [
+        { "text": "Livres comptables et pieces justificatives : 7 ans (3 ans si sans valeur probante).", "source_id": "conservation-comptable", "must_match": ["7 ans", "3 ans"] }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "conservation-fiscale-tva-10-ans",
+      "langue": "fr",
+      "company": {
+        "denomination": "Fiscal Test SRL",
+        "bce": "0234.567.890",
+        "region": "bruxelles",
+        "langue": "fr",
+        "forme_juridique": "SRL",
+        "regime_tva": "normal",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Quelle est la duree de conservation fiscale et TVA de mes documents depuis 2023 ?",
+      "expected_output": "La conservation fiscale et TVA est passee a 10 ans depuis le 01/01/2023.",
+      "assertions": [
+        { "text": "Conservation fiscale et TVA : 10 ans depuis le 01/01/2023.", "source_id": "conservation-fiscale-tva", "must_match": ["10 ans", "01/01/2023"] }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "facture-mentions-numerotation",
+      "langue": "fr",
+      "company": {
+        "denomination": "Facturation SRL",
+        "bce": "0345.678.901",
+        "region": "wallonie",
+        "langue": "fr",
+        "regime_tva": "normal",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Quelles mentions doivent figurer sur ma facture et comment numeroter mes factures ?",
+      "expected_output": "La facture doit porter un numero sequentiel unique, les taux 6/12/21 %, etc. La numerotation est continue, sans trou ni doublon.",
+      "assertions": [
+        { "text": "Mention obligatoire : numero sequentiel unique, taux 6/12/21 %.", "source_id": "facture-mentions", "must_match": ["numero sequentiel", "21 %"] },
+        { "text": "Numerotation continue, sans trou ni doublon.", "source_id": "facture-numerotation", "must_match": ["sans trou ni doublon"] }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "conservation-immeubles-15-ans",
+      "langue": "fr",
+      "company": {
+        "denomination": "Immo Invest SRL",
+        "bce": "0456.789.012",
+        "region": "wallonie",
+        "langue": "fr",
+        "forme_juridique": "SRL",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Combien de temps conserver les documents lies a un bien d'investissement immobilier ?",
+      "expected_output": "Les documents des biens d'investissement immobiliers se conservent 15 ans (25 ans pour une location avec option TVA).",
+      "assertions": [
+        { "text": "Biens d'investissement immobiliers : conservation 15 ans (25 ans si option TVA).", "source_id": "conservation-immeubles", "must_match": ["15 ans", "25 ans"] }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "efacturatie-peppol-2026-nl",
+      "langue": "nl",
+      "company": {
+        "denomination": "Antwerpen Klassement BV",
+        "bce": "0567.890.123",
+        "region": "flandre",
+        "langue": "nl",
+        "forme_juridique": "BV",
+        "regime_tva": "normal",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Sinds wanneer is gestructureerde elektronische facturatie B2B verplicht in Belgie en welk netwerk wordt gebruikt ?",
+      "expected_output": "Gestructureerde elektronische B2B-facturatie is verplicht sinds 01/01/2026, via het Peppol-netwerk (norm EN 16931).",
+      "assertions": [
+        { "text": "E-facturation B2B obligatoire depuis 01/01/2026 via Peppol (EN 16931).", "source_id": "facture-electronique-2026", "must_match": ["01/01/2026", "Peppol", "EN 16931"] }
+      ]
+    }
+  ]
+}

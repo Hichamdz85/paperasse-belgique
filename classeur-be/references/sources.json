@@ -1,0 +1,20 @@
+{
+  "meta": {
+    "description": "Sous-ensemble du registre central des sources (data/sources.json) pour le skill classeur-be : domaine organisation (conservation, facturation, archivage). Valeurs copiées sans modification. Deelverzameling van het centrale bronnenregister voor de skill classeur-be.",
+    "version": "1.0.0",
+    "date_consultation_globale": "2026-06-01",
+    "annee_reference": "exercice d'imposition 2026 (revenus 2025)",
+    "regle": "Chaque donnée chiffrée affichée ou calculée DOIT renvoyer à une entrée 'confirme'. Les entrées 'a_verifier' ne doivent jamais entrer dans un calcul.",
+    "statuts": ["confirme", "confirme_partiel", "confirme_avec_reserve", "a_verifier"],
+    "source_amont": "../../data/sources.json",
+    "verifie_par": "scripts/check-sources.js"
+  },
+  "sources": [
+    { "id": "conservation-comptable", "domaine": "organisation", "sujet": "Conservation des livres comptables et pièces justificatives", "valeur": "Conservation des livres comptables et pièces justificatives : 7 ans (3 ans pour les pièces sans valeur probante envers les tiers). Code de droit économique, Livre III, art. III.86. Départ : 1er janvier suivant la clôture.", "url": "https://www.cnc-cbn.be/fr/node/724", "date_consultation": "2026-06-01", "statut": "confirme" },
+    { "id": "conservation-fiscale-tva", "domaine": "organisation", "sujet": "Conservation fiscale et TVA", "valeur": "Conservation fiscale et TVA : 10 ans (depuis le 01/01/2023 ; auparavant 7 ans). CIR 92 art. 315 et Code TVA art. 60 (loi du 20/11/2022). Départ : 1er janvier suivant l'émission/la clôture.", "url": "https://finances.belgium.be/fr/entreprises/tva/comptabilite-facturation/comptabilite-facturation", "date_consultation": "2026-06-01", "statut": "confirme" },
+    { "id": "conservation-immeubles", "domaine": "organisation", "sujet": "Conservation des documents des biens d'investissement immobiliers", "valeur": "Documents des biens d'investissement immobiliers : période de révision TVA de 15 ans (art. 48 §2 Code TVA), d'où conservation 15 ans (25 ans pour location avec option TVA). La loi du 10/02/2026 modifie l'art. 48 §2 — à reconfirmer au Moniteur belge.", "url": "https://www.moore.be/fr/nouvelle/tva-et-biens-dinvestissement-nouveau-delai-de-revision-pour-les-travaux-immobiliers", "date_consultation": "2026-06-01", "statut": "confirme_avec_reserve" },
+    { "id": "facture-mentions", "domaine": "organisation", "sujet": "Mentions obligatoires d'une facture", "valeur": "Mentions obligatoires d'une facture (Code TVA art. 53 §2 + AR n°1 art. 5) : date d'émission, numéro séquentiel unique, n° TVA du fournisseur et du client, date de l'opération, description (quantité/nature), base imposable par taux, taux (6/12/21 %), montant de la TVA, mentions particulières (autoliquidation, exonération).", "url": "https://finances.belgium.be/fr/entreprises/tva/comptabilite-facturation/comptabilite-facturation", "date_consultation": "2026-06-01", "statut": "confirme_partiel" },
+    { "id": "facture-numerotation", "domaine": "organisation", "sujet": "Numérotation des factures", "valeur": "Numérotation des factures : numéro séquentiel unique et continu (sans trou ni doublon), basé sur une ou plusieurs séries (AR n°1 art. 5, 2°).", "url": "https://finances.belgium.be/fr/entreprises/tva/comptabilite-facturation/comptabilite-facturation", "date_consultation": "2026-06-01", "statut": "confirme_partiel" },
+    { "id": "facture-electronique-2026", "domaine": "organisation", "sujet": "Facturation électronique structurée B2B obligatoire", "valeur": "Facturation électronique structurée B2B obligatoire depuis le 01/01/2026 (norme EN 16931, format Peppol-BIS, réseau Peppol) pour les assujettis TVA établis en Belgique. Loi du 06/02/2024.", "url": "https://efacture.belgium.be/fr/article/pour-qui-la-facturation-electronique-deviendra-t-elle-obligatoire", "date_consultation": "2026-06-01", "statut": "confirme" }
+  ]
+}

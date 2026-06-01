@@ -143,6 +143,23 @@
             </div>
           </article>
 
+          <!-- Carte classeur-be -->
+          <article class="card">
+            <div class="card-icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><path d="M3 11h18" />
+              </svg>
+            </div>
+            <h3 class="card-title">classeur-be</h3>
+            <p class="card-desc" data-i18n="card_classeur_desc">
+              Organisation et archivage : arborescence de classement, conventions de nommage, conservation légale (7/10/15 ans), échéancier fiscal, tableau de bord, conseils.
+            </p>
+            <div class="badges">
+              <span class="badge badge-quality" data-i18n="badge_quality">Qualité</span>
+              <span class="badge badge-source" data-i18n="badge_source">Sources vérifiées</span>
+            </div>
+          </article>
+
           <!-- Carte « Bientôt » -->
           <article class="card card-soon">
             <div class="card-icon" aria-hidden="true">
@@ -152,7 +169,7 @@
             </div>
             <h3 class="card-title" data-i18n="card_soon_title">Bientôt</h3>
             <p class="card-desc" data-i18n="card_soon_desc">
-              Indépendant / personne physique (IPP), TVA avancée, ressources humaines (CP), aides régionales — en préparation.
+              Indépendant / personne physique (IPP), TVA avancée — en préparation.
             </p>
             <div class="badges">
               <span class="badge badge-soon" data-i18n="badge_soon">À venir</span>
@@ -209,6 +226,7 @@ mkdir -p ~/.claude/skills
 cp -R comptable-be ~/.claude/skills/comptable-be
 cp -R notaire-be  ~/.claude/skills/notaire-be
 cp -R asbl-be     ~/.claude/skills/asbl-be
+cp -R classeur-be ~/.claude/skills/classeur-be
 
 ls ~/.claude/skills/</code></pre>
         </div>

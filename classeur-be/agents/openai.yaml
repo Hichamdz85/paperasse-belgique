@@ -1,0 +1,4 @@
+interface:
+  display_name: "Classeur BE"
+  short_description: "Belgian recordkeeping and archiving help"
+  default_prompt: "Use $classeur-be to organize my Belgian invoices and bank statements, apply legal retention periods (7/10/15 years) and list my upcoming tax deadlines."

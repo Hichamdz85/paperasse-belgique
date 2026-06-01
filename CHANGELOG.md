@@ -9,6 +9,14 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 
 ---
 
+## [2.3.0] — 2026-06-02
+
+### Ajouté / Toegevoegd
+- Skill `classeur-be` : organisation et archivage administratif (arborescence de classement, conventions de nommage), conservation légale (7/10/15 ans), échéancier fiscal, tableau de bord et coaching de bonnes habitudes de tenue de documents (FR/NL).
+- 3 scripts : `echeancier.mjs` (échéances fiscales légales + export iCalendar `.ics`), `dashboard.mjs` (tableau de bord HTML : KPIs + prochaines échéances), `classeur.mjs` (arborescence d'archivage + assistant de classement). Scripts npm `echeancier` / `dashboard` / `classeur`.
+- Données sourcées ajoutées : conservation comptable **7 ans** (CDE III.86), conservation fiscale/TVA **10 ans** (CIR 315 / Code TVA 60), biens d'investissement immobiliers **15 ans**, mentions et numérotation de facture, facturation électronique B2B obligatoire au **01/01/2026** (norme EN 16931, Peppol).
+- Évals : couverture sourcée **32/32**. `check-sources` couvre désormais `classeur-be`.
+
 ## [2.2.0] — 2026-06-01
 
 ### Ajouté / Toegevoegd
@@ -79,6 +87,7 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 - Landing page statique bilingue FR/NL (`site/`).
 - `RESEARCH.md` : cadrage juridique sourcé + liste des points à vérifier. Licence MIT.
 
+[2.3.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.3.0
 [2.2.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.2.0
 [2.1.1]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.1.1
 [2.1.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.1.0

@@ -6,12 +6,12 @@
 [![Langues](https://img.shields.io/badge/langues-FR%20%7C%20NL-1A1A1A.svg)](glossaire-fr-nl.json)
 [![Sources](https://img.shields.io/badge/donn%C3%A9es-sourc%C3%A9es%20%26%20dat%C3%A9es-EF3340.svg)](data/sources.json)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Agent%20Skills-6C5CE7.svg)](https://docs.claude.com/en/docs/claude-code)
-[![Évals](https://img.shields.io/badge/%C3%A9vals-couverture%20sourc%C3%A9e%2026%2F26-3fbf6b.svg)](evals/)
+[![Évals](https://img.shields.io/badge/%C3%A9vals-couverture%20sourc%C3%A9e%2032%2F32-3fbf6b.svg)](evals/)
 
 > Skills Claude Code pour automatiser la comptabilité et le notariat **belges**, en **français et néerlandais**, avec des données **sourcées et datées**.
 > Claude Code-skills om de Belgische **boekhouding en notariaat** te automatiseren, in het **Frans en Nederlands**, met **gedateerde en gecontroleerde bronnen**.
 
-Version **2.1** — 3 skills (comptable-be, notaire-be, asbl-be) — données vérifiées au **2026-06-01** — exercice d'imposition 2026 (revenus 2025).
+Version **2.3** — 4 skills (comptable-be, notaire-be, asbl-be, classeur-be) — données vérifiées au **2026-06-01** — exercice d'imposition 2026 (revenus 2025).
 
 **Démo en ligne / Live demo : https://hichamdz85.github.io/paperasse-belgique/**
 
@@ -44,6 +44,8 @@ Chaque skill respecte le schéma officiel `SKILL.md` (`name`, `description`, `me
 |-------|--------|
 | **comptable-be** | Écritures PCMN, TVA/BTW, calcul ISoc/Ven.B, clôture annuelle, dépôt BNB |
 | **notaire-be** | Frais de notaire, droits d'enregistrement par région, succession, donation, SRL/BV |
+| **asbl-be** | ASBL/VZW : régime CSA Livre 9, comptabilité simplifiée ou en partie double, dépôt (greffe/BNB), IPM, taxe patrimoniale, TVA, registre UBO |
+| **classeur-be** | Organisation, archivage, conservation légale (7/10/15 ans), échéancier fiscal, tableau de bord, conseils |
 
 ### Bilinguisme FR/NL (obligation, pas option)
 
@@ -72,7 +74,9 @@ npm run validate
 # Copier les skills vers le répertoire des skills Claude Code
 mkdir -p ~/.claude/skills
 cp -R comptable-be ~/.claude/skills/comptable-be
-cp -R notaire-be  ~/.claude/skills/notaire-be
+cp -R notaire-be   ~/.claude/skills/notaire-be
+cp -R asbl-be      ~/.claude/skills/asbl-be
+cp -R classeur-be  ~/.claude/skills/classeur-be
 
 # Vérifier
 ls ~/.claude/skills/
@@ -92,9 +96,12 @@ cp company.example.json company.json
 ```bash
 node scripts/check-sources.js        # vérifie url + date de chaque source, liste les « à vérifier »
 node scripts/validate-skills.js      # vérifie SKILL.md, agents/openai.yaml et cohérence des sources
-node evals/run-evals.mjs             # évals : couverture sourcée (26/26) — voir evals/README.md
+node evals/run-evals.mjs             # évals : couverture sourcée (32/32) — voir evals/README.md
 node scripts/generate-statements.js  # bilan + compte de résultats (schéma BNB), libellés FR/NL
 node scripts/generate-pdfs.js        # document imprimable (HTML A4) à partir des états
+node scripts/echeancier.mjs          # échéances fiscales légales (+ .ics)
+node scripts/dashboard.mjs           # tableau de bord HTML (KPIs + échéances)
+node scripts/classeur.mjs --init     # arborescence d'archivage + assistant de classement
 ```
 
 ### Avertissement légal
@@ -128,6 +135,8 @@ Elke skill volgt het officiële `SKILL.md`-schema (`name`, `description`, `metad
 |-------|-----------|
 | **comptable-be** | MAR-boekingen, btw, berekening vennootschapsbelasting, jaarafsluiting, neerlegging NBB |
 | **notaire-be** | Notariskosten, gewestelijke registratierechten, erfbelasting, schenkbelasting, BV/NV |
+| **asbl-be** | VZW : regeling WVV Boek 9, vereenvoudigde of dubbele boekhouding, neerlegging (griffie/NBB), rechtspersonenbelasting, patrimoniumtaks, btw, UBO-register |
+| **classeur-be** | Organisatie, archivering, wettelijke bewaartermijnen (7/10/15 jaar), fiscale vervaldagen, dashboard, advies |
 
 ### Tweetaligheid FR/NL (verplichting, geen optie)
 
@@ -156,7 +165,9 @@ npm run validate
 # Skills kopiëren naar de Claude Code skills-map
 mkdir -p ~/.claude/skills
 cp -R comptable-be ~/.claude/skills/comptable-be
-cp -R notaire-be  ~/.claude/skills/notaire-be
+cp -R notaire-be   ~/.claude/skills/notaire-be
+cp -R asbl-be      ~/.claude/skills/asbl-be
+cp -R classeur-be  ~/.claude/skills/classeur-be
 
 # Controleren
 ls ~/.claude/skills/
@@ -174,9 +185,12 @@ cp company.example.json company.json
 ```bash
 node scripts/check-sources.js        # controleert url + datum van elke bron
 node scripts/validate-skills.js      # controleert SKILL.md, agents/openai.yaml en bronconsistentie
-node evals/run-evals.mjs             # evals: brondekking (26/26) — zie evals/README.md
+node evals/run-evals.mjs             # evals: brondekking (32/32) — zie evals/README.md
 node scripts/generate-statements.js  # balans + resultatenrekening (NBB-schema), FR/NL-labels
 node scripts/generate-pdfs.js        # afdrukbaar document (HTML A4)
+node scripts/echeancier.mjs          # wettelijke fiscale vervaldagen (+ .ics)
+node scripts/dashboard.mjs           # dashboard HTML (KPI's + vervaldagen)
+node scripts/classeur.mjs --init     # archiveringsstructuur + klasseerassistent
 ```
 
 ### Juridische disclaimer
