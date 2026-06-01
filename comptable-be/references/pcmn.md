@@ -1,6 +1,6 @@
 # PCMN / MAR — Plan comptable minimum normalisé
 
-> Référence du skill `comptable-be`. Données sourcées et datées (consultation : 2026-05-29).
+> Référence du skill `comptable-be`. Données sourcées et datées (consultation : 2026-06-02).
 > Libellés bilingues issus de `glossaire-fr-nl.json` (clé `cle`). Numéros de comptes :
 > voir `../data/pcmn_comptes.json`.
 
@@ -16,21 +16,35 @@ Le PCMN est le plan comptable **obligatoire** pour toute entreprise tenue à la 
 en **partie double** (SRL/BV, SA/NV, ASBL, etc.). Le plan comptable de l'entreprise doit être
 conforme, dans son contenu, sa présentation et sa numérotation, au PCMN.
 
-- **Source :** CNC/CBN, https://www.cnc-cbn.be/fr/node/2250
-- **id source :** `compta-pcmn-def` — **statut : confirmé** — consultation 2026-05-29
+**FR** — ≈ 782 comptes (sociétés) + 373 comptes (ASBL), conformes à l'AR du 29 avril 2019.
+**NL** — ≈ 782 rekeningen (vennootschappen) + 373 rekeningen (vzw's), conform het KB van 29 april 2019.
+*(version courte : ≈ 782 + 373 comptes (PCMN, AR 2019))*
+
+- **Source :** CNC/CBN, https://www.cnc-cbn.be/fr/node/2250 ; ITAA https://www.itaa.be/wp-content/uploads/ITAA_plan-comptable.pdf
+- **id source :** `compta-pcmn-def`, `pcmn-cnc-consolide`, `pcmn-itaa` — **statut : confirmé** — consultation 2026-06-02
 
 ---
 
 ## 2. Base légale
 
-Le PCMN des entreprises est porté par l'**Arrêté royal du 21 octobre 2018** (Annexe 1re),
-pris en exécution des **articles III.82 à III.95 du Code de droit économique (CDE)**. Cet AR
-**abroge l'AR du 12 septembre 1983** qui fondait historiquement le PCMN. La **forme et le
-contenu des comptes annuels** sont fixés, eux, par l'**AR du 29 avril 2019** portant exécution
-du Code des sociétés et des associations (CSA / WVV).
+La **base légale primaire** actuelle est l'**Arrêté royal du 29 avril 2019** portant exécution
+du **Code des sociétés et des associations (CSA / WVV)**. Ce texte légal contraignant fixe les
+**schémas de comptes annuels** et le **plan comptable** (sociétés + ASBL/fondations).
 
-> **Note :** le PCMN (plan comptable) et le schéma des comptes annuels relèvent de deux textes
-> distincts : AR 21/10/2018 (plan comptable, exéc. CDE) ≠ AR 29/04/2019 (comptes annuels, exéc. CSA).
+> **Contexte historique (non base d'un chiffre actuel) :** le PCMN des entreprises a été
+> consolidé au **Code de droit économique (CDE) Livre III** via l'**AR du 21 octobre 2018**
+> (Annexe 1re, exéc. art. III.82 à III.95 CDE), qui a **abrogé l'AR du 12 septembre 1983**. Ces
+> dates ne subsistent qu'à titre de **lignée historique**.
+
+### Hiérarchie des sources
+
+**FR** — Source primaire : AR du 29 avril 2019 (Moniteur belge). Source interprétative
+officielle : CNC/CBN (version consolidée). Source professionnelle pratique : ITAA. En cas de
+divergence, l'AR 29/04/2019 prévaut.
+
+**NL** — Primaire bron: KB van 29 april 2019 (Belgisch Staatsblad). Officiële interpretatieve
+bron: CBN (geconsolideerde versie). Praktische professionele bron: ITAA. Bij tegenstrijdigheid
+heeft het KB van 29/04/2019 voorrang.
 
 Le **schéma de comptes annuels imposé** (complet / abrégé / micro) découle du **CSA art. 3:1**
 (délégation au Roi) combiné aux critères de taille (**art. 1:24** petite société / **art. 1:25**
@@ -39,8 +53,13 @@ art. 3:58** et ses annexes (modèles). Les **modèles officiels** sont publiés 
 **Modèle C** (complet) / **Modèle A** (abrégé) / **Modèle M** (micro), déclinés sociétés à capital
 et sans capital, en FR et NL.
 
-- **Statut :** **confirmé** — 3e vérification 2026-05-29 (`id source : compta-pcmn-ar`, `compta-schema-article`, `compta-bnb-modeles`).
-- **Source :** AR du 21/10/2018, Annexe 1re (Moniteur belge / ejustice, NUMAC 2019042901 pour l'AR du 29/04/2019) ; CNC/CBN https://www.cnc-cbn.be/fr/node/1845 ; modèles BNB/NBB https://www.nbb.be/en/central-balance-sheet-office/preparation-and-filing/what-file/models/models-companies-0.
+> **Réforme CSA — capital.** Le concept de capital a été supprimé pour les SRL/BV par le CSA ;
+> les apports sont comptabilisés sans notion de capital (compte 11 « apport hors capital »).
+> **NL** — Het kapitaalbegrip is voor de BV afgeschaft door het WVV; inbreng wordt geboekt
+> zonder kapitaalnotie.
+
+- **Statut :** **confirmé** — vérification 2026-06-02 (`id source : pcmn-ar-2019`, `compta-pcmn-ar`, `pcmn-cnc-consolide`, `pcmn-itaa`, `compta-schema-article`, `compta-bnb-modeles`).
+- **Source primaire :** AR du 29/04/2019 (Moniteur belge / Belgisch Staatsblad — ejustice https://www.ejustice.just.fgov.be, NUMAC 2019042901). **Interprétative :** CNC/CBN https://www.cnc-cbn.be/fr/node/1845. **Professionnelle :** ITAA https://www.itaa.be/wp-content/uploads/ITAA_plan-comptable.pdf. Modèles BNB/NBB https://www.nbb.be/en/central-balance-sheet-office/preparation-and-filing/what-file/models/models-companies-0.
 
 ---
 

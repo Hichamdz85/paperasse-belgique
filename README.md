@@ -11,7 +11,7 @@
 > Skills Claude Code pour automatiser la comptabilité et le notariat **belges**, en **français et néerlandais**, avec des données **sourcées et datées**.
 > Claude Code-skills om de Belgische **boekhouding en notariaat** te automatiseren, in het **Frans en Nederlands**, met **gedateerde en gecontroleerde bronnen**.
 
-Version **2.3** — 4 skills (comptable-be, notaire-be, asbl-be, classeur-be) — données vérifiées au **2026-06-01** — exercice d'imposition 2026 (revenus 2025).
+Version **2.3.1** — 4 skills (comptable-be, notaire-be, asbl-be, classeur-be) — données vérifiées au **2026-06-01** (entrées PCMN au **2026-06-02**) — exercice d'imposition 2026 (revenus 2025).
 
 **Démo en ligne / Live demo : https://hichamdz85.github.io/paperasse-belgique/**
 
@@ -42,7 +42,7 @@ Chaque skill respecte le schéma officiel `SKILL.md` (`name`, `description`, `me
 
 | Skill | Couvre |
 |-------|--------|
-| **comptable-be** | Écritures PCMN, TVA/BTW, calcul ISoc/Ven.B, clôture annuelle, dépôt BNB |
+| **comptable-be** | Écritures PCMN (≈ 782 + 373 comptes, AR 2019), TVA/BTW, calcul ISoc/Ven.B, clôture annuelle, dépôt BNB |
 | **notaire-be** | Frais de notaire, droits d'enregistrement par région, succession, donation, SRL/BV |
 | **asbl-be** | ASBL/VZW : régime CSA Livre 9, comptabilité simplifiée ou en partie double, dépôt (greffe/BNB), IPM, taxe patrimoniale, TVA, registre UBO |
 | **classeur-be** | Organisation, archivage, conservation légale (7/10/15 ans), échéancier fiscal, tableau de bord, conseils |
@@ -133,7 +133,7 @@ Elke skill volgt het officiële `SKILL.md`-schema (`name`, `description`, `metad
 
 | Skill | Behandelt |
 |-------|-----------|
-| **comptable-be** | MAR-boekingen, btw, berekening vennootschapsbelasting, jaarafsluiting, neerlegging NBB |
+| **comptable-be** | MAR-boekingen (≈ 782 + 373 rekeningen, KB 2019), btw, berekening vennootschapsbelasting, jaarafsluiting, neerlegging NBB |
 | **notaire-be** | Notariskosten, gewestelijke registratierechten, erfbelasting, schenkbelasting, BV/NV |
 | **asbl-be** | VZW : regeling WVV Boek 9, vereenvoudigde of dubbele boekhouding, neerlegging (griffie/NBB), rechtspersonenbelasting, patrimoniumtaks, btw, UBO-register |
 | **classeur-be** | Organisatie, archivering, wettelijke bewaartermijnen (7/10/15 jaar), fiscale vervaldagen, dashboard, advies |
@@ -215,7 +215,17 @@ paperasse-be/
 
 ## Sources officielles / Officiële bronnen
 
-SPF Finances – FOD Financiën · BNB – NBB (Centrale des bilans / Balanscentrale) · CNC – CBN · SPF Économie – FOD Economie (BCE/KBO) · Fednot (notaire.be / notaris.be) · Moniteur belge – Belgisch Staatsblad · portails régionaux (be.brussels, vlaanderen.be, wallonie.be).
+- [CNC – CBN](https://www.cnc-cbn.be)
+- [SPF Finances – FOD Financiën](https://finances.belgium.be)
+- [Moniteur belge – Belgisch Staatsblad](https://www.ejustice.just.fgov.be)
+- [BNB – NBB](https://www.nbb.be) (Centrale des bilans / Balanscentrale)
+- [ITAA](https://www.itaa.be)
+- [Fednot](https://www.notaire.be) (notaire.be / notaris.be)
+
+Également : SPF Économie – FOD Economie (BCE/KBO) · portails régionaux (be.brussels, vlaanderen.be, wallonie.be).
+
+**FR** — Données vérifiées et datées (consultation : 2026-06-02).
+**NL** — Geverifieerde en gedateerde gegevens (raadpleging: 2026-06-02).
 
 ## Licence / Licentie
 

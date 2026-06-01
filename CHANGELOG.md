@@ -9,6 +9,13 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 
 ---
 
+## [2.3.1] — 2026-06-02
+
+### Modifié / Gewijzigd
+- **FR** — Précision du nombre de comptes PCMN (≈ 782 sociétés / 373 ASBL) ; ajout des sources officielles PCMN (AR 29/04/2019, CNC/CBN, ITAA) et de la hiérarchie des sources ; base légale primaire = AR 29/04/2019 (lignée 21/10/2018 / 1983 conservée comme historique) ; rappel CSA (suppression du capital SRL/BV) ; dates de consultation au 2026-06-02.
+- **NL** — Verduidelijking van het aantal MAR-rekeningen (≈ 782 vennootschappen / 373 vzw's) ; toevoeging van de officiële PCMN-bronnen (KB 29/04/2019, CBN, ITAA) en van de bronhiërarchie ; primaire rechtsbasis = KB 29/04/2019 (lijn 21/10/2018 / 1983 als historische context behouden) ; herinnering WVV (afschaffing van het kapitaal voor de BV) ; raadplegingsdata op 2026-06-02.
+- Entrées de source ajoutées : `pcmn-ar-2019`, `pcmn-cnc-consolide`, `pcmn-itaa` (statut confirmé) dans `data/sources.json` et `comptable-be/references/sources.json`. `meta.version` → 2.3.1.
+
 ## [2.3.0] — 2026-06-02
 
 ### Ajouté / Toegevoegd
@@ -87,6 +94,7 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 - Landing page statique bilingue FR/NL (`site/`).
 - `RESEARCH.md` : cadrage juridique sourcé + liste des points à vérifier. Licence MIT.
 
+[2.3.1]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.3.1
 [2.3.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.3.0
 [2.2.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.2.0
 [2.1.1]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.1.1

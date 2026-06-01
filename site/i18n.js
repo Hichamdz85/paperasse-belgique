@@ -59,7 +59,7 @@
       copy_done: "Copié",
 
       sources_title: "Sources officielles",
-      sources_note: "Données vérifiées et datées (2026-05-29).",
+      sources_note: "Données vérifiées et datées (consultation : 2026-06-02).",
 
       footer_disclaimer: "Ces skills ne remplacent pas un expert-comptable (ITAA), un réviseur (IRE) ni un notaire belge. Vérifiez toujours les sources officielles avant tout dépôt ou acte.",
       footer_license: "Licence MIT"
@@ -114,7 +114,7 @@
       copy_done: "Gekopieerd",
 
       sources_title: "Officiële bronnen",
-      sources_note: "Geverifieerde en gedateerde gegevens (2026-05-29).",
+      sources_note: "Geverifieerde en gedateerde gegevens (raadpleging: 2026-06-02).",
 
       footer_disclaimer: "Deze skills vervangen geen accountant (ITAA), bedrijfsrevisor (IRE) of Belgische notaris. Controleer altijd de officiële bronnen vóór elke neerlegging of akte.",
       footer_license: "MIT-licentie"

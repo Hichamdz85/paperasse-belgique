@@ -1,10 +1,12 @@
 {
   "meta": {
     "description": "Comptes du PCMN/MAR belge (Plan comptable minimum normalisé) avec libellés FR/NL. Les 8 classes (0-7) sont confirmées. Les sous-comptes confirmés verbatim sur cnc-cbn.be portent statut 'confirme' ; ceux dont l'intitulé officiel (notamment NL) n'a pas été confirmé portent statut 'a_completer' avec libellé 'à compléter'. AUCUN numéro de compte n'a été fabriqué.",
-    "source": "PCMN/MAR des entreprises porté par l'AR du 21/10/2018 (Annexe 1re, en exécution des art. III.82 à III.95 CDE), qui abroge l'AR du 12/09/1983 ; CNC/CBN — Titre 3 (https://www.cnc-cbn.be/fr/node/1653) ; classes (https://www.cnc-cbn.be/fr/node/2250) ; glossaire-fr-nl.json",
-    "date_consultation": "2026-05-29",
+    "source": "PCMN/MAR — base légale primaire : AR du 29/04/2019 (exécution du CSA/WVV) ; version consolidée officielle CNC/CBN (https://www.cnc-cbn.be ; Titre 3 https://www.cnc-cbn.be/fr/node/1653 ; classes https://www.cnc-cbn.be/fr/node/2250) ; glossaire-fr-nl.json. Note historique : le PCMN a été consolidé au CDE Livre III via l'AR du 21/10/2018 (Annexe 1re, exéc. art. III.82 à III.95 CDE), qui a abrogé l'AR du 12/09/1983.",
+    "source_ref": "pcmn-cnc-consolide",
+    "date_consultation": "2026-06-02",
     "statut": "mixte (confirme / a_completer)",
-    "note_base_legale": "Base légale confirmée (2e vérif 2026-05-29, id compta-pcmn-ar) : AR du 21/10/2018, Annexe 1re (exéc. art. III.82–III.95 CDE), abrogeant l'AR du 12/09/1983 ; forme/contenu des comptes annuels fixés par l'AR du 29/04/2019 (exéc. CSA). Classes 8 et 9 non incluses ici : d'usage libre/optionnel (note 29 PCMN, id compta-pcmn-classes-89). NL : Minimumindeling van het algemeen rekeningenstelsel (MAR)."
+    "note_exhaustivite": "Liste non exhaustive (38 comptes structurants présents) — le PCMN complet compte ≈ 782 comptes (sociétés) + 373 (ASBL). // à compléter — vérifier exhaustivité vs version consolidée CNC/CBN.",
+    "note_base_legale": "Base légale primaire (vérif 2026-06-02, id pcmn-ar-2019 / compta-pcmn-ar) : AR du 29/04/2019 (exéc. CSA/WVV), fixant les schémas de comptes annuels et le plan comptable (sociétés + ASBL/fondations). Lignée historique : AR du 21/10/2018, Annexe 1re (exéc. art. III.82–III.95 CDE), abrogeant l'AR du 12/09/1983. Classes 8 et 9 non incluses ici : d'usage libre/optionnel (note 29 PCMN, id compta-pcmn-classes-89). NL : Minimumindeling van het algemeen rekeningenstelsel (MAR)."
   },
   "comptes": [
     { "numero": "0", "libelle_fr": "Droits et engagements hors bilan", "libelle_nl": "Rechten en verplichtingen buiten balans", "classe": 0, "statut": "confirme" },
@@ -16,7 +18,7 @@
     { "numero": "6", "libelle_fr": "Charges", "libelle_nl": "Kosten", "classe": 6, "statut": "confirme" },
     { "numero": "7", "libelle_fr": "Produits", "libelle_nl": "Opbrengsten", "classe": 7, "statut": "confirme" },
 
-    { "numero": "10", "libelle_fr": "Capital / Apport", "libelle_nl": "à compléter", "classe": 1, "statut": "a_completer" },
+    { "numero": "10", "libelle_fr": "Apports (CSA — capital supprimé pour SRL/BV)", "libelle_nl": "à compléter", "classe": 1, "statut": "a_completer" },
     { "numero": "13", "libelle_fr": "Réserves", "libelle_nl": "à compléter", "classe": 1, "statut": "a_completer" },
     { "numero": "14", "libelle_fr": "Résultat reporté", "libelle_nl": "à compléter", "classe": 1, "statut": "a_completer" },
     { "numero": "17", "libelle_fr": "Dettes à plus d'un an", "libelle_nl": "à compléter", "classe": 1, "statut": "a_completer" },

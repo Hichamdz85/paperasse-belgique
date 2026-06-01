@@ -3,8 +3,8 @@ name: comptable-be
 description: Assistant comptable belge FR/NL pour sociétés belges. Use when working on PCMN/MAR entries, TVA/BTW, ISoc/Ven.B, annual closing, BNB/NBB annual accounts, Belgian fiscal deadlines, company.json-based accounting checks, or sourced Belgian accounting/tax answers. Requires sourced, dated values and excludes unconfirmed data from calculations.
 metadata:
   short-description: Belgian accounting, VAT, ISoc and BNB workflows
-  version: "2.0.0"
-  last-updated: "2026-05-29"
+  version: "2.3.1"
+  last-updated: "2026-06-02"
   languages: ["fr", "nl"]
 ---
 
@@ -13,7 +13,7 @@ metadata:
 > Skill d'assistance comptable et fiscale pour sociétés belges (SRL/BV, SA/NV, etc.).
 > Toutes les valeurs chiffrées proviennent de `references/sources.json` (copie des entrées
 > `confirme` de `data/sources.json`). Aucune valeur n'est codée en dur sans source.
-> Date de consultation des sources : 2026-05-29. Année de référence : exercice d'imposition 2026 (revenus 2025).
+> Date de consultation des sources : 2026-05-29 (entrées PCMN mises à jour au 2026-06-02). Année de référence : exercice d'imposition 2026 (revenus 2025).
 
 ---
 
@@ -81,8 +81,17 @@ avant toute réponse chiffrée.
 ### 2.1 Écritures en PCMN / MAR
 Voir `references/pcmn.md` et `data/pcmn_comptes.json`.
 Plan comptable obligatoire en partie double, classes 0 à 7 (`compta-pcmn-def`, confirmé).
+**≈ 782 comptes (sociétés) + 373 comptes (ASBL), conformes à l'AR du 29 avril 2019** ; NL :
+**≈ 782 rekeningen (vennootschappen) + 373 rekeningen (vzw's), conform het KB van 29 april 2019**
+(version courte : ≈ 782 + 373 comptes (PCMN, AR 2019)).
 N'utiliser que des numéros de compte présents dans `data/pcmn_comptes.json` ;
 les comptes non confirmés officiellement y portent `statut: "a_completer"`.
+
+> **Hiérarchie des sources.** Source primaire : AR du 29/04/2019 (Moniteur belge). Source
+> interprétative officielle : CNC/CBN (version consolidée). Source professionnelle pratique :
+> ITAA. En cas de divergence, l'AR 29/04/2019 prévaut. — **NL** : Primaire bron: KB van
+> 29/04/2019 (Belgisch Staatsblad) ; officiële interpretatieve bron: CBN ; praktische bron:
+> ITAA ; bij tegenstrijdigheid heeft het KB van 29/04/2019 voorrang.
 
 ### 2.2 TVA / BTW
 Voir `references/tva-be.md`.
