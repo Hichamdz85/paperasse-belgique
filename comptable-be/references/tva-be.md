@@ -70,9 +70,24 @@ Déclarations périodiques (mensuelles ou trimestrielles, voir §3).
 - Déclaration **trimestrielle** : **le 25** du mois suivant le trimestre.
 - Plus d'acompte trimestriel.
 
-> **À VÉRIFIER — source non confirmée** : les **dates exactes décalées** du calendrier TVA
-> (variables chaque année, jours fériés/week-ends). RESEARCH §8 #13 — statut `a_verifier`.
-> Annoncer la règle (le 20 / le 25), pas une date dérogatoire non confirmée.
+> **Note** : les **dates varient chaque année** (report au 1er jour ouvrable si
+> l'échéance tombe un week-end ou un jour férié). Toujours vérifier le calendrier
+> officiel de l'année concernée. **Calendrier 2026 confirmé** (SPF Finances) :
+>
+> | Échéance | Dépôt + paiement 2026 |
+> |----------|------------------------|
+> | Mensuels — déc. 2025 | **20/01/2026** |
+> | Mensuels — mai 2026 (report) | **22/06/2026** |
+> | Mensuels — nov. 2026 (report) | **21/12/2026** |
+> | Trimestriels — T4 2025 | **26/01/2026** |
+> | Trimestriels — T1 2026 | **27/04/2026** |
+> | Trimestriels — T2 2026 | **25/07/2026** |
+> | Trimestriels — T3 2026 | **25/10/2026** |
+> | Trimestriels — T4 2026 | **25/01/2027** |
+> | Listing clients annuel + relevé IC annuel | **31/03/2026** |
+>
+> **Source :** SPF Finances — Calendrier TVA, https://finances.belgium.be/fr/entreprises/tva/calendrier-tva
+> — id source `fisc-tva-calendrier-2026` — **statut : confirmé** — consultation 2026-06-01.
 
 ### 3.3 Relevé intracommunautaire
 Mensuel (le 20) ou trimestriel (le 25) ; le seuil **50.000 EUR** impose le dépôt mensuel.

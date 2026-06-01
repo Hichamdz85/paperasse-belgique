@@ -9,6 +9,13 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 
 ---
 
+## [2.1.1] — 2026-06-01
+
+### Modifié / Gewijzigd
+- **Donation immobilière Wallonie 2028 confirmée** : réforme du **décret wallon du 05/12/2024** (art. 21 remplaçant l'art. 131 du Code des droits d'enregistrement), **MB 13/12/2024, NUMAC 2024011274** (erratum 2024011635), applicable aux actes authentiques dès le 01/01/2028 — barème complet (ligne directe 3/6/10/14 % ; autres 9/12/16/20 %). Entrée de source `notaire-donation-immo-wal-2028` ajoutée (statut confirmé).
+- **Calendrier TVA 2026 confirmé** (SPF Finances) : échéances mensuelles/trimestrielles 2026 datées, listing clients + relevé IC annuels au 31/03/2026 ; note « les dates varient chaque année » conservée. Entrée de source `fisc-tva-calendrier-2026` ajoutée (statut confirmé).
+- **Versements anticipés ISoc** — précision : le taux de majoration **n'est pas fixé par un avis MB autonome** ; il dérive de l'**art. 218 CIR 92** (renvoi art. 161, taux directeur BCE au 1er janvier avec plancher). 6,75 % confirmé pour l'EI 2027 ; page SPF EI 2026 écrasée → entrée `av-isoc-majoration-2026` maintenue en `a_verifier`.
+
 ## [2.1.0] — 2026-06-01
 
 ### Ajouté / Toegevoegd
@@ -59,6 +66,7 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 - Landing page statique bilingue FR/NL (`site/`).
 - `RESEARCH.md` : cadrage juridique sourcé + liste des points à vérifier. Licence MIT.
 
+[2.1.1]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.1.1
 [2.1.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.1.0
 [2.0.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.0.0
 [1.0.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v1.0.0

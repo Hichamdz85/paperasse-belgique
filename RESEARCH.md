@@ -150,7 +150,7 @@ Majoration en cas de dépôt tardif (art. 3:13 CSA), progressive selon le retard
 ### 4.4 Versements anticipés (VA)
 Principe : 4 échéances trimestrielles pour éviter une majoration (pas de bonification pour les sociétés). Exonération pour la « petite société » sur les **3 premiers exercices** depuis la constitution.
 **Source :** SPF Finances — Versements anticipés, https://finances.belgium.be/fr/entreprises/impot_des_societes/versements_anticipes — `confirmé` (principe)
-- **Taux de majoration ex. d'imp. 2026 = 6,75 %** ; coefficients VA1–VA4 : **9,00 / 7,50 / 6,00 / 4,50 %** (confirmés sur SPF Finances ; le taux découle de l'**art. 218 CIR 92** + taux de référence). Échéances 2025 : **10/04, 10/07, 10/10, 22/12/2025**. — `confirmé` (taux/coefficients, 2e–3e vérif 2026-05-29) ; **réserve : avis MB daté ex. d'imp. 2026 reste à vérifier**.
+- **Taux de majoration = 6,75 %** ; coefficients VA1–VA4 : **9,00 / 7,50 / 6,00 / 4,50 %**. Le taux **n'est pas fixé par un avis annuel autonome au Moniteur belge** : il **dérive de l'art. 218 CIR 92 (renvoi à l'art. 161 CIR 92)**, lui-même lié au **taux directeur de la BCE au 1er janvier** (avec un plancher). **6,75 % est confirmé pour l'exercice d'imposition 2027** ; la page SPF Finances n'affiche **plus** l'exercice d'imposition 2026 (page écrasée). Échéances 2025 : **10/04, 10/07, 10/10, 22/12/2025**. — `a_verifier` pour l'ex. imp. 2026 (taux dérivé, pas d'avis MB autonome ; page SPF EI 2026 écrasée).
 
 ### 4.5 Précompte mobilier (dividendes)
 Taux de base : **30 %**. (Taux réduits VVPRbis 15/20 % sous conditions — hors périmètre « standard ».)
@@ -186,10 +186,10 @@ Détail des biens/services par taux fixé par l'**AR n° 20** :
 
 ### 5.3 Déclaration via Intervat
 - **Mensuelle** par défaut. **Trimestrielle** possible si : CA annuel ≤ **2.500.000 € HT** ET CA catégories sensibles (énergie, GSM, ordinateurs, véhicules) ≤ **250.000 € HT** ET pas de relevé IC mensuel > **50.000 €**.
-- Délais : mensuelle **le 20** du mois suivant ; trimestrielle **le 25** du mois suivant le trimestre (dates ponctuellement décalées). Plus d'acompte trimestriel.
-- **Listing clients annuel** : au plus tard le **31 mars**. Petites entreprises sous franchise : déclaration via Intervat (même « néant », délai jusqu'au 30/04/2026 pour 2025).
+- Délais : mensuelle **le 20** du mois suivant ; trimestrielle **le 25** du mois suivant le trimestre. **Les dates varient chaque année** (report au 1er jour ouvrable si week-end/férié). **Calendrier 2026 confirmé** (SPF Finances) : mensuels — déc. 2025 → **20/01/2026**, mai 2026 → **22/06/2026**, nov. 2026 → **21/12/2026** ; trimestriels — T4 2025 → **26/01/2026**, T1 2026 → **27/04/2026**, T2 2026 → **25/07/2026**, T3 2026 → **25/10/2026**, T4 2026 → **25/01/2027**. Plus d'acompte trimestriel.
+- **Listing clients annuel** + **relevé intracommunautaire annuel** : au plus tard le **31/03/2026**. Petites entreprises sous franchise : déclaration via Intervat (même « néant »).
 - **Relevé intracommunautaire** : mensuel (le 20) ou trimestriel (le 25) ; seuil 50.000 € impose le mensuel.
-**Source :** SPF Finances — Déclaration périodique https://finances.belgium.be/fr/entreprises/tva/declaration/declaration-periodique ; Calendrier TVA https://finances.belgium.be/fr/entreprises/tva/calendrier-tva — `confirmé` (seuils) ; dates exactes variables/an → section 8
+**Source :** SPF Finances — Déclaration périodique https://finances.belgium.be/fr/entreprises/tva/declaration/declaration-periodique ; Calendrier TVA https://finances.belgium.be/fr/entreprises/tva/calendrier-tva — `confirmé` (seuils + calendrier 2026, id source `fisc-tva-calendrier-2026`, consultation 2026-06-01) ; **les dates varient chaque année**
 
 ---
 
@@ -239,9 +239,16 @@ Principe : donation **mobilière** (taux fixes réduits) vs **immobilière** (ba
 **Donation IMMOBILIÈRE** — barème **COMMUN aux 3 régions en 2026** :
 - **Ligne directe / époux / cohabitants** : **3 %** (0–150.000) / **9 %** (150.000–250.000) / **18 %** (250.000–450.000) / **27 %** (>450.000). — `confirmé` (3e vérif 2026-05-29)
 - **Autres bénéficiaires** : **10 %** / **20 %** / **30 %** / **40 %** (mêmes tranches). — `confirmé` (3e vérif 2026-05-29)
-- **Réforme wallonne au 01/01/2028** : plafonds abaissés à **14 %** (ligne directe) / **20 %** (autres) ; **bornes intermédiaires 2028 restent à vérifier** (section 8 #17).
+- **Réforme wallonne — applicable aux actes authentiques passés à partir du 01/01/2028** (le barème commun 3/9/18/27 % · 10/20/30/40 % reste en vigueur en Wallonie **jusqu'au 31/12/2027**). Grille wallonne dès le **01/01/2028** (émolument par donataire) — `confirmé` (3e vérif 2026-06-01) :
 
-**Source :** notaire.be — `confirmé` (barème actuel commun 3 régions ; bornes 2028 Wallonie à vérifier)
+| Tranche (€) | Ligne directe / époux / cohabitants légaux | Autres personnes |
+|-------------|--------------------------------------------|------------------|
+| 0 – 150.000 | **3 %** | **9 %** |
+| 150.000 – 250.000 | **6 %** | **12 %** |
+| 250.000 – 450.000 | **10 %** | **16 %** |
+| > 450.000 | **14 %** | **20 %** |
+
+**Source :** notaire.be (barème actuel commun 3 régions) ; **décret wallon du 05/12/2024** (art. 21 remplaçant l'art. 131 du Code des droits d'enregistrement), **MB 13/12/2024, NUMAC 2024011274** (erratum 2024011635), https://wallex.wallonie.be/eli/loi-decret/2024/12/05/2024011274 (id source `notaire-donation-immo-wal-2028`) — `confirmé`
 
 ### 7.4 Frais de notaire
 Trois blocs : (1) droits d'enregistrement (régional) ; (2) **honoraires tarifés par AR fédéral**, dégressifs, identiques chez tous les notaires ; (3) frais administratifs/débours.
@@ -289,13 +296,13 @@ Constitution SRL/BV : honoraires non tarifés (ordre de grandeur 750–1.200 €
 | 10 | Taux exact cotisation distincte (5,10 %) rémunération dirigeant | **RÉSOLU (2e vérif 2026-05-29)** — abrogée/inexistante ; seule conséquence = perte du taux réduit |
 | 11 | Exemples de biens/services par taux TVA (AR n° 20) | **RÉSOLU (2e vérif 2026-05-29)** — exemples 6/12/21 % confirmés |
 | 12 | Composition « BE + numéro d'entreprise » du numéro de TVA | **RÉSOLU (2e vérif 2026-05-29)** — BE + 10 chiffres |
-| 13 | Dates exactes décalées du calendrier TVA (variables chaque année) | À VÉRIFIER (calendrier officiel annuel) |
+| 13 | Dates exactes décalées du calendrier TVA | **RÉSOLU (3e vérif 2026-06-01)** — calendrier 2026 confirmé (SPF Finances, id `fisc-tva-calendrier-2026`) : mensuels 20 du mois (déc. 2025→20/01/2026, mai 2026→22/06/2026, nov. 2026→21/12/2026) ; trimestriels le 25 (T4 2025→26/01/2026, T1→27/04, T2→25/07, T3→25/10/2026, T4 2026→25/01/2027) ; listing + relevé IC annuels 31/03/2026. **Note : les dates varient chaque année** (report au 1er jour ouvrable) |
 | 14 | Bruxelles : abattement/taux confirmés sur be.brussels | **RÉSOLU (2e vérif 2026-05-29)** — 12,5 % / abattement 200.000 € / bonus PEB +25.000 €/classe (max +100.000 €) / plafond 600.000 € |
 | 15 | Flandre : monument 1 %, sort du taux rénovation énergétique 2025 | **RÉSOLU (2e vérif 2026-05-29)** — monument 1 % aboli depuis 01/01/2025 ; 1 % IER subsiste |
 | 16 | Flandre : barème erfbelasting détaillé + réforme 2026 | **RÉSOLU (2e vérif 2026-05-29)** — 3/9/27 % ; réforme 2026 (abattement partenaire mobilier 75.000 €, singlevermindering) |
-| 17 | Barèmes de donation **immobilière** | **barème actuel RÉSOLU (3e vérif 2026-05-29)** — commun aux 3 régions : 3/9/18/27 % (ligne directe) ; 10/20/30/40 % (autres) ; **bornes intermédiaires 2028 Wallonie restent à vérifier** (réforme 01/01/2028 : plafonds 14 %/20 %) |
+| 17 | Barèmes de donation **immobilière** (dont réforme wallonne 2028) | **RÉSOLU (3e vérif 2026-06-01)** — barème actuel commun aux 3 régions : 3/9/18/27 % (ligne directe) ; 10/20/30/40 % (autres). **Réforme wallonne dès 01/01/2028** (décret du 05/12/2024, MB 13/12/2024, NUMAC 2024011274) : ligne directe **3/6/10/14 %** ; autres **9/12/16/20 %** (tranches 0–150k / 150–250k / 250–450k / >450k) — id source `notaire-donation-immo-wal-2028` |
 | 18 | Honoraires notariaux : bornes € de l'annexe AR fédéral + coût constitution SRL | **RÉSOLU (3e vérif 2026-05-29)** — AR 16/12/1950 (consolidé 01/01/2023, AR 22/11/2022, NUMAC 1950121603) ; 7 bornes 0–7.500 / 7.500–10.000 / 10.000–12.500 / 12.500–15.495 / 15.495–18.600 / 18.600–186.000 / >186.000 ; Barème J 4,56→0,057 % + TVA 21 % ; post-2023 partie fixe + forfait 750 € HT/acte ; indexation biennale |
-| 19 | Références MB ISoc 2026 (rémunération dirigeant + VA) | **loi-programme RÉSOLU (3e vérif 2026-05-29)** — rémunération dirigeant 50.000 € via loi-programme du 18/07/2025, **MB 29/07/2025, NUMAC 2025005578** ; **avis VA daté reste à vérifier** (taux 6,75 % confirmé, art. 218 CIR 92) |
+| 19 | Références MB ISoc 2026 (rémunération dirigeant + VA) | **rémunération dirigeant RÉSOLU (3e vérif 2026-05-29)** — 50.000 € via loi-programme du 18/07/2025, **MB 29/07/2025, NUMAC 2025005578**. **VA — précisé (2026-06-01)** : le taux de majoration **n'est pas fixé par un avis MB autonome** ; il **dérive de l'art. 218 CIR 92 (renvoi art. 161)** + taux directeur BCE au 1er janvier (avec plancher). **6,75 % confirmé pour l'EI 2027** ; **page SPF EI 2026 écrasée → `a_verifier`** (id source `av-isoc-majoration-2026`) |
 | 20 | Langue de dépôt comptes/déclarations/actes à Bruxelles (choix FR/NL) | **RÉSOLU (2e vérif 2026-05-29)** — FR ou NL, mais toutes les pièces dans UNE seule langue (art. 2:33 CSA + art. 3:67 §3 AR exéc. CSA) |
 | 21 | Sigle/intitulé NL exact du MAR | **RÉSOLU (2e vérif 2026-05-29)** — « Minimumindeling van het algemeen rekeningenstelsel (MAR) » (rekening**en**stelsel) |
 | 22 | Appariement régional FR/NL : `successierechten` (féd.) vs `erfbelasting` (Flandre) | **RÉSOLU (2e vérif 2026-05-29)** — féd.+Wallonie : successie-/registratie-/schenkingsrechten ; Flandre : erf-/registratie-/schenkbelasting |
