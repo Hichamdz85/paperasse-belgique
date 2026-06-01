@@ -10,11 +10,11 @@
 > Skills Claude Code pour automatiser la comptabilité et le notariat **belges**, en **français et néerlandais**, avec des données **sourcées et datées**.
 > Claude Code-skills om de Belgische **boekhouding en notariaat** te automatiseren, in het **Frans en Nederlands**, met **gedateerde en gecontroleerde bronnen**.
 
-Version **2.0** des skills — données vérifiées au **2026-05-29** — exercice d'imposition 2026 (revenus 2025).
+Version **2.1** — 3 skills (comptable-be, notaire-be, asbl-be) — données vérifiées au **2026-06-01** — exercice d'imposition 2026 (revenus 2025).
 
 **Démo en ligne / Live demo : https://hichamdz85.github.io/paperasse-belgique/**
 
-![Aperçu de la landing page Paperasse Belgique](.github/assets/screenshot.png)
+![Démonstration du sélecteur de langue FR/NL de la landing page Paperasse Belgique / Demo van de FR/NL-taalkiezer](.github/assets/demo.gif)
 
 ---
 
