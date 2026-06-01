@@ -6,6 +6,7 @@
 [![Langues](https://img.shields.io/badge/langues-FR%20%7C%20NL-1A1A1A.svg)](glossaire-fr-nl.json)
 [![Sources](https://img.shields.io/badge/donn%C3%A9es-sourc%C3%A9es%20%26%20dat%C3%A9es-EF3340.svg)](data/sources.json)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-Agent%20Skills-6C5CE7.svg)](https://docs.claude.com/en/docs/claude-code)
+[![Évals](https://img.shields.io/badge/%C3%A9vals-couverture%20sourc%C3%A9e%2026%2F26-3fbf6b.svg)](evals/)
 
 > Skills Claude Code pour automatiser la comptabilité et le notariat **belges**, en **français et néerlandais**, avec des données **sourcées et datées**.
 > Claude Code-skills om de Belgische **boekhouding en notariaat** te automatiseren, in het **Frans en Nederlands**, met **gedateerde en gecontroleerde bronnen**.
@@ -91,6 +92,7 @@ cp company.example.json company.json
 ```bash
 node scripts/check-sources.js        # vérifie url + date de chaque source, liste les « à vérifier »
 node scripts/validate-skills.js      # vérifie SKILL.md, agents/openai.yaml et cohérence des sources
+node evals/run-evals.mjs             # évals : couverture sourcée (26/26) — voir evals/README.md
 node scripts/generate-statements.js  # bilan + compte de résultats (schéma BNB), libellés FR/NL
 node scripts/generate-pdfs.js        # document imprimable (HTML A4) à partir des états
 ```
@@ -172,6 +174,7 @@ cp company.example.json company.json
 ```bash
 node scripts/check-sources.js        # controleert url + datum van elke bron
 node scripts/validate-skills.js      # controleert SKILL.md, agents/openai.yaml en bronconsistentie
+node evals/run-evals.mjs             # evals: brondekking (26/26) — zie evals/README.md
 node scripts/generate-statements.js  # balans + resultatenrekening (NBB-schema), FR/NL-labels
 node scripts/generate-pdfs.js        # afdrukbaar document (HTML A4)
 ```

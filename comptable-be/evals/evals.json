@@ -1,0 +1,139 @@
+{
+  "skill_name": "comptable-be",
+  "description": "Scénarios d'évaluation — couverture sourcée.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "isoc-taux-normal",
+      "langue": "fr",
+      "company": {
+        "denomination": "Demo Compta SRL",
+        "bce": "0123.456.789",
+        "region": "wallonie",
+        "langue": "fr",
+        "forme_juridique": "SRL",
+        "regime_tva": "normal",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Quel est le taux normal de l'impot des societes en Belgique pour l'exercice d'imposition 2026 ?",
+      "expected_output": "Le taux normal de l'ISoc est de 25 %.",
+      "assertions": [
+        { "text": "Le taux normal de l'ISoc est de 25 %.", "source_id": "fisc-isoc-taux-normal", "must_match": ["25"] }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "isoc-taux-reduit-remuneration",
+      "langue": "fr",
+      "company": {
+        "denomination": "PME Conseil SRL",
+        "bce": "0234.567.890",
+        "region": "bruxelles",
+        "langue": "fr",
+        "forme_juridique": "SRL",
+        "taille_societe": "petite",
+        "dirigeant_remuneration_annuelle": 52000,
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Ma petite SRL peut-elle beneficier du taux reduit ISoc et quelle remuneration minimale dois-je verser au dirigeant pour l'exercice d'imposition 2026 ?",
+      "expected_output": "Taux reduit de 20 % sur la 1re tranche de 100.000 EUR, sous condition d'une remuneration minimale de dirigeant de 50.000 EUR a partir de l'exercice d'imposition 2026.",
+      "assertions": [
+        { "text": "Taux reduit de 20 % sur la 1re tranche de 100.000 EUR.", "source_id": "fisc-isoc-taux-reduit", "must_match": ["20", "100.000"] },
+        { "text": "Remuneration minimale de dirigeant de 50.000 EUR des l'exercice d'imposition 2026.", "source_id": "fisc-isoc-remuneration", "must_match": ["50.000", "2026"] }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "biztax-delai",
+      "langue": "fr",
+      "company": {
+        "denomination": "Delai Test SRL",
+        "bce": "0345.678.901",
+        "region": "wallonie",
+        "langue": "fr",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Mon exercice se cloture le 31/12/2025. Quelle est la date limite de depot de ma declaration ISoc via Biztax ?",
+      "expected_output": "La declaration Biztax est due le dernier jour du 7e mois apres la cloture, soit le 30/09/2026 pour un bilan au 31/12/2025.",
+      "assertions": [
+        { "text": "Declaration Biztax due au dernier jour du 7e mois apres cloture, soit le 30/09/2026.", "source_id": "fisc-isoc-biztax-delai", "must_match": ["7e mois", "30/09/2026"] }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "tva-taux-franchise",
+      "langue": "fr",
+      "company": {
+        "denomination": "Petit Indep SRL",
+        "bce": "0456.789.012",
+        "region": "bruxelles",
+        "langue": "fr",
+        "regime_tva": "franchise",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Quels sont les taux de TVA en Belgique et a partir de quel chiffre d'affaires perd-on le regime de la franchise ?",
+      "expected_output": "Taux de TVA : 21 % normal, plus 12 %, 6 % et 0 %. Le regime de la franchise s'applique jusqu'a 25.000 EUR HT/an.",
+      "assertions": [
+        { "text": "Taux de TVA : 21 % (normal), 12 %, 6 %, 0 %.", "source_id": "fisc-tva-taux", "must_match": ["21", "12", "6"] },
+        { "text": "Seuil du regime de la franchise : 25.000 EUR HT/an.", "source_id": "fisc-tva-franchise", "must_match": ["25.000"] }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "bnb-frais-depot-nl",
+      "langue": "nl",
+      "company": {
+        "denomination": "Antwerpen Boekhouding BV",
+        "bce": "0567.890.123",
+        "region": "flandre",
+        "langue": "nl",
+        "forme_juridique": "BV",
+        "schema_comptes": "abrege",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Wat kost de neerlegging van de jaarrekening (verkort schema) bij de NBB in 2026, in XBRL en in PDF ?",
+      "expected_output": "Verkort schema 2026 : 89,40 EUR in XBRL en 159,50 EUR in PDF.",
+      "assertions": [
+        { "text": "Frais de depot abrege 2026 : 89,40 EUR XBRL et 159,50 EUR PDF.", "source_id": "compta-bnb-frais-2026", "must_match": ["89,40", "159,50"] }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "seuils-taille-societe",
+      "langue": "fr",
+      "company": {
+        "denomination": "Croissance SRL",
+        "bce": "0678.901.234",
+        "region": "wallonie",
+        "langue": "fr",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Quels sont les seuils qui distinguent une micro-societe d'une petite societe au sens du CSA ?",
+      "expected_output": "Micro : 10 travailleurs / 900.000 EUR CA / 450.000 EUR bilan. Petite : 50 travailleurs / 11.250.000 EUR CA / 6.000.000 EUR bilan.",
+      "assertions": [
+        { "text": "Micro-societe : 10 travailleurs / 900.000 EUR CA HT / 450.000 EUR bilan.", "source_id": "compta-seuil-micro", "must_match": ["10 travailleurs", "900.000", "450.000"] },
+        { "text": "Petite societe : 50 travailleurs / 11.250.000 EUR CA HT / 6.000.000 EUR bilan.", "source_id": "compta-seuil-petite", "must_match": ["50 travailleurs", "11.250.000", "6.000.000"] }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "tva-calendrier-2026",
+      "langue": "fr",
+      "company": {
+        "denomination": "Trimestre SRL",
+        "bce": "0789.012.345",
+        "region": "wallonie",
+        "langue": "fr",
+        "regime_tva": "normal",
+        "periodicite_tva": "trimestrielle",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Je suis declarant TVA trimestriel. Quelles sont mes echeances de depot pour les trimestres 2026 et la date du listing clients annuel ?",
+      "expected_output": "T1 2026 -> 27/04/2026, T2 2026 -> 25/07/2026, T3 2026 -> 25/10/2026 ; listing clients annuel le 31/03/2026.",
+      "assertions": [
+        { "text": "Echeances trimestrielles 2026 : T1 27/04/2026, T2 25/07/2026.", "source_id": "fisc-tva-calendrier-2026", "must_match": ["27/04/2026", "25/07/2026"] },
+        { "text": "Listing clients annuel : 31/03/2026.", "source_id": "fisc-tva-calendrier-2026", "must_match": ["31/03/2026"] }
+      ]
+    }
+  ]
+}

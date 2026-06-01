@@ -9,6 +9,19 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 
 ---
 
+## [2.2.0] — 2026-06-01
+
+### Ajouté / Toegevoegd
+- **Banc d'évaluation des skills** (`evals/run-evals.mjs`, Node, sans dépendance) avec scénarios `<skill>/evals/evals.json` — 20 scénarios, 26 assertions (≥ 1 scénario NL par skill).
+- Mode `grounding` (par défaut, en CI) : vérifie que **chaque assertion est adossée à une source confirmée** (id existant + statut confirmé + jetons présents dans la valeur). Couverture sourcée mesurée : **26/26 (100 %)**. Garde-fou de non-régression.
+- Mode `--llm` (expérimental, hors CI) : A/B « avec skill vs sans skill » via `ANTHROPIC_API_KEY` ; aucun delta n'est publié tant qu'il n'est pas réellement mesuré (cf. `evals/README.md`).
+- Scripts npm `evals` / `evals:llm` ; `npm run validate` inclut désormais les évals.
+- Badge « évals : couverture sourcée 26/26 » + section dans `README.md`.
+
+### Modifié / Gewijzigd
+- CI `quality.yml` : déclenchement étendu (`evals/**`, `asbl-be/**`) ; `npm run validate` exécute aussi les évals.
+- `package.json` aligné sur 2.2.0.
+
 ## [2.1.1] — 2026-06-01
 
 ### Modifié / Gewijzigd
@@ -66,6 +79,7 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 - Landing page statique bilingue FR/NL (`site/`).
 - `RESEARCH.md` : cadrage juridique sourcé + liste des points à vérifier. Licence MIT.
 
+[2.2.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.2.0
 [2.1.1]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.1.1
 [2.1.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.1.0
 [2.0.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.0.0

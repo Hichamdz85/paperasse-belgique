@@ -8,6 +8,8 @@ on:
       - "notaire-be/**"
       - "data/**"
       - "scripts/**"
+      - "evals/**"
+      - "asbl-be/**"
       - "package.json"
       - ".github/workflows/quality.yml"
   pull_request:

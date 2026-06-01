@@ -1,0 +1,109 @@
+{
+  "skill_name": "asbl-be",
+  "description": "Scénarios d'évaluation — couverture sourcée.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "regime-csa",
+      "langue": "fr",
+      "company": {
+        "denomination": "Les Amis du Quartier ASBL",
+        "bce": "0890.123.456",
+        "region": "bruxelles",
+        "langue": "fr",
+        "forme_juridique": "ASBL"
+      },
+      "prompt": "Quel cadre juridique regit une ASBL en Belgique et quel est le nombre minimum de membres requis ?",
+      "expected_output": "L'ASBL est regie par le CSA Livre 9 (loi du 23/03/2019), avec un minimum de 2 membres et deux organes : assemblee generale et organe d'administration.",
+      "assertions": [
+        { "text": "ASBL regie par le CSA Livre 9 (loi 23/03/2019), minimum 2 membres.", "source_id": "asbl-regime-csa", "must_match": ["Livre 9", "23/03/2019", "2 membres"] }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "compta-type-seuils",
+      "langue": "fr",
+      "company": {
+        "denomination": "Culture en Mouvement ASBL",
+        "bce": "0901.234.567",
+        "region": "wallonie",
+        "langue": "fr",
+        "forme_juridique": "ASBL"
+      },
+      "prompt": "Mon ASBL doit-elle tenir une comptabilite simplifiee ou en partie double ? Quels sont les seuils ?",
+      "expected_output": "Comptabilite en partie double si l'ASBL depasse au moins 2 des 4 criteres (5 travailleurs ETP, 334.500 EUR recettes, 1.337.000 EUR avoirs, 1.337.000 EUR dettes) ; sinon comptabilite simplifiee.",
+      "assertions": [
+        { "text": "Partie double si depassement d'au moins 2 des 4 criteres dont 5 travailleurs ETP et 334.500 EUR de recettes.", "source_id": "asbl-compta-type", "must_match": ["partie double", "5 travailleurs", "334.500"] }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "ipm-vs-isoc",
+      "langue": "fr",
+      "company": {
+        "denomination": "Solidarite Sociale ASBL",
+        "bce": "0912.345.678",
+        "region": "bruxelles",
+        "langue": "fr",
+        "forme_juridique": "ASBL"
+      },
+      "prompt": "Mon ASBL est-elle soumise a l'impot des societes ou a un autre regime fiscal par defaut ?",
+      "expected_output": "Par defaut, l'ASBL releve de l'impot des personnes morales (IPM, art. 220 CIR 92) ; bascule possible vers l'impot des societes en cas d'exploitation ou d'operations lucratives non accessoires.",
+      "assertions": [
+        { "text": "Regime fiscal par defaut de l'ASBL : impot des personnes morales (IPM, art. 220 CIR 92).", "source_id": "asbl-ipm", "must_match": ["impot des personnes morales", "220"] }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "taxe-patrimoniale-nl",
+      "langue": "nl",
+      "company": {
+        "denomination": "Buurtwerking VZW",
+        "bce": "0923.456.789",
+        "region": "flandre",
+        "langue": "nl",
+        "forme_juridique": "VZW"
+      },
+      "prompt": "Wat zijn de tarieven van de jaarlijkse patrimoniumtaks voor een VZW en wanneer moet de aangifte gebeuren ?",
+      "expected_output": "Patrimoniumtaks : 0 % tot 50.000 EUR ; 0,15 % van 50.000 tot 250.000 ; 0,30 % van 250.000 tot 500.000 ; 0,45 % boven 500.000 ; aangifte en betaling voor 31 maart.",
+      "assertions": [
+        { "text": "Taxe patrimoniale : 0,15 % entre 50.000 et 250.000 EUR, jusqu'a 0,45 % au-dela de 500.000 EUR.", "source_id": "asbl-taxe-patrimoniale", "must_match": ["0,15", "0,45"] },
+        { "text": "Declaration et paiement de la taxe patrimoniale avant le 31 mars.", "source_id": "asbl-taxe-patrimoniale", "must_match": ["31 mars"] }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "depot-comptes",
+      "langue": "fr",
+      "company": {
+        "denomination": "Patrimoine Local ASBL",
+        "bce": "0934.567.890",
+        "region": "wallonie",
+        "langue": "fr",
+        "forme_juridique": "ASBL"
+      },
+      "prompt": "Ou et dans quel delai mon ASBL doit-elle deposer ses comptes annuels apres l'assemblee generale ?",
+      "expected_output": "Petite ASBL : depot au greffe du tribunal de l'entreprise dans les 30 jours de l'AG ; grande ASBL : depot a la BNB/NBB dans les 30 jours de l'AG.",
+      "assertions": [
+        { "text": "Petite ASBL : depot au greffe du tribunal de l'entreprise dans les 30 jours de l'AG.", "source_id": "asbl-depot-comptes", "must_match": ["greffe", "30 jours"] }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "registre-ubo",
+      "langue": "fr",
+      "company": {
+        "denomination": "Reseau Associatif ASBL",
+        "bce": "0945.678.901",
+        "region": "bruxelles",
+        "langue": "fr",
+        "forme_juridique": "ASBL"
+      },
+      "prompt": "Mon ASBL doit-elle s'enregistrer au registre UBO et a quelle frequence faut-il le mettre a jour ?",
+      "expected_output": "L'ASBL doit enregistrer ses beneficiaires effectifs au registre UBO ; mise a jour dans le mois suivant tout changement, plus une confirmation annuelle.",
+      "assertions": [
+        { "text": "ASBL : enregistrement au registre UBO, mise a jour dans le mois suivant tout changement et confirmation annuelle.", "source_id": "asbl-ubo", "must_match": ["UBO", "confirmation annuelle"] }
+      ]
+    }
+  ]
+}

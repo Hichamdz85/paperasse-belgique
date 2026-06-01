@@ -1,0 +1,119 @@
+{
+  "skill_name": "notaire-be",
+  "description": "Scénarios d'évaluation — couverture sourcée.",
+  "evals": [
+    {
+      "id": 1,
+      "name": "enreg-bruxelles",
+      "langue": "fr",
+      "company": {
+        "denomination": "Acheteur Bruxellois (particulier)",
+        "region": "bruxelles",
+        "langue": "fr",
+        "operation": "achat habitation propre et unique"
+      },
+      "prompt": "J'achete a Bruxelles ma seule habitation. Quel est le taux des droits d'enregistrement et le montant de l'abattement sur la 1re tranche ?",
+      "expected_output": "A Bruxelles, droits d'enregistrement a 12,5 % avec un abattement sur la 1re tranche de 200.000 EUR pour l'habitation propre et unique.",
+      "assertions": [
+        { "text": "Bruxelles : taux 12,5 % et abattement 1re tranche de 200.000 EUR.", "source_id": "notaire-enreg-bxl", "must_match": ["12,5", "200.000"] }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "enreg-flandre-nl",
+      "langue": "nl",
+      "company": {
+        "denomination": "Vlaamse koper (particulier)",
+        "region": "flandre",
+        "langue": "nl",
+        "operation": "aankoop enige eigen woning"
+      },
+      "prompt": "Ik koop in Vlaanderen mijn enige eigen woning. Wat is het verkooprecht en het verlaagde tarief voor de enige eigen woning sinds 2025 ?",
+      "expected_output": "In Vlaanderen : standaard verkooprecht 12 %, en 2 % voor de enige eigen woning sinds 01/01/2025.",
+      "assertions": [
+        { "text": "Flandre : verkooprecht standard 12 % et habitation propre et unique 2 % depuis 01/01/2025.", "source_id": "notaire-enreg-vl", "must_match": ["12", "2", "01/01/2025"] }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "enreg-wallonie",
+      "langue": "fr",
+      "company": {
+        "denomination": "Acheteur Wallon (particulier)",
+        "region": "wallonie",
+        "langue": "fr",
+        "operation": "achat habitation propre et unique"
+      },
+      "prompt": "En Wallonie, quel est le taux ordinaire des droits d'enregistrement et le taux reduit pour l'habitation propre et unique depuis 2025 ?",
+      "expected_output": "En Wallonie : taux ordinaire 12,5 %, et habitation propre et unique a 3 % depuis 01/01/2025, abattement supprime.",
+      "assertions": [
+        { "text": "Wallonie : taux ordinaire 12,5 % et habitation propre et unique 3 % depuis 2025.", "source_id": "notaire-enreg-wal", "must_match": ["12,5", "3"] }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "donation-immobiliere",
+      "langue": "fr",
+      "company": {
+        "denomination": "Donateur (ligne directe)",
+        "region": "bruxelles",
+        "langue": "fr",
+        "operation": "donation immobiliere en ligne directe"
+      },
+      "prompt": "Je veux donner un bien immobilier a mon enfant. Quel est le bareme des droits de donation immobiliere en ligne directe en 2026 ?",
+      "expected_output": "Bareme commun aux 3 regions en ligne directe : 3 % (0-150.000), 9 % (150.000-250.000), 18 % (250.000-450.000), 27 % (>450.000).",
+      "assertions": [
+        { "text": "Donation immobiliere ligne directe 2026 : 3 % sur la tranche 0-150.000 EUR.", "source_id": "notaire-donation-immo", "must_match": ["3", "150.000"] },
+        { "text": "Tranche superieure : 27 % au-dela de 450.000 EUR.", "source_id": "notaire-donation-immo", "must_match": ["27", "450.000"] }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "donation-immo-wal-2028",
+      "langue": "fr",
+      "company": {
+        "denomination": "Donateur Wallon (ligne directe)",
+        "region": "wallonie",
+        "langue": "fr",
+        "operation": "donation immobiliere prevue apres 2028"
+      },
+      "prompt": "En Wallonie, comment evoluera le bareme des donations immobilieres en ligne directe pour les actes passes a partir du 01/01/2028 ?",
+      "expected_output": "Reforme wallonne applicable des le 01/01/2028 : ligne directe 3 % / 6 % / 10 % / 14 % (plafond abaisse a 14 %).",
+      "assertions": [
+        { "text": "Reforme wallonne donation immobiliere applicable des le 01/01/2028, plafond ligne directe 14 %.", "source_id": "notaire-donation-immo-wal-2028", "must_match": ["01/01/2028", "14"] }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "honoraires-bareme",
+      "langue": "fr",
+      "company": {
+        "denomination": "Vendeur immobilier",
+        "region": "wallonie",
+        "langue": "fr",
+        "operation": "vente immobiliere de gre a gre"
+      },
+      "prompt": "Comment sont fixes les honoraires du notaire pour une vente immobiliere de gre a gre, et quel bareme s'applique ?",
+      "expected_output": "Honoraires fixes par l'AR du 16/12/1950 (degressif, identique pour tous les notaires) ; vente de gre a gre = bareme J, + TVA 21 %.",
+      "assertions": [
+        { "text": "Honoraires notariaux degressifs ; vente de gre a gre = Bareme J (premier taux 4,56 %).", "source_id": "notaire-honoraires-bareme", "must_match": ["Bareme J", "4,56"] }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "plusvalue-immobiliere",
+      "langue": "fr",
+      "company": {
+        "denomination": "Revendeur immobilier",
+        "region": "bruxelles",
+        "langue": "fr",
+        "operation": "revente d'un bien bati avant 5 ans"
+      },
+      "prompt": "Je revends un bien bati que je detiens depuis moins de 5 ans. Quelle est l'imposition sur la plus-value immobiliere ?",
+      "expected_output": "Plus-value immobiliere taxee a 16,5 % si revente d'un bien bati moins de 5 ans ; exoneration pour la residence principale.",
+      "assertions": [
+        { "text": "Plus-value immobiliere : 16,5 % si revente d'un bien bati moins de 5 ans.", "source_id": "notaire-plusvalue-immo", "must_match": ["16,5", "5 ans"] }
+      ]
+    }
+  ]
+}
