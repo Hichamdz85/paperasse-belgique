@@ -4,8 +4,8 @@
   "bce": "0123.456.789",
   "numero_tva": "BE0123456789",
   "forme_juridique": "SRL",
-  "forme_juridique_options": ["SRL", "SA", "SNC", "SComm", "SC", "ASBL", "personne_physique", "independant_complementaire"],
-  "forme_juridique_commentaire": "Pour une personne physique (indépendant à titre principal = personne_physique ; à titre complémentaire = independant_complementaire), le régime est l'IPP (impôt des personnes physiques) + cotisations sociales INASTI/RSVZ — PAS l'ISoc. Voir le skill independant-be.",
+  "forme_juridique_options": ["SRL", "SA", "SNC", "SComm", "SC", "ASBL", "personne physique", "independant_complementaire"],
+  "forme_juridique_commentaire": "Valeurs canoniques : société = SRL/SA/SNC/SComm/SC ; ASBL = ASBL ; indépendant personne physique à titre principal = personne physique ; indépendant à titre complémentaire = independant_complementaire. Le régime de l'indépendant personne physique est l'IPP + cotisations sociales INASTI/RSVZ — PAS l'ISoc. Voir le skill independant-be.",
   "region": "bruxelles",
   "region_options": ["bruxelles", "flandre", "wallonie"],
   "langue": "fr-nl",
@@ -24,5 +24,5 @@
   "schema_comptes_commentaire": "micro -> micro ; petite -> abrege ; grande -> complet. Voir RESEARCH.md §2.",
   "date_constitution": "2020-03-15",
   "dirigeant_remuneration_annuelle": 45000,
-  "dirigeant_remuneration_commentaire": "Pour le taux réduit ISoc : seuil 50.000 EUR à partir de l'ex. imp. 2026 (loi-programme 18/07/2025) ; 45.000 EUR jusqu'à l'ex. imp. 2025. Voir RESEARCH §4.2."
+  "dirigeant_remuneration_commentaire": "Pour le taux réduit ISoc : seuil 50.000 EUR à partir de l'ex. imp. 2026 (loi-programme 18/07/2025) ; 45.000 EUR jusqu'à l'ex. imp. 2025. Voir RESEARCH §4.2. Ignorer pour un indépendant personne physique."
 }
