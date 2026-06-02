@@ -9,6 +9,12 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 
 ---
 
+## [2.4.0] — 2026-06-02
+
+### Ajouté / Toegevoegd
+- **FR** — Skill `independant-be` (indépendant personne physique, à titre principal ou complémentaire) : IPP (barème 25/40/45/50, quotité exemptée 10.910 EUR, frais professionnels, versements anticipés), cotisations sociales INASTI/RSVZ (taux 20,50 % / 14,16 %, cotisation minimale 890,42 EUR/trimestre, primostarter, complémentaire), franchise TVA, comptabilité simplifiée (3 journaux) et organisation d'un dossier professionnel structuré. Échéancier étendu aux indépendants : versements anticipés IPP (10/04, 10/07, 10/10, 20/12) + cotisations INASTI trimestrielles (dernier jour du trimestre). 11 sources officielles (SPF Finances / FOD Financiën, INASTI / RSVZ, CNC / CBN). `check-sources` couvre désormais `independant-be`. Évals : couverture sourcée **42/42**. `package.json` → 2.4.0.
+- **NL** — Skill `independant-be` (zelfstandige natuurlijke persoon, in hoofd- of bijberoep): personenbelasting (tarief 25/40/45/50, belastingvrije som 10.910 EUR, beroepskosten, voorafbetalingen), sociale bijdragen RSVZ (tarief 20,50 % / 14,16 %, minimumbijdrage 890,42 EUR/kwartaal, primostarter, bijberoep), btw-vrijstelling, vereenvoudigde boekhouding (3 dagboeken) en een gestructureerd professioneel dossier. Vervaldagenkalender uitgebreid naar zelfstandigen: voorafbetalingen PB (10/04, 10/07, 10/10, 20/12) + driemaandelijkse RSVZ-bijdragen (laatste dag van het kwartaal). 11 officiële bronnen (FOD Financiën, RSVZ, CBN). `check-sources` dekt nu `independant-be`. Evals: brondekking **42/42**. `package.json` → 2.4.0.
+
 ## [2.3.1] — 2026-06-02
 
 ### Modifié / Gewijzigd
@@ -94,6 +100,7 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 - Landing page statique bilingue FR/NL (`site/`).
 - `RESEARCH.md` : cadrage juridique sourcé + liste des points à vérifier. Licence MIT.
 
+[2.4.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.4.0
 [2.3.1]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.3.1
 [2.3.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.3.0
 [2.2.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.2.0

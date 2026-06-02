@@ -1,0 +1,4 @@
+interface:
+  display_name: "Indépendant BE"
+  short_description: "Belgian sole-trader IPP, INASTI and dossier helper"
+  default_prompt: "Use $independant-be to prepare a sourced Belgian FR/NL checklist for a self-employed person: IPP bracket and exempt amount, INASTI social contributions, VAT franchise and a structured professional dossier."

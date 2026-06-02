@@ -1,0 +1,137 @@
+{
+  "skill_name": "independant-be",
+  "description": "Scénarios d'évaluation — couverture sourcée (indépendant personne physique : IPP, INASTI, TVA, comptabilité simplifiée).",
+  "evals": [
+    {
+      "id": 1,
+      "name": "ipp-bareme-quotite",
+      "langue": "fr",
+      "company": {
+        "denomination": "Demo Indep PP",
+        "bce": "0123.456.789",
+        "region": "wallonie",
+        "langue": "fr",
+        "forme_juridique": "personne physique",
+        "regime_tva": "normal",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Quel est le taux d'entree du bareme IPP et la quotite du revenu exemptee d'impot pour les revenus 2025 (exercice d'imposition 2026) ?",
+      "expected_output": "Premiere tranche du bareme IPP a 25 % ; quotite du revenu exemptee d'impot de 10.910 EUR (revenus 2025).",
+      "assertions": [
+        { "text": "Premiere tranche du bareme IPP a 25 %.", "source_id": "ipp-bareme", "must_match": ["25"] },
+        { "text": "Quotite du revenu exemptee : 10.910 EUR.", "source_id": "ipp-quotite-exemptee", "must_match": ["10.910"] }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "inasti-taux-principal",
+      "langue": "fr",
+      "company": {
+        "denomination": "Indep Principal PP",
+        "bce": "0234.567.890",
+        "region": "bruxelles",
+        "langue": "fr",
+        "forme_juridique": "personne physique",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Quel est le taux de cotisation sociale INASTI d'un independant a titre principal en 2026 sur la premiere tranche de revenu ?",
+      "expected_output": "Taux INASTI de 20,50 % sur le revenu net professionnel jusqu'a 75.024,54 EUR (titre principal, 2026, hors frais de gestion).",
+      "assertions": [
+        { "text": "Taux INASTI titre principal : 20,50 % sur la 1re tranche.", "source_id": "inasti-taux", "must_match": ["20,50"] }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "inasti-cotisation-minimale",
+      "langue": "fr",
+      "company": {
+        "denomination": "Indep Minimum PP",
+        "bce": "0345.678.901",
+        "region": "wallonie",
+        "langue": "fr",
+        "forme_juridique": "personne physique",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Quelle est la cotisation sociale minimale trimestrielle d'un independant a titre principal en 2026 ?",
+      "expected_output": "Cotisation minimale de 890,42 EUR/trimestre (revenu plancher 17.374,08 EUR, hors frais de gestion).",
+      "assertions": [
+        { "text": "Cotisation minimale : 890,42 EUR/trimestre.", "source_id": "inasti-minimum", "must_match": ["890,42"] }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "inasti-complementaire-seuil",
+      "langue": "fr",
+      "company": {
+        "denomination": "Indep Complementaire PP",
+        "bce": "0456.789.012",
+        "region": "bruxelles",
+        "langue": "fr",
+        "forme_juridique": "personne physique",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Je suis independant a titre complementaire. A partir de quel revenu dois-je payer des cotisations sociales en 2026 ?",
+      "expected_output": "A titre complementaire, aucune cotisation si le revenu est inferieur a 1.922,16 EUR ; au-dela, memes taux.",
+      "assertions": [
+        { "text": "Titre complementaire : aucune cotisation sous 1.922,16 EUR.", "source_id": "inasti-complementaire", "must_match": ["1.922,16"] }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "primostarter-tva-franchise",
+      "langue": "fr",
+      "company": {
+        "denomination": "Primostarter PP",
+        "bce": "0567.890.123",
+        "region": "wallonie",
+        "langue": "fr",
+        "forme_juridique": "personne physique",
+        "regime_tva": "franchise",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Je demarre comme primostarter. Quel est le revenu plancher reduit INASTI et a partir de quel chiffre d'affaires perd-on la franchise TVA ?",
+      "expected_output": "Primostarter : revenu plancher reduit 8.972,07 EUR ; franchise TVA jusqu'a 25.000 EUR HT/an.",
+      "assertions": [
+        { "text": "Primostarter : revenu plancher reduit 8.972,07 EUR.", "source_id": "inasti-primostarter", "must_match": ["8.972,07"] },
+        { "text": "Franchise TVA : seuil 25.000 EUR HT/an.", "source_id": "fisc-tva-franchise", "must_match": ["25.000"] }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "compta-simplifiee-paiement",
+      "langue": "fr",
+      "company": {
+        "denomination": "Indep Compta PP",
+        "bce": "0678.901.234",
+        "region": "wallonie",
+        "langue": "fr",
+        "forme_juridique": "personne physique",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Jusqu'a quel chiffre d'affaires un independant personne physique peut-il tenir une comptabilite simplifiee, et quand les cotisations INASTI sont-elles dues ?",
+      "expected_output": "Comptabilite simplifiee (>= 3 journaux) si CA HT <= 500.000 EUR ; cotisations INASTI dues au plus tard le dernier jour du trimestre.",
+      "assertions": [
+        { "text": "Comptabilite simplifiee si CA HT <= 500.000 EUR.", "source_id": "compta-indep-simplifiee", "must_match": ["500.000", "3 journaux"] },
+        { "text": "Cotisations INASTI dues le dernier jour du trimestre.", "source_id": "inasti-paiement", "must_match": ["dernier jour du trimestre"] }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "inasti-taux-nl",
+      "langue": "nl",
+      "company": {
+        "denomination": "Zelfstandige NP",
+        "bce": "0789.012.345",
+        "region": "flandre",
+        "langue": "nl",
+        "forme_juridique": "personne physique",
+        "exercice": { "debut": "2025-01-01", "cloture": "2025-12-31" }
+      },
+      "prompt": "Wat is het tarief van de sociale bijdragen (RSVZ) voor een zelfstandige in hoofdberoep in 2026 op de eerste inkomensschijf ?",
+      "expected_output": "RSVZ-tarief : 20,50 % op het netto beroepsinkomen tot 75.024,54 EUR (hoofdberoep, 2026, exclusief beheerskosten).",
+      "assertions": [
+        { "text": "RSVZ-tarief hoofdberoep : 20,50 %.", "source_id": "inasti-taux", "must_match": ["20,50"] }
+      ]
+    }
+  ]
+}

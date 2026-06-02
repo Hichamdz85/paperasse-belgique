@@ -66,6 +66,16 @@
     { "cle": "releve_bancaire", "fr": "Relevé bancaire", "nl": "Rekeninguittreksel", "domaine": "organisation", "statut": "confirme", "source": "Febelfin ; usage bancaire belge" },
     { "cle": "archivage", "fr": "Archivage", "nl": "Archivering", "domaine": "organisation", "statut": "confirme", "source": "CNC / CBN ; CDE Livre III" },
     { "cle": "classement", "fr": "Classement", "nl": "Klassement", "domaine": "organisation", "statut": "confirme", "source": "Terminologie administrative belge" },
-    { "cle": "facture_electronique", "fr": "Facturation électronique", "nl": "Elektronische facturatie", "domaine": "organisation", "statut": "confirme", "source": "SPF Finances / FOD Financiën (efacture.belgium.be)" }
+    { "cle": "facture_electronique", "fr": "Facturation électronique", "nl": "Elektronische facturatie", "domaine": "organisation", "statut": "confirme", "source": "SPF Finances / FOD Financiën (efacture.belgium.be)" },
+    { "cle": "independant", "fr": "Indépendant", "nl": "Zelfstandige", "domaine": "social", "statut": "confirme", "source": "INASTI / RSVZ" },
+    { "cle": "ipp", "fr": "Impôt des personnes physiques (IPP)", "nl": "Personenbelasting (PB)", "domaine": "fiscalite", "statut": "confirme", "source": "SPF Finances / FOD Financiën" },
+    { "cle": "frais_professionnels", "fr": "Frais professionnels", "nl": "Beroepskosten", "domaine": "fiscalite", "statut": "confirme", "source": "SPF Finances / FOD Financiën (CIR 92)" },
+    { "cle": "quotite_exemptee", "fr": "Quotité exemptée", "nl": "Belastingvrije som", "domaine": "fiscalite", "statut": "confirme", "source": "SPF Finances / FOD Financiën" },
+    { "cle": "cotisations_sociales", "fr": "Cotisations sociales", "nl": "Sociale bijdragen", "domaine": "social", "statut": "confirme", "source": "INASTI / RSVZ" },
+    { "cle": "caisse_assurances_sociales", "fr": "Caisse d'assurances sociales", "nl": "Sociaal verzekeringsfonds", "domaine": "social", "statut": "confirme", "source": "INASTI / RSVZ" },
+    { "cle": "inasti", "fr": "INASTI", "nl": "RSVZ", "domaine": "institution", "statut": "confirme", "source": "INASTI / RSVZ (inasti.be / rsvz.be)" },
+    { "cle": "independant_principal", "fr": "Indépendant à titre principal", "nl": "Zelfstandige in hoofdberoep", "domaine": "social", "statut": "confirme", "source": "INASTI / RSVZ" },
+    { "cle": "independant_complementaire", "fr": "Indépendant à titre complémentaire", "nl": "Zelfstandige in bijberoep", "domaine": "social", "statut": "confirme", "source": "INASTI / RSVZ" },
+    { "cle": "primostarter", "fr": "Primostarter", "nl": "Primostarter", "domaine": "social", "statut": "confirme", "source": "INASTI / RSVZ" }
   ]
 }

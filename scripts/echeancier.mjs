@@ -87,6 +87,14 @@ export function afficherLabel(echeance, langue) {
 // Liste des formes juridiques considérées comme « société » (vs ASBL).
 const FORMES_SOCIETE = new Set(['SRL', 'SA', 'SNC', 'SComm', 'SC']);
 
+// Formes juridiques de l'indépendant personne physique (régime IPP + INASTI,
+// PAS l'ISoc). Voir le skill independant-be.
+const FORMES_INDEPENDANT = new Set([
+  'personne_physique',
+  'independant',
+  'independant_complementaire',
+]);
+
 // ---------------------------------------------------------------------------
 // Calcul des échéances LÉGALES sur l'horizon [from, from + mois].
 //
@@ -128,6 +136,7 @@ export function computeEcheances(company, fromDate, mois = 12) {
   const forme = String(company.forme_juridique || '').trim();
   const estSociete = FORMES_SOCIETE.has(forme);
   const estAsbl = forme === 'ASBL';
+  const estIndependant = FORMES_INDEPENDANT.has(forme);
   const periodicite = company.periodicite_tva || 'trimestrielle';
   const regimeTva = company.regime_tva || 'normal';
   // Le dépôt de déclarations TVA ne concerne que les assujettis au régime normal.
@@ -239,6 +248,50 @@ export function computeEcheances(company, fromDate, mois = 12) {
           label_fr: `Dépôt des comptes annuels de l'ASBL (greffe/BNB) — exercice ${anCloture}`,
           label_nl: `Neerlegging van de jaarrekening van de vzw (griffie/NBB) — boekjaar ${anCloture}`,
           source_id: 'asbl-depot-comptes',
+        });
+      }
+    }
+  }
+
+  // --- Indépendant personne physique (régime IPP + INASTI, PAS l'ISoc) ---
+  // Échéances LÉGALES sourcées. La TVA et le listing clients (31/03) sont déjà
+  // gérés par le bloc « TVA périodique » ci-dessus (selon periodicite_tva), qui
+  // ne dépend pas de la forme juridique.
+  if (estIndependant) {
+    for (let an = anneeDebut; an <= anneeFin + 1; an += 1) {
+      // Versements anticipés IPP : 4 échéances (10/04, 10/07, 10/10, 20/12).
+      // source_id: ipp-versements-anticipes.
+      const versementsAnticipes = [
+        { mois: 4, jour: 10, t: 'T1' },
+        { mois: 7, jour: 10, t: 'T2' },
+        { mois: 10, jour: 10, t: 'T3' },
+        { mois: 12, jour: 20, t: 'T4' },
+      ];
+      for (const va of versementsAnticipes) {
+        echeances.push({
+          date: isoJour(dateUTC(an, va.mois, va.jour)),
+          label_fr: `Versement anticipé IPP — ${va.t} ${an}`,
+          label_nl: `Voorafbetaling PB — ${va.t} ${an}`,
+          source_id: 'ipp-versements-anticipes',
+        });
+      }
+
+      // Cotisations sociales INASTI : trimestrielles, dues au plus tard le
+      // dernier jour du trimestre (31/03, 30/06, 30/09, 31/12).
+      // Le « jour 0 » du mois suivant donne le dernier jour du mois voulu.
+      // source_id: inasti-paiement.
+      const trimestresInasti = [
+        { moisFin: 3, t: 'T1' },
+        { moisFin: 6, t: 'T2' },
+        { moisFin: 9, t: 'T3' },
+        { moisFin: 12, t: 'T4' },
+      ];
+      for (const tr of trimestresInasti) {
+        echeances.push({
+          date: isoJour(dateUTC(an, tr.moisFin + 1, 0)),
+          label_fr: `Cotisations sociales (INASTI) — ${tr.t} ${an}`,
+          label_nl: `Sociale bijdragen (RSVZ) — ${tr.t} ${an}`,
+          source_id: 'inasti-paiement',
         });
       }
     }
