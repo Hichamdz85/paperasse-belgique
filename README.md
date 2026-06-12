@@ -11,7 +11,7 @@
 > Skills Claude Code pour automatiser la comptabilité et le notariat **belges**, en **français et néerlandais**, avec des données **sourcées et datées**.
 > Claude Code-skills om de Belgische **boekhouding en notariaat** te automatiseren, in het **Frans en Nederlands**, met **gedateerde en gecontroleerde bronnen**.
 
-Version **2.4** — 5 skills (comptable-be, notaire-be, asbl-be, classeur-be, independant-be) — données vérifiées au **2026-06-01** (entrées PCMN et indépendant au **2026-06-02**) — exercice d'imposition 2026 (revenus 2025).
+Version **2.5** — 5 skills (comptable-be, notaire-be, asbl-be, classeur-be, independant-be) + une **équipe d'agents** d'orchestration (Claude Code) — données vérifiées au **2026-06-01** (entrées PCMN et indépendant au **2026-06-02**) — exercice d'imposition 2026 (revenus 2025).
 
 **Démo en ligne / Live demo : https://hichamdz85.github.io/paperasse-belgique/**
 
@@ -47,6 +47,34 @@ Chaque skill respecte le schéma officiel `SKILL.md` (`name`, `description`, `me
 | **asbl-be** | ASBL/VZW : régime CSA Livre 9, comptabilité simplifiée ou en partie double, dépôt (greffe/BNB), IPM, taxe patrimoniale, TVA, registre UBO |
 | **classeur-be** | Organisation, archivage, conservation légale (7/10/15 ans), échéancier fiscal, tableau de bord, conseils |
 | **independant-be** | Indépendant personne physique : IPP (barème, quotité, frais pro, versements anticipés), cotisations sociales INASTI, TVA, comptabilité simplifiée, dossier professionnel |
+
+### Équipe d'agents (orchestration Claude Code)
+
+Au-dessus des skills, une **équipe d'agents Claude Code** ajoute une couche
+d'**orchestration** : un orchestrateur (`directeur-financier`, CFO virtuel)
+écoute le dirigeant, route la demande vers le bon spécialiste, puis consolide
+les livrables en une synthèse de pilotage. L'orchestrateur **ne calcule jamais**
+lui-même : il délègue à l'un des 6 spécialistes et reprend leur sortie sourcée.
+
+| Agent | Rôle | Skill utilisé |
+|---|---|---|
+| `directeur-financier` | Orchestrateur / CFO virtuel — route & consolide | (tous, via délégation) |
+| `comptable` | Écritures, TVA, ISoc, clôture, dépôt BNB | `comptable-be` |
+| `fiscaliste` | Fiscalité transversale (ISoc, IPP, TVA, précompte, VA) | `comptable-be` + `independant-be` |
+| `notaire-conseil` | Frais notaire, droits d'enregistrement, succession, donation | `notaire-be` |
+| `gestionnaire-asbl` | ASBL/VZW : CSA Livre 9, IPM, taxe patrimoniale, UBO | `asbl-be` |
+| `conseiller-independant` | Indépendant : IPP, INASTI/RSVZ, franchise TVA | `independant-be` |
+| `analyste-archiviste` | États financiers, ratios, dashboard, échéancier, archivage | `classeur-be` + `scripts/*` |
+
+Six **slash commands** servent de raccourcis : `/pilotage` (synthèse de
+pilotage), `/cloture` (clôture annuelle séquentielle), `/tva` (déclaration
+TVA), `/echeances` (échéancier), `/classer` (archivage), `/rapport` (états +
+tableau de bord). La **mémoire** de l'équipe est l'arborescence
+`dossiers/{client}/` (fichiers Markdown versionnés à frontmatter YAML).
+
+C'est une **couche d'orchestration** construite **sur** les skills : elle
+prépare et organise, mais **ne remplace pas** un professionnel agréé. Détails
+dans [`AGENTS.md`](AGENTS.md).
 
 ### Bilinguisme FR/NL (obligation, pas option)
 
@@ -85,6 +113,13 @@ ls ~/.claude/skills/
 ```
 
 Dans Claude Code, le skill se déclenche via le frontmatter `name` / `description` de chaque `SKILL.md`.
+
+Pour utiliser l'**équipe d'agents** (orchestrateur + 6 spécialistes + slash
+commands), deux options : soit **ouvrir le dépôt `paperasse-be` comme projet
+Claude Code** (les agents de `.claude/agents/` et les commandes de
+`.claude/commands/` sont alors chargés automatiquement), soit copier
+`.claude/agents/*` et `.claude/commands/*` vers `~/.claude/agents/` et
+`~/.claude/commands/` pour les rendre disponibles globalement.
 
 ### Configuration de l'entreprise
 
@@ -141,6 +176,36 @@ Elke skill volgt het officiële `SKILL.md`-schema (`name`, `description`, `metad
 | **classeur-be** | Organisatie, archivering, wettelijke bewaartermijnen (7/10/15 jaar), fiscale vervaldagen, dashboard, advies |
 | **independant-be** | Zelfstandige natuurlijke persoon: PB (tarief, belastingvrije som, beroepskosten, voorafbetalingen), sociale bijdragen (RSVZ), btw, vereenvoudigde boekhouding, professioneel dossier |
 
+### Agententeam (Claude Code-orchestratie)
+
+Boven op de skills voegt een **Claude Code-agententeam** een
+**orchestratielaag** toe: een orchestrator (`directeur-financier`, virtuele
+CFO) luistert naar de bedrijfsleider, routeert de vraag naar de juiste
+specialist en consolideert de resultaten in een stuuroverzicht. De orchestrator
+**rekent nooit zelf**: hij delegeert aan één van de 6 specialisten en neemt hun
+gedocumenteerde output over.
+
+| Agent | Rol | Gebruikte skill |
+|---|---|---|
+| `directeur-financier` | Orchestrator / virtuele CFO — routeert & consolideert | (alle, via delegatie) |
+| `comptable` | Boekingen, btw, venn.bel., afsluiting, neerlegging NBB | `comptable-be` |
+| `fiscaliste` | Transversale fiscaliteit (venn.bel., PB, btw, VA) | `comptable-be` + `independant-be` |
+| `notaire-conseil` | Notariskosten, registratierechten, erfenis, schenking | `notaire-be` |
+| `gestionnaire-asbl` | VZW : WVV Boek 9, RPB, patrimoniumtaks, UBO | `asbl-be` |
+| `conseiller-independant` | Zelfstandige : PB, RSVZ, btw-vrijstelling | `independant-be` |
+| `analyste-archiviste` | Financiële staten, ratio's, dashboard, vervaldagen, archivering | `classeur-be` + `scripts/*` |
+
+Zes **slash-commando's** dienen als snelkoppelingen: `/pilotage`
+(stuuroverzicht), `/cloture` (sequentiële jaarafsluiting), `/tva`
+(btw-aangifte), `/echeances` (vervaldagen), `/classer` (archivering),
+`/rapport` (staten + dashboard). Het **geheugen** van het team is de
+mapstructuur `dossiers/{client}/` (geversioneerde Markdown-bestanden met
+YAML-frontmatter).
+
+Dit is een **orchestratielaag** gebouwd **bovenop** de skills: ze bereidt voor
+en organiseert, maar **vervangt geen** erkende professional. Details in
+[`AGENTS.md`](AGENTS.md).
+
 ### Tweetaligheid FR/NL (verplichting, geen optie)
 
 De werktaal wordt bepaald door het **gewest** van de onderneming (`company.json`):
@@ -183,6 +248,13 @@ ls ~/.claude/skills/
 cp company.example.json company.json
 # Bewerk company.json: bce, forme_juridique, regime_tva, exercice, region, langue
 ```
+
+Om het **agententeam** (orchestrator + 6 specialisten + slash-commando's) te
+gebruiken, zijn er twee opties: ofwel de repository `paperasse-be` **als Claude
+Code-project openen** (de agenten in `.claude/agents/` en de commando's in
+`.claude/commands/` worden dan automatisch geladen), ofwel `.claude/agents/*`
+en `.claude/commands/*` kopiëren naar `~/.claude/agents/` en
+`~/.claude/commands/` om ze globaal beschikbaar te maken.
 
 ### Scripts (Node.js ≥ 18, geen externe afhankelijkheden)
 

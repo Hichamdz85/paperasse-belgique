@@ -9,6 +9,12 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 
 ---
 
+## [2.5.0] — 2026-06-12
+
+### Ajouté / Toegevoegd
+- **FR** — **Équipe d'agents Claude Code** (couche d'orchestration par-dessus les 5 skills) : un orchestrateur `directeur-financier` (CFO virtuel qui route et consolide, ne calcule jamais lui-même) + 6 spécialistes (`comptable`, `fiscaliste`, `notaire-conseil`, `gestionnaire-asbl`, `conseiller-independant`, `analyste-archiviste`). 6 slash commands (`/pilotage`, `/cloture`, `/tva`, `/echeances`, `/classer`, `/rapport`) dans `.claude/commands/`. Arborescence `dossiers/{client}/` (`ecritures/`, `declarations/`, `rapports/`, `echeances/`, `classeur/`, `notes/`) avec frontmatter YAML (`client`, `agent`, `date`, `version`, `statut`) — mémoire **auditable** et versionnée — et un modèle `dossiers/_TEMPLATE/`. Guide de la plateforme `AGENTS.md`. Garde-fous conservés : discipline de source (données `confirme` uniquement) et non-remplacement d'un professionnel agréé (validation humaine obligatoire). `package.json` → 2.5.0.
+- **NL** — **Claude Code-agententeam** (orchestratielaag bovenop de 5 skills): een orchestrator `directeur-financier` (virtuele CFO die routeert en consolideert, nooit zelf rekent) + 6 specialisten (`comptable`, `fiscaliste`, `notaire-conseil`, `gestionnaire-asbl`, `conseiller-independant`, `analyste-archiviste`). 6 slash-commando's (`/pilotage`, `/cloture`, `/tva`, `/echeances`, `/classer`, `/rapport`) in `.claude/commands/`. Mapstructuur `dossiers/{client}/` met YAML-frontmatter (`client`, `agent`, `date`, `version`, `statut`) — **auditeerbaar** en geversioneerd geheugen — plus een sjabloon `dossiers/_TEMPLATE/`. Platformgids `AGENTS.md`. Vrijwaringen behouden: brondiscipline (alleen `confirme`-gegevens) en geen vervanging van een erkende professional (menselijke validatie verplicht). `package.json` → 2.5.0.
+
 ## [2.4.0] — 2026-06-02
 
 ### Ajouté / Toegevoegd
@@ -100,6 +106,7 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 - Landing page statique bilingue FR/NL (`site/`).
 - `RESEARCH.md` : cadrage juridique sourcé + liste des points à vérifier. Licence MIT.
 
+[2.5.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.5.0
 [2.4.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.4.0
 [2.3.1]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.3.1
 [2.3.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.3.0
