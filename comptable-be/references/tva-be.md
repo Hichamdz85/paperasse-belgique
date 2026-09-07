@@ -1,6 +1,6 @@
 # TVA / BTW — Taxe sur la valeur ajoutée
 
-> Référence du skill `comptable-be`. Données sourcées et datées (consultation : 2026-05-29).
+> Référence du skill `comptable-be`. Données sourcées et datées (consultation : 2026-05-29 ; §6-7 ajoutés le 2026-09-08).
 > **FR** — TVA (taxe sur la valeur ajoutée). **NL** — Btw (belasting over de toegevoegde waarde).
 > *(glossaire `tva` — confirmé)*
 
@@ -115,3 +115,76 @@ l'identification (`inst-bce-format`, confirmé pour le format BCE).
 Le numéro de TVA se compose de « **BE** » suivi du **numéro d'entreprise (10 chiffres)**.
 - **Source :** SPF Économie — Identification à la TVA, https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-creer-une/lidentification-la-tva
 - **id source :** `fisc-tva-numero-be` — **statut : confirmé** — consultation 2026-05-29
+
+---
+
+## 6. Modernisation de la chaîne TVA (loi du 12/03/2023, en vigueur par phases depuis le 01/01/2025)
+
+**FR** — Nouvelle chaîne TVA. **NL** — Nieuwe btw-ketting.
+
+La loi du **12/03/2023** modernisant la chaîne TVA et le recouvrement des créances (non)
+fiscales est entrée en vigueur **par phases depuis le 01/01/2025** (circulaire 2024/C/6 du
+27/01/2025). Les §3.2 ci-dessus (échéances 20 / 25) en sont la première conséquence.
+- **id source :** `fisc-tva-chaine-loi` — **statut : confirmé** — consultation 2026-09-08
+
+### 6.1 Compte-provisions TVA (remplace le compte courant)
+- En vigueur depuis le **01/05/2026** (communication SPF Finances du 04/03/2026 ; report
+  technique depuis octobre 2025). Premières déclarations traitées : **avril 2026** (mensuels,
+  dépôt 20/05/2026) et **T2 2026** (trimestriels, dépôt 25/07/2026).
+- Compte numérique tenu par le SPF pour chaque assujetti : crédits non remboursés + versements
+  anticipés volontaires. Le SPF y **puise automatiquement** les montants dus (déclaration,
+  déclaration de substitution, intérêts de retard, amendes).
+- Consultation, versements et demandes de remboursement **via MyMinfin**.
+- Remboursement demandé dans la déclaration : limité au montant de la **grille 72** ; le solde
+  du compte-provisions se demande séparément via MyMinfin.
+- **id source :** `fisc-tva-compte-provisions` — **statut : confirmé** — consultation 2026-09-08
+
+### 6.2 Numéros de compte de paiement
+| Compte | Usage |
+|--------|-------|
+| **BE41 6792 0036 4210** (TVA/BTW) | Alimentation du compte-provisions, paiement anticipé, paiement de la déclaration (intérêts et amendes inclus) tant qu'aucun titre exécutoire n'est émis |
+| **BE42 6792 0000 0054** | Paiement après titre exécutoire (déclaration périodique ou de substitution) |
+
+> Un paiement sur un **ancien** numéro de compte n'est **pas conservé** : il est remboursé
+> automatiquement sans transfert, avec risque de défaut de paiement (intérêts, amendes).
+- **id source :** `fisc-tva-comptes-paiement` — **statut : confirmé** — consultation 2026-09-08
+
+### 6.3 Proposition de déclaration de substitution
+- En cas de **non-dépôt**, le SPF notifie une proposition de déclaration de substitution.
+- L'assujetti dispose d'**un mois** pour déposer sa propre déclaration ; passé ce délai, la
+  déclaration de substitution devient **définitive** et aucune déclaration périodique ne peut
+  plus être déposée pour la période.
+- Amende en cas de déclaration de substitution définitive : **15 %** de la taxe due (brochure SPF).
+- Dette minimale fixée par la substitution : 2.100 EUR — **À VÉRIFIER — source non confirmée**
+  (source secondaire ; ne pas utiliser en calcul).
+- **id source :** `fisc-tva-declaration-substitution` — **statut : confirmé partiel** — consultation 2026-09-08
+
+### 6.4 Remboursements et tolérances
+- **Déclarants mensuels** : remboursement mensuel **automatique** (case « demander le
+  remboursement » dans la déclaration), sans autorisation préalable.
+- **Fin du régime de tolérance « vacances »** (juillet/août) pour les délais de dépôt ;
+  application souple des amendes annoncée pour la période transitoire 2026 (ITAA).
+- **id source :** `fisc-tva-remboursement-mensuel` — **statut : confirmé** — consultation 2026-09-08
+
+**Conséquence pratique (règle du skill) :** toujours déposer la déclaration, même en retard,
+et vérifier l'ordre de virement (BE41 6792 0036 4210) avant chaque paiement.
+
+---
+
+## 7. Facturation électronique B2B (Peppol) et e-reporting
+
+**FR** — Facturation électronique structurée. **NL** — Gestructureerde elektronische facturatie.
+
+- **Obligatoire depuis le 01/01/2026** pour les transactions **B2B** entre assujettis établis
+  en Belgique (loi du 06/02/2024) : format structuré **EN 16931**, profil **Peppol-BIS**, via le
+  **réseau Peppol**. Un PDF simple ne satisfait **pas** l'obligation. Détail, archivage et
+  mentions obligatoires : voir le skill `classeur-be` (`references/facturation.md`).
+- **id source :** `facture-electronique-2026` — **statut : confirmé** (registre central)
+- **e-reporting 2028** : avant-projet de loi approuvé au Conseil des ministres du 18/07/2026
+  (e-reporting quasi temps réel via Peppol « 5 coins » prévu au 01/01/2028, suppression du
+  listing clients annuel). **À VÉRIFIER — source non confirmée** (non publié au Moniteur) :
+  ne pas l'utiliser en calcul ni dans l'échéancier.
+- **id source :** `av-tva-e-reporting-2028` — **statut : à vérifier** — consultation 2026-09-08
+- Incitants fiscaux (déduction 120 % des abonnements logiciels de facturation 2024-2027,
+  déduction pour investissement numérique 20 %) : **À VÉRIFIER — source non confirmée**.
+- **id source :** `av-fisc-deduction-logiciels-facturation` — **statut : à vérifier**
