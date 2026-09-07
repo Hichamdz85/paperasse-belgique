@@ -18,6 +18,14 @@ conforme, dans son contenu, sa présentation et sa numérotation, au PCMN.
 
 **FR** — ≈ 782 comptes (sociétés) + 373 comptes (ASBL), conformes à l'AR du 29 avril 2019.
 **NL** — ≈ 782 rekeningen (vennootschappen) + 373 rekeningen (vzw's), conform het KB van 29 april 2019.
+
+> **Couverture du jeu de données de ce dépôt.** Les chiffres ci-dessus décrivent le
+> **référentiel légal** (AR du 29/04/2019). Le fichier `data/pcmn_comptes.json` n'en reprend
+> qu'un **sous-ensemble vérifié** : **38 entrées au 2026-09-08 (23 `confirme`, 15 `a_completer`)**.
+> Pour tout compte absent du fichier, se référer au PCMN officiel (CNC/CBN, version
+> consolidée — source `pcmn-cnc-consolide`) et signaler explicitement que le numéro n'a pas
+> été vérifié dans ce dépôt. Compléter progressivement `data/pcmn_comptes.json` à partir du
+> texte de l'AR.
 *(version courte : ≈ 782 + 373 comptes (PCMN, AR 2019))*
 
 - **Source :** CNC/CBN, https://www.cnc-cbn.be/fr/node/2250 ; ITAA https://www.itaa.be/wp-content/uploads/ITAA_plan-comptable.pdf

@@ -3,8 +3,8 @@ name: comptable-be
 description: Assistant comptable belge FR/NL pour sociétés belges. Use when working on PCMN/MAR entries, TVA/BTW, ISoc/Ven.B, annual closing, BNB/NBB annual accounts, Belgian fiscal deadlines, company.json-based accounting checks, or sourced Belgian accounting/tax answers. Requires sourced, dated values and excludes unconfirmed data from calculations.
 metadata:
   short-description: Belgian accounting, VAT, ISoc and BNB workflows
-  version: "2.3.1"
-  last-updated: "2026-06-02"
+  version: "2.4.0"
+  last-updated: "2026-09-08"
   languages: ["fr", "nl"]
 ---
 
@@ -13,7 +13,7 @@ metadata:
 > Skill d'assistance comptable et fiscale pour sociétés belges (SRL/BV, SA/NV, etc.).
 > Toutes les valeurs chiffrées proviennent de `references/sources.json` (copie des entrées
 > `confirme` de `data/sources.json`). Aucune valeur n'est codée en dur sans source.
-> Date de consultation des sources : 2026-05-29 (entrées PCMN mises à jour au 2026-06-02). Année de référence : exercice d'imposition 2026 (revenus 2025).
+> Date de consultation des sources : 2026-05-29 (entrées PCMN mises à jour au 2026-06-02 ; chaîne TVA, Peppol et e-reporting ajoutés au 2026-09-08). Année de référence : exercice d'imposition 2026 (revenus 2025).
 
 ---
 
@@ -68,6 +68,10 @@ Calculer à partir de `exercice.cloture` et de `periodicite_tva` :
 
 > Note : les dates exactes du calendrier TVA peuvent être ponctuellement décalées chaque
 > année (RESEARCH §8 #13, « À VÉRIFIER »). Annoncer la règle, pas une date dérogatoire non confirmée.
+> `scripts/echeancier.mjs` applique le report au 1er jour ouvrable (week-end et jours fériés
+> légaux belges) aux échéances SPF Finances (TVA, listing, Biztax, versements anticipés, taxe
+> patrimoniale) et **pas** à l'AG, au dépôt BNB/greffe ni à l'INASTI (choix conservateur :
+> une date antérieure est toujours valable).
 
 ### (d) Contrôle de fraîcheur
 Si la date de consultation globale du skill (2026-05-29) date de **plus de 6 mois** par rapport
@@ -84,8 +88,12 @@ Plan comptable obligatoire en partie double, classes 0 à 7 (`compta-pcmn-def`, 
 **≈ 782 comptes (sociétés) + 373 comptes (ASBL), conformes à l'AR du 29 avril 2019** ; NL :
 **≈ 782 rekeningen (vennootschappen) + 373 rekeningen (vzw's), conform het KB van 29 april 2019**
 (version courte : ≈ 782 + 373 comptes (PCMN, AR 2019)).
-N'utiliser que des numéros de compte présents dans `data/pcmn_comptes.json` ;
-les comptes non confirmés officiellement y portent `statut: "a_completer"`.
+**Couverture du dépôt :** `data/pcmn_comptes.json` ne contient qu'un **sous-ensemble vérifié**
+du référentiel (38 entrées au 2026-09-08 : 23 `confirme`, 15 `a_completer`). Règle :
+1. utiliser en priorité un numéro présent dans `data/pcmn_comptes.json` avec `statut: "confirme"` ;
+2. pour un numéro absent du fichier, se référer au PCMN officiel consolidé (source
+   `pcmn-cnc-consolide`) et **signaler explicitement** que le compte n'a pas été vérifié dans ce dépôt ;
+3. ne jamais présenter comme certain un compte `a_completer` ou absent.
 
 > **Hiérarchie des sources.** Source primaire : AR du 29/04/2019 (Moniteur belge). Source
 > interprétative officielle : CNC/CBN (version consolidée). Source professionnelle pratique :
@@ -100,6 +108,15 @@ Voir `references/tva-be.md`.
   forfaitaire **en extinction** (suppression au **31/12/2027**, `fisc-tva-forfaitaire`, confirmé).
 - Périodicité Intervat : mensuelle par défaut ; trimestrielle sous seuils
   **2.500.000 / 250.000 / 50.000 EUR** (`fisc-tva-periodicite`, confirmé).
+- **Nouvelle chaîne TVA** (loi du 12/03/2023, phases depuis 01/01/2025) : compte-provisions
+  depuis le **01/05/2026**, paiements sur **BE41 6792 0036 4210**, proposition de déclaration
+  de substitution (délai de réponse **1 mois**), remboursement mensuel automatique pour les
+  déclarants mensuels, fin de la tolérance « vacances » (`fisc-tva-chaine-loi`,
+  `fisc-tva-compte-provisions`, `fisc-tva-comptes-paiement`, `fisc-tva-remboursement-mensuel`,
+  confirmés ; `fisc-tva-declaration-substitution`, confirmé partiel) — voir `references/tva-be.md` §6.
+- **Facturation électronique B2B** obligatoire depuis le **01/01/2026** (Peppol-BIS, EN 16931,
+  `facture-electronique-2026`, confirmé) ; **e-reporting 2028** : À VÉRIFIER — source non
+  confirmée (`av-tva-e-reporting-2028`) — voir `references/tva-be.md` §7 et le skill `classeur-be`.
 
 ### 2.3 Impôt des sociétés (ISoc / Vennootschapsbelasting)
 Voir `references/isoc-be.md`.
