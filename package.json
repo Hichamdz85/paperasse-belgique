@@ -1,6 +1,6 @@
 {
   "name": "paperasse-be",
-  "version": "2.5.0",
+  "version": "2.6.0",
   "description": "Skills Claude Code pour la comptabilité et le notariat belges (FR/NL) — données sourcées et datées. Belgische boekhoud- en notariaat-skills voor Claude Code.",
   "type": "module",
   "private": true,
@@ -9,13 +9,14 @@
     "statements": "node scripts/generate-statements.js",
     "pdfs": "node scripts/generate-pdfs.js",
     "echeancier": "node scripts/echeancier.mjs",
+    "test:echeancier": "node scripts/test-echeancier.mjs",
     "dashboard": "node scripts/dashboard.mjs",
     "classeur": "node scripts/classeur.mjs",
     "check-sources": "node scripts/check-sources.js",
     "validate-skills": "node scripts/validate-skills.js",
     "evals": "node evals/run-evals.mjs",
     "evals:llm": "node evals/run-evals.mjs --llm",
-    "validate": "npm run check-sources && npm run validate-skills && npm run evals"
+    "validate": "npm run check-sources && npm run validate-skills && npm run test:echeancier && npm run evals"
   },
   "engines": {
     "node": ">=18"

@@ -55,6 +55,76 @@ function parseJour(s) {
 }
 
 // ---------------------------------------------------------------------------
+// Jours fériés légaux belges (10 jours, art. 1er AR du 18/04/1974) et report au
+// 1er jour ouvrable. Règle : si une échéance légale tombe un samedi, un
+// dimanche ou un jour férié légal, elle est reportée au premier jour ouvrable
+// suivant (règle générale SPF Finances, cf. fisc-isoc-biztax-delai et
+// fisc-tva-periodicite). Les fêtes mobiles sont dérivées de Pâques (algorithme
+// de Meeus/Jones/Butcher, calendrier grégorien).
+// ---------------------------------------------------------------------------
+export function datePaques(annee) {
+  const a = annee % 19;
+  const b = Math.floor(annee / 100);
+  const c = annee % 100;
+  const d = Math.floor(b / 4);
+  const e = b % 4;
+  const f = Math.floor((b + 8) / 25);
+  const g = Math.floor((b - f + 1) / 3);
+  const h = (19 * a + b - d - g + 15) % 30;
+  const i = Math.floor(c / 4);
+  const k = c % 4;
+  const l = (32 + 2 * e + 2 * i - h - k) % 7;
+  const m = Math.floor((a + 11 * h + 22 * l) / 451);
+  const mois = Math.floor((h + l - 7 * m + 114) / 31);
+  const jour = ((h + l - 7 * m + 114) % 31) + 1;
+  return dateUTC(annee, mois, jour);
+}
+
+function plusJours(d, n) {
+  const r = new Date(d.getTime());
+  r.setUTCDate(r.getUTCDate() + n);
+  return r;
+}
+
+// Renvoie l'ensemble (Set de YYYY-MM-DD) des jours fériés légaux belges de l'année.
+export function joursFeriesBelges(annee) {
+  const paques = datePaques(annee);
+  const fixes = [
+    [1, 1],   // Nouvel An / Nieuwjaar
+    [5, 1],   // Fête du Travail / Dag van de Arbeid
+    [7, 21],  // Fête nationale / Nationale feestdag
+    [8, 15],  // Assomption / O.-L.-V.-Hemelvaart
+    [11, 1],  // Toussaint / Allerheiligen
+    [11, 11], // Armistice / Wapenstilstand
+    [12, 25], // Noël / Kerstmis
+  ].map(([m, j]) => isoJour(dateUTC(annee, m, j)));
+  const mobiles = [
+    isoJour(plusJours(paques, 1)),  // Lundi de Pâques / Paasmaandag
+    isoJour(plusJours(paques, 39)), // Ascension / O.-H.-Hemelvaart
+    isoJour(plusJours(paques, 50)), // Lundi de Pentecôte / Pinkstermaandag
+  ];
+  return new Set([...fixes, ...mobiles]);
+}
+
+// Vrai si la date (UTC) est un jour ouvrable (lundi-vendredi, hors férié légal).
+export function estJourOuvrable(d) {
+  const jourSemaine = d.getUTCDay(); // 0 = dimanche, 6 = samedi
+  if (jourSemaine === 0 || jourSemaine === 6) return false;
+  return !joursFeriesBelges(d.getUTCFullYear()).has(isoJour(d));
+}
+
+// Reporte une date au premier jour ouvrable suivant si nécessaire.
+export function reporterJourOuvrable(d) {
+  let r = new Date(d.getTime());
+  let garde = 0;
+  while (!estJourOuvrable(r) && garde < 10) {
+    r = plusJours(r, 1);
+    garde += 1;
+  }
+  return r;
+}
+
+// ---------------------------------------------------------------------------
 // Chargement de la configuration entreprise (company.json sinon l'exemple).
 // Même logique de repli que generate-statements.js.
 // ---------------------------------------------------------------------------
@@ -224,6 +294,7 @@ export function computeEcheances(company, fromDate, mois = 12) {
         const dernierJourAG = dateUTC(anCloture, moisCloture + 6 + 1, 0);
         echeances.push({
           date: isoJour(dernierJourAG),
+          reportable: false,
           label_fr: `Assemblée générale d'approbation des comptes — exercice ${anCloture}`,
           label_nl: `Algemene vergadering ter goedkeuring van de jaarrekening — boekjaar ${anCloture}`,
           source_id: 'compta-bnb-delais',
@@ -234,6 +305,7 @@ export function computeEcheances(company, fromDate, mois = 12) {
         const dernierJourDepot = dateUTC(anCloture, moisCloture + 7 + 1, 0);
         echeances.push({
           date: isoJour(dernierJourDepot),
+          reportable: false,
           label_fr: `Dépôt des comptes annuels (BNB) — exercice ${anCloture}`,
           label_nl: `Neerlegging van de jaarrekening (NBB) — boekjaar ${anCloture}`,
           source_id: 'compta-bnb-delais',
@@ -245,6 +317,7 @@ export function computeEcheances(company, fromDate, mois = 12) {
         const dernierJourDepotAsbl = dateUTC(anCloture, moisCloture + 6 + 1, 0);
         echeances.push({
           date: isoJour(dernierJourDepotAsbl),
+          reportable: false,
           label_fr: `Dépôt des comptes annuels de l'ASBL (greffe/BNB) — exercice ${anCloture}`,
           label_nl: `Neerlegging van de jaarrekening van de vzw (griffie/NBB) — boekjaar ${anCloture}`,
           source_id: 'asbl-depot-comptes',
@@ -289,6 +362,7 @@ export function computeEcheances(company, fromDate, mois = 12) {
       for (const tr of trimestresInasti) {
         echeances.push({
           date: isoJour(dateUTC(an, tr.moisFin + 1, 0)),
+          reportable: false,
           label_fr: `Cotisations sociales (INASTI) — ${tr.t} ${an}`,
           label_nl: `Sociale bijdragen (RSVZ) — ${tr.t} ${an}`,
           source_id: 'inasti-paiement',
@@ -314,13 +388,27 @@ export function computeEcheances(company, fromDate, mois = 12) {
   const vues = new Set();
   const dansHorizon = [];
   for (const e of echeances) {
-    const d = parseJour(e.date);
-    if (!d) continue;
+    const dLegale = parseJour(e.date);
+    if (!dLegale) continue;
+    // Report au 1er jour ouvrable (week-end / férié légal belge) pour les
+    // échéances SPF Finances (TVA, listing, Biztax, VA, taxe patrimoniale).
+    // Choix conservateur : PAS de report pour l'AG, le dépôt BNB/greffe et
+    // l'INASTI (une date antérieure est toujours valable ; le report n'est
+    // pas confirmé par une source officielle pour ces échéances).
+    const dReportee = e.reportable === false ? dLegale : reporterJourOuvrable(dLegale);
+    const reportee = dReportee.getTime() !== dLegale.getTime();
+    const item = {
+      ...e,
+      date: isoJour(dReportee),
+      date_legale: isoJour(dLegale),
+      reportee,
+    };
+    const d = dReportee;
     if (d < debut || d > fin) continue;
-    const cle = `${e.date}|${e.source_id}|${e.label_fr}`;
+    const cle = `${item.date}|${item.source_id}|${item.label_fr}`;
     if (vues.has(cle)) continue;
     vues.add(cle);
-    dansHorizon.push(e);
+    dansHorizon.push(item);
   }
   dansHorizon.sort((a, b) => (a.date < b.date ? -1 : a.date > b.date ? 1 : 0));
   return dansHorizon;
@@ -329,7 +417,7 @@ export function computeEcheances(company, fromDate, mois = 12) {
 // Note d'honnêteté affichée en tête (et exportée pour réutilisation).
 export const NOTE_HONNETETE =
   'Échéances légales sourcées ; les dates exactes varient chaque année ; ' +
-  'report au 1er jour ouvrable si week-end/férié ; revérifier le calendrier officiel.';
+  'report automatique au 1er jour ouvrable (week-end / férié légal belge) ; revérifier le calendrier officiel.';
 
 // ---------------------------------------------------------------------------
 // Lecture des arguments CLI (--from, --mois, --ics).
@@ -378,7 +466,8 @@ function genererICS(echeances, langue) {
     lignes.push(`DTSTART;VALUE=DATE:${compact(e.date)}`);
     lignes.push(`DTEND;VALUE=DATE:${lendemain(e.date)}`);
     lignes.push(`SUMMARY:${esc(titre)}`);
-    lignes.push(`DESCRIPTION:${esc(`Échéance légale belge. source_id: ${e.source_id}. ${NOTE_HONNETETE}`)}`);
+    const infoReport = e.reportee ? ` Date légale : ${e.date_legale}, reportée au 1er jour ouvrable.` : '';
+    lignes.push(`DESCRIPTION:${esc(`Échéance légale belge. source_id: ${e.source_id}.${infoReport} ${NOTE_HONNETETE}`)}`);
     lignes.push('TRANSP:TRANSPARENT');
     // Alarme 7 jours avant l'échéance.
     lignes.push('BEGIN:VALARM');
@@ -415,7 +504,8 @@ async function main() {
   console.log(`NOTE : ${NOTE_HONNETETE}`);
   console.log('-'.repeat(72));
   for (const e of echeances) {
-    console.log(`  ${e.date}  ${afficherLabel(e, langue)}   [${e.source_id}]`);
+    const marque = e.reportee ? ` (report du ${e.date_legale})` : '';
+    console.log(`  ${e.date}  ${afficherLabel(e, langue)}${marque}   [${e.source_id}]`);
   }
   console.log(sep);
   console.log(`(Config: ${srcCompany})`);
