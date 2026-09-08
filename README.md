@@ -11,7 +11,7 @@
 > Skills Claude Code pour automatiser la comptabilité et le notariat **belges**, en **français et néerlandais**, avec des données **sourcées et datées**.
 > Claude Code-skills om de Belgische **boekhouding en notariaat** te automatiseren, in het **Frans en Nederlands**, met **gedateerde en gecontroleerde bronnen**.
 
-Version **2.5** — 5 skills (comptable-be, notaire-be, asbl-be, classeur-be, independant-be) + une **équipe d'agents** d'orchestration (Claude Code) — données vérifiées au **2026-06-01** (entrées PCMN et indépendant au **2026-06-02**) — exercice d'imposition 2026 (revenus 2025).
+Version **2.6** — 5 skills (comptable-be, notaire-be, asbl-be, classeur-be, independant-be) + une **équipe d'agents** d'orchestration (Claude Code) — données vérifiées au **2026-06-01** (entrées PCMN et indépendant au **2026-06-02** ; chaîne TVA, Peppol et e-reporting au **2026-09-08**) — exercice d'imposition 2026 (revenus 2025).
 
 **Démo en ligne / Live demo : https://hichamdz85.github.io/paperasse-belgique/**
 
@@ -42,7 +42,7 @@ Chaque skill respecte le schéma officiel `SKILL.md` (`name`, `description`, `me
 
 | Skill | Couvre |
 |-------|--------|
-| **comptable-be** | Écritures PCMN (≈ 782 + 373 comptes, AR 2019), TVA/BTW, calcul ISoc/Ven.B, clôture annuelle, dépôt BNB |
+| **comptable-be** | Écritures PCMN (référentiel AR 2019 ≈ 782 + 373 comptes ; jeu de données vérifié : 38 comptes), TVA/BTW incl. nouvelle chaîne TVA 2025-2026 et Peppol, calcul ISoc/Ven.B, clôture annuelle, dépôt BNB |
 | **notaire-be** | Frais de notaire, droits d'enregistrement par région, succession, donation, SRL/BV |
 | **asbl-be** | ASBL/VZW : régime CSA Livre 9, comptabilité simplifiée ou en partie double, dépôt (greffe/BNB), IPM, taxe patrimoniale, TVA, registre UBO |
 | **classeur-be** | Organisation, archivage, conservation légale (7/10/15 ans), échéancier fiscal, tableau de bord, conseils |
@@ -136,7 +136,8 @@ node scripts/validate-skills.js      # vérifie SKILL.md, agents/openai.yaml et 
 node evals/run-evals.mjs             # évals : couverture sourcée (42/42) — voir evals/README.md
 node scripts/generate-statements.js  # bilan + compte de résultats (schéma BNB), libellés FR/NL
 node scripts/generate-pdfs.js        # document imprimable (HTML A4) à partir des états
-node scripts/echeancier.mjs          # échéances fiscales légales (+ .ics)
+node scripts/echeancier.mjs          # échéances fiscales légales, report au 1er jour ouvrable (+ .ics)
+node scripts/test-echeancier.mjs     # tests : fériés belges + report jours ouvrables
 node scripts/dashboard.mjs           # tableau de bord HTML (KPIs + échéances)
 node scripts/classeur.mjs --init     # arborescence d'archivage + assistant de classement
 ```
@@ -170,7 +171,7 @@ Elke skill volgt het officiële `SKILL.md`-schema (`name`, `description`, `metad
 
 | Skill | Behandelt |
 |-------|-----------|
-| **comptable-be** | MAR-boekingen (≈ 782 + 373 rekeningen, KB 2019), btw, berekening vennootschapsbelasting, jaarafsluiting, neerlegging NBB |
+| **comptable-be** | MAR-boekingen (referentiekader KB 2019 ≈ 782 + 373 rekeningen ; geverifieerde dataset: 38 rekeningen), btw incl. nieuwe btw-ketting 2025-2026 en Peppol, berekening vennootschapsbelasting, jaarafsluiting, neerlegging NBB |
 | **notaire-be** | Notariskosten, gewestelijke registratierechten, erfbelasting, schenkbelasting, BV/NV |
 | **asbl-be** | VZW : regeling WVV Boek 9, vereenvoudigde of dubbele boekhouding, neerlegging (griffie/NBB), rechtspersonenbelasting, patrimoniumtaks, btw, UBO-register |
 | **classeur-be** | Organisatie, archivering, wettelijke bewaartermijnen (7/10/15 jaar), fiscale vervaldagen, dashboard, advies |
@@ -264,7 +265,8 @@ node scripts/validate-skills.js      # controleert SKILL.md, agents/openai.yaml 
 node evals/run-evals.mjs             # evals: brondekking (42/42) — zie evals/README.md
 node scripts/generate-statements.js  # balans + resultatenrekening (NBB-schema), FR/NL-labels
 node scripts/generate-pdfs.js        # afdrukbaar document (HTML A4)
-node scripts/echeancier.mjs          # wettelijke fiscale vervaldagen (+ .ics)
+node scripts/echeancier.mjs          # wettelijke fiscale vervaldagen, verschuiving naar 1e werkdag (+ .ics)
+node scripts/test-echeancier.mjs     # tests: Belgische feestdagen + werkdagverschuiving
 node scripts/dashboard.mjs           # dashboard HTML (KPI's + vervaldagen)
 node scripts/classeur.mjs --init     # archiveringsstructuur + klasseerassistent
 ```
@@ -300,8 +302,8 @@ paperasse-be/
 
 Également : SPF Économie – FOD Economie (BCE/KBO) · portails régionaux (be.brussels, vlaanderen.be, wallonie.be).
 
-**FR** — Données vérifiées et datées (consultation : 2026-06-02).
-**NL** — Geverifieerde en gedateerde gegevens (raadpleging: 2026-06-02).
+**FR** — Données vérifiées et datées (consultation : 2026-06-02 ; mise à jour partielle 2026-09-08).
+**NL** — Geverifieerde en gedateerde gegevens (raadpleging: 2026-06-02; gedeeltelijke update 2026-09-08).
 
 ## Licence / Licentie
 

@@ -9,6 +9,22 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 
 ---
 
+## [2.6.0] — 2026-09-08
+
+### Ajouté / Toegevoegd
+- **FR** — `comptable-be` : section **Nouvelle chaîne TVA** (loi du 12/03/2023, phases depuis le 01/01/2025) dans `references/tva-be.md` §6 : compte-provisions en vigueur depuis le 01/05/2026, numéros de compte de paiement BE41 6792 0036 4210 / BE42 6792 0000 0054, proposition de déclaration de substitution (délai de réponse 1 mois, amende 15 % en cas de substitution définitive), remboursement mensuel automatique pour les déclarants mensuels, fin de la tolérance « vacances ». Section §7 **Facturation électronique B2B (Peppol) et e-reporting** avec renvoi vers `classeur-be`. Nouvelles sources : `fisc-tva-chaine-loi`, `fisc-tva-compte-provisions`, `fisc-tva-comptes-paiement`, `fisc-tva-remboursement-mensuel` (confirmé), `fisc-tva-declaration-substitution` (confirmé partiel), `av-tva-e-reporting-2028`, `av-fisc-deduction-logiciels-facturation` (à vérifier — exclus des calculs).
+- **NL** — `comptable-be`: sectie **Nieuwe btw-ketting** (wet van 12/03/2023, gefaseerd sinds 01/01/2025) in `references/tva-be.md` §6: provisierekening sinds 01/05/2026, betaalrekeningen BE41 6792 0036 4210 / BE42 6792 0000 0054, voorstel van vervangende aangifte (antwoordtermijn 1 maand, boete 15 % bij definitieve vervanging), automatische maandelijkse teruggaaf voor maandaangevers, einde van de vakantieregeling. Sectie §7 **Elektronische B2B-facturatie (Peppol) en e-reporting** met verwijzing naar `classeur-be`. Nieuwe bronnen zoals hierboven.
+- `scripts/echeancier.mjs` : **report automatique au 1er jour ouvrable** (samedi, dimanche, 10 jours fériés légaux belges, fêtes mobiles calculées à partir de Pâques) pour les échéances SPF Finances (TVA, listing, Biztax, versements anticipés, taxe patrimoniale). Choix conservateur : pas de report pour l'AG, le dépôt BNB/greffe et l'INASTI. Chaque échéance expose désormais `date_legale` et `reportee` ; l'export `.ics` mentionne la date légale en cas de report. Nouveau test `scripts/test-echeancier.mjs` (15 assertions) intégré à `npm run validate`.
+
+### Corrigé / Gecorrigeerd
+- **FR** — Écart entre le référentiel légal annoncé (≈ 782 + 373 comptes PCMN) et le contenu réel de `data/pcmn_comptes.json` (38 entrées : 23 `confirme`, 15 `a_completer`). La couverture réelle est désormais indiquée dans `README.md`, `comptable-be/SKILL.md` (§2.1, nouvelle règle en 3 points pour les comptes absents du fichier), `references/pcmn.md` et la source `compta-pcmn-def`.
+- **NL** — Verschil tussen het aangekondigde wettelijke referentiekader (≈ 782 + 373 MAR-rekeningen) en de werkelijke inhoud van `data/pcmn_comptes.json` (38 items: 23 `confirme`, 15 `a_completer`). De werkelijke dekking staat nu in `README.md`, `comptable-be/SKILL.md` (§2.1), `references/pcmn.md` en de bron `compta-pcmn-def`.
+- `scripts/echeancier.mjs` : les échéances tombant un week-end ou un jour férié (ex. TVA T3 2026 le dimanche 25/10/2026, Biztax le samedi 31/07/2027) étaient affichées à la date légale alors que la note annonçait un report.
+
+### Vérifié / Gecontroleerd (audit du 2026-09-08)
+- Valeurs recoupées sur sources officielles à jour : règle Biztax (dernier jour du 7e mois) et exception 30/09/2026 pour les clôtures du 31/12/2025 au 28/02/2026 ; taux et régimes TVA ; échéances 20 / 25 ; ISoc 25 % / 20 %, rémunération minimale 50.000 EUR (ex. imp. 2026) ; délais AG / BNB. Aucune correction de valeur nécessaire.
+- `package.json`, `data/sources.json` → 2.6.0 ; `comptable-be` → 2.4.0.
+
 ## [2.5.0] — 2026-06-12
 
 ### Ajouté / Toegevoegd
@@ -106,6 +122,7 @@ Alle noemenswaardige wijzigingen worden hier gedocumenteerd
 - Landing page statique bilingue FR/NL (`site/`).
 - `RESEARCH.md` : cadrage juridique sourcé + liste des points à vérifier. Licence MIT.
 
+[2.6.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.6.0
 [2.5.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.5.0
 [2.4.0]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.4.0
 [2.3.1]: https://github.com/Hichamdz85/paperasse-belgique/releases/tag/v2.3.1
